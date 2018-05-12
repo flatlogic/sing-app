@@ -1,0 +1,481 @@
+/***********************************/
+/**            UTILS              **/
+/***********************************/
+
+// Util Components
+// ----------------------------
+.transition-height{
+  @include transition(height .15s ease-in-out);
+}
+
+.badge-white {
+  @include badge-variant($white);
+}
+
+.display-flex {
+  display: flex;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+/**
+ * .circle & .square are pretty cool way to add a bit of beauty to raw data.
+ * should be used with bg-* and text-* classes for colors.
+ */
+.circle, .square, .circle-o{
+  display: inline-block;
+  width: #{$line-height-base}em;
+  height: #{$line-height-base}em;
+  line-height: #{$line-height-base}em;
+  text-align: center;
+}
+
+.circle, .circle-o{
+  @include border-radius(50%);
+}
+
+.square{
+  @include border-radius(5px);
+}
+
+.circle-lg, .square-lg{
+  width: 2.2em;
+  height: 2.2em;
+  line-height: 2.2em;
+}
+
+.circle-o{
+  border: #{$line-height-base/5}em solid transparent;
+
+  &.circle-o-danger{ border-color: theme-color('danger') };
+  &.circle-o-warning{ border-color: theme-color('warning') };
+  &.circle-o-success{ border-color: theme-color('success') };
+  &.circle-o-info{ border-color: theme-color('info') };
+  &.circle-o-primary{ border-color: theme-color('primary') };
+  &.circle-o-black{ border-color: $black };
+  &.circle-o-gray-darker{ border-color: $gray-900 };
+  &.circle-o-gray-dark{ border-color: $gray-800 };
+  &.circle-o-gray{ border-color: $gray-700 };
+  &.circle-o-gray-light{ border-color: $gray-600 };
+  &.circle-o-gray-lighter{ border-color: $gray-200 };
+  &.circle-o-white{ border-color: $white };
+}
+
+@include thumb('.thumb-xl', 100px);
+@include thumb('.thumb-lg', 60px);
+@include thumb('.thumb', 48px);
+@include thumb('.thumb-sm', 34px);
+@include thumb('.thumb-xs', 28px);
+
+.thumb-xs,
+.thumb-sm,
+.thumb-lg,
+.thumb-xl,
+.thumb{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+
+  img{
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+
+  .status{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    border: 0.15em solid $white;
+    @include border-radius(50%);
+
+    &.status-bottom{
+      top: auto;
+      left: auto;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+
+.text-ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.input-dark{
+  background-color: rgba(0,0,0,.4);
+  border: 0;
+  color: $body-color;
+  &:focus{
+    background-color: $gray-200
+  }
+}
+
+.input-group-dark{
+  .input-group-text,
+  .form-control{
+    background-color: rgba(0,0,0,.4);
+    border: 0;
+    color: $body-color;
+    @include transition(background-color .15s ease-in-out);
+  }
+
+  .form-control:focus,
+  .form-control:focus + .input-group-append .input-group-text,
+  &.focus .input-group-text{
+    background-color: $gray-200
+  }
+
+  .input-group-append,
+  .input-group-prepend {
+    margin: 0;
+  }
+}
+
+.input-group-transparent{
+  .form-control:first-child,
+  .input-group-prepend:first-child > .input-group-text,
+  .input-group-prepend:first-child > .btn,
+  .input-group-prepend:first-child > .btn-group > .btn,
+  .input-group-prepend:first-child > .dropdown-toggle,
+  .input-group-prepend:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+  .input-group-prepend:last-child > .btn-group:not(:last-child) > .btn{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+  }
+
+  .form-control:last-child,
+  .input-group-prepend:last-child > .input-group-text,
+  .input-group-prepend:last-child > .btn,
+  .input-group-prepend:last-child > .btn-group > .btn,
+  .input-group-prepend:last-child > .dropdown-toggle,
+  .input-group-prepend:first-child > .btn:not(:first-child),
+  .input-group-prepend:first-child > .btn-group:not(:first-child) > .btn{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .input-group-text{
+    background-color: $input-bg;
+    @include transition(border-color ease-in-out .15s);
+  }
+
+  .input-group-append,
+  .input-group-prepend {
+    margin: 0;
+  }
+
+  .form-control:focus + .input-group-append .input-group-text,
+  &.focus .input-group-text{
+    border-color: $input-focus-border-color;
+  }
+}
+
+.input-no-border{
+  border: none;
+  @include transition(background-color ease-in-out .15s);
+
+  &:focus{
+    background-color: $gray-100;
+  }
+}
+
+.input-group-no-border{
+  @extend .input-group-transparent;
+
+  .form-control,
+  .input-group-text {
+    @extend .input-no-border;
+  }
+
+  .form-control:focus,
+  .form-control:focus + .input-group-append .input-group-text,
+  &.focus .input-group-text{
+    @extend .input-no-border:focus;
+  }
+}
+
+.input-group-rounded{
+  .form-control:first-child,
+  .input-group-prepend:first-child > .input-group-text,
+  .input-group-prepend:first-child > .btn,
+  .input-group-prepend:first-child > .btn-group > .btn,
+  .input-group-prepend:first-child > .dropdown-toggle,
+  .input-group-prepend:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+  .input-group-prepend:last-child > .btn-group:not(:last-child) > .btn{
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+
+  .form-control:last-child,
+  .input-group-prepend:last-child > .input-group-text,
+  .input-group-prepend:last-child > .btn,
+  .input-group-prepend:last-child > .btn-group > .btn,
+  .input-group-prepend:last-child > .dropdown-toggle,
+  .input-group-prepend:first-child > .btn:not(:first-child),
+  .input-group-prepend:first-child > .btn-group:not(:first-child) > .btn{
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+}
+
+.globe{
+  font-size: 64px;
+  > i {
+    position: relative;
+    > i {
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+.thin-scroll{
+  &::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+  &::-webkit-scrollbar:hover {
+    background-color: $gray-200;
+    border: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    border: none;
+    background-color: rgba(0, 0, 0, .2);
+    @include box-shadow(inset 1px 1px 0 rgba(0, 0, 0, .1));
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $gray-600;
+  }
+}
+
+@include keyframes('bg-attention'){
+  0%{
+    background-color: lighten(theme-color('warning'), 43%);
+  }
+  5%{
+    background-color: lighten(theme-color('warning'), 33%);
+  }
+  0%{
+    background-color: rgba(0,0,0,0);
+  }
+};
+
+.bg-attention{
+  animation: bg-attention 10s;
+}
+
+/* .h* + .fw-bold */
+$font-sizes: 54px, $h1-font-size, $h2-font-size, $h3-font-size, $h4-font-size, $h5-font-size, $h6-font-size;
+$i: 0;
+@each $font-size in $font-sizes{
+
+  .value#{$i}{
+    margin: 0;
+    font-size: $font-size;
+    font-weight: $font-weight-normal;
+  }
+  $i: $i + 1 !global;
+}
+
+.help{
+  font-size: $small-font-size;
+  color: $text-muted;
+}
+
+// Style Classes
+// ----------------------------
+
+
+
+.no-margin {
+  margin: 0;
+}
+
+$margin-vertical-variants: (xlg: 40px, lg: $spacer*3/2, md: $spacer, sm: $spacer/2, xs: $spacer/4, 0: 0);
+$margin-horizontal-variants: (lg: 20px, md: 15px, sm: 10px, xs: 5px, 0: 0);
+
+@include property-variants('.mt', 'margin-top', $margin-vertical-variants);
+@include property-variants('.mb', 'margin-bottom', $margin-vertical-variants);
+@include property-variants('.ml', 'margin-left', $margin-horizontal-variants);
+@include property-variants('.mr', 'margin-right', $margin-horizontal-variants);
+
+.p-0{
+  padding: 0;
+}
+
+$display-variants: (inline: inline, inline-block: inline-block, block: block);
+
+@include property-variants('.display', 'display', $display-variants);
+
+$width-variants: (50: 50px, 100: 100px, 150: 150px, 200: 200px);
+
+@include property-variants('.width', 'width', $width-variants);
+
+$height-variants: (50: 50px, 100: 100px, 150: 150px, 200: 200px, 250: 250px);
+
+@include property-variants('.height', 'height', $height-variants);
+@include property-variants('.max-height', 'max-height', $height-variants);
+
+$opacity-variants: (10: .1, 20: .2, 30: .3, 40: .4, 50: .5, 60: .6, 70: .7, 80: .8, 90: .9);
+
+@include property-variants('.opacity', 'opacity', $opacity-variants);
+
+$z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
+
+@include property-variants('.z-index', 'z-index', $z-index-variants);
+
+
+.no-border{
+  border: none;
+}
+
+.bt{ border-top: 1px solid $gray-light }
+.br{ border-right: 1px solid $gray-light }
+.bb{ border-bottom: 1px solid $gray-light }
+.bl{ border-left: 1px solid $gray-light }
+
+.overflow-hidden{
+  overflow: hidden;
+}
+
+.fw-semi-bold{
+  font-weight: $font-weight-semi-bold;
+}
+
+.fw-normal{
+  font-weight: $font-weight-normal;
+}
+
+.fw-bold{
+  font-weight: $font-weight-bold;
+}
+
+.fw-thin{
+  font-weight: $font-weight-thin;
+}
+
+.rotate-45 {
+  transform: rotate(45deg);
+}
+
+.rotate-315 {
+  transform: rotate(315deg);
+}
+
+/* small + .text-muted*/
+.deemphasize{
+  font-size: $small-font-size;
+  color: $text-muted;
+}
+
+// Text & Background Variations
+// ----------------------------
+
+//copy bg classes after bootstrap so it's possible to overload other bootstrap classes
+
+@include bg-variant('.bg-primary', theme-color('primary'));
+@include bg-variant('.bg-success', theme-color('success'));
+@include bg-variant('.bg-info', theme-color('info'));
+@include bg-variant('.bg-warning', theme-color('warning'));
+@include bg-variant('.bg-danger', theme-color('danger'));
+
+@include bg-variant('.bg-primary-light', theme-color('primary-light'));
+@include bg-variant('.bg-success-light', theme-color('success-light'));
+@include bg-variant('.bg-info-light', theme-color('info-light'));
+@include bg-variant('.bg-warning-light', theme-color('warning-light'));
+@include bg-variant('.bg-danger-light', theme-color('danger-light'));
+
+@include bg-variant('.bg-body', $body-bg);
+@include bg-variant('.bg-body-light', $body-bg-light);
+@include bg-variant('.bg-gray', $gray-700);
+@include bg-variant('.bg-gray-transparent', rgba($gray-700, .6));
+@include bg-variant('.bg-gray-dark', $gray-800);
+@include bg-variant('.bg-black', $black);
+@include bg-variant('.bg-gray-light', $gray-light);
+@include bg-variant('.bg-gray-lighter', $gray-200);
+@include bg-variant('.bg-transparent', rgba(0,0,0,0));
+@include bg-variant('.bg-white', $white);
+
+@include bg-variant('.bg-sidebar', $sidebar-bg-color);
+
+.bg-body, .bg-body-light, .bg-gray, .bg-gray-transparent, .bg-transparent,
+.bg-primary, .bg-success, .bg-warning, .bg-danger, .bg-info{
+  @include transition(background-color .15s ease-in-out);
+}
+
+//override bs .text-* classes so they use $brand-* variables
+
+@include text-emphasis-variant('.text-primary', theme-color('primary'));
+
+@include text-emphasis-variant('.text-success', theme-color('success'));
+
+@include text-emphasis-variant('.text-info', theme-color('info'));
+
+@include text-emphasis-variant('.text-warning', theme-color('warning'));
+
+@include text-emphasis-variant('.text-danger', theme-color('danger'));
+
+@include text-emphasis-variant('.text-link', $link-color);
+
+@include text-emphasis-variant('.text-white', $white);
+@include text-emphasis-variant('.text-gray', $gray-700);
+@include text-emphasis-variant('.text-gray-dark', $gray-800);
+@include text-emphasis-variant('.text-gray-light', $gray-600);
+@include text-emphasis-variant('.text-semi-muted', $gray-600);
+@include text-emphasis-variant('.text-gray-darker', $gray-900);
+@include text-emphasis-variant('.text-gray-lighter', $gray-200);
+@include text-emphasis-variant('.text-bg-sidebar', $sidebar-bg-color);
+
+
+.text-light{
+  opacity: .8;
+  color: inherit !important;
+}
+
+.fs-mini{
+  font-size: $font-size-mini;
+}
+
+.fs-smaller{
+  font-size: $small-font-size;
+}
+
+.fs-sm{
+  font-size: $font-size-sm;
+}
+
+.fs-larger{
+  font-size: $font-size-larger;
+}
+
+.btlr{
+  border-top-left-radius: $border-radius;
+}
+
+.btrr{
+  border-top-right-radius: $border-radius;
+}
+
+.bblr{
+  border-bottom-left-radius: $border-radius;
+}
+
+.bbrr{
+  border-bottom-right-radius: $border-radius;
+}
+
+.hide {
+  display: none;
+}

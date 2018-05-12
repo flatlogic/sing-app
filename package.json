@@ -1,0 +1,19 @@
+{
+  "name": "Sing",
+  "version": "4.0.0",
+  "description": "Sing App - Bootstrap 4 Admin Dashboard",
+  "dependencies": {
+    "line-awesome": "github:icons8/line-awesome"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "~3.9.0",
+    "gulp-hb": "^7.0.1",
+    "gulp-rename": "1.2.2",
+    "gulp-sass": "2.1.1",
+    "handlebars-layouts": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}

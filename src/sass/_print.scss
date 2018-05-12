@@ -1,0 +1,98 @@
+@media print {
+
+  .page-controls, .sidebar, .loader-wrap {
+    display: none;
+  }
+
+  .content-wrap{
+    position: static;
+  }
+
+  .content{
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .table, .table td, .table th{
+    background: $white !important;
+    border: none !important;
+  }
+
+  .table td{
+    border-top: 1px solid $gray-600 !important;
+  }
+
+  .hidden-print{
+    display: none !important;
+  }
+
+  //special print grid system
+  .col-print-1,
+  .col-print-2,
+  .col-print-3,
+  .col-print-4,
+  .col-print-5,
+  .col-print-6,
+  .col-print-7,
+  .col-print-8,
+  .col-print-9,
+  .col-print-10,
+  .col-print-11 {
+    float: left;
+  }
+  .col-print-1  { width: percentage((1 / $grid-columns)); }
+  .col-print-2  { width: percentage((2 / $grid-columns)); }
+  .col-print-3  { width: percentage((3 / $grid-columns)); }
+  .col-print-4  { width: percentage((4 / $grid-columns)); }
+  .col-print-5  { width: percentage((5 / $grid-columns)); }
+  .col-print-6  { width: percentage((6 / $grid-columns)); }
+  .col-print-7  { width: percentage((7 / $grid-columns)); }
+  .col-print-8  { width: percentage((8 / $grid-columns)); }
+  .col-print-9  { width: percentage((9 / $grid-columns)); }
+  .col-print-10 { width: percentage((10/ $grid-columns)); }
+  .col-print-11 { width: percentage((11/ $grid-columns)); }
+  .col-print-12 { width: 100%; }
+
+// Push and pull columns for source order changes
+  .col-print-push-0  { left: auto; }
+  .col-print-push-1  { left: percentage((1 / $grid-columns)); }
+  .col-print-push-2  { left: percentage((2 / $grid-columns)); }
+  .col-print-push-3  { left: percentage((3 / $grid-columns)); }
+  .col-print-push-4  { left: percentage((4 / $grid-columns)); }
+  .col-print-push-5  { left: percentage((5 / $grid-columns)); }
+  .col-print-push-6  { left: percentage((6 / $grid-columns)); }
+  .col-print-push-7  { left: percentage((7 / $grid-columns)); }
+  .col-print-push-8  { left: percentage((8 / $grid-columns)); }
+  .col-print-push-9  { left: percentage((9 / $grid-columns)); }
+  .col-print-push-10 { left: percentage((10/ $grid-columns)); }
+  .col-print-push-11 { left: percentage((11/ $grid-columns)); }
+
+  .col-print-pull-0  { right: auto; }
+  .col-print-pull-1  { right: percentage((1 / $grid-columns)); }
+  .col-print-pull-2  { right: percentage((2 / $grid-columns)); }
+  .col-print-pull-3  { right: percentage((3 / $grid-columns)); }
+  .col-print-pull-4  { right: percentage((4 / $grid-columns)); }
+  .col-print-pull-5  { right: percentage((5 / $grid-columns)); }
+  .col-print-pull-6  { right: percentage((6 / $grid-columns)); }
+  .col-print-pull-7  { right: percentage((7 / $grid-columns)); }
+  .col-print-pull-8  { right: percentage((8 / $grid-columns)); }
+  .col-print-pull-9  { right: percentage((9 / $grid-columns)); }
+  .col-print-pull-10 { right: percentage((10/ $grid-columns)); }
+  .col-print-pull-11 { right: percentage((11/ $grid-columns)); }
+
+// Offsets
+  .col-print-offset-0  { margin-left: 0; }
+  .col-print-offset-1  { margin-left: percentage((1 / $grid-columns)); }
+  .col-print-offset-2  { margin-left: percentage((2 / $grid-columns)); }
+  .col-print-offset-3  { margin-left: percentage((3 / $grid-columns)); }
+  .col-print-offset-4  { margin-left: percentage((4 / $grid-columns)); }
+  .col-print-offset-5  { margin-left: percentage((5 / $grid-columns)); }
+  .col-print-offset-6  { margin-left: percentage((6 / $grid-columns)); }
+  .col-print-offset-7  { margin-left: percentage((7 / $grid-columns)); }
+  .col-print-offset-8  { margin-left: percentage((8 / $grid-columns)); }
+  .col-print-offset-9  { margin-left: percentage((9 / $grid-columns)); }
+  .col-print-offset-10 { margin-left: percentage((10/ $grid-columns)); }
+  .col-print-offset-11 { margin-left: percentage((11/ $grid-columns)); }
+
+}

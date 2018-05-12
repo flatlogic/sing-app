@@ -1,0 +1,14 @@
+a{
+  @include transition(
+      background-color .15s ease-in-out,
+      border-color .15s ease-in-out,
+      color .15s ease-in-out);
+}
+
+.btn{
+  @include transition(background-color .15s ease-in-out, border-color .15s ease-in-out);
+}
+
+.form-control{
+  @include transition(border-color .15s ease-in-out, background-color .15s ease-in-out);
+}

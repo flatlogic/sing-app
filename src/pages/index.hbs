@@ -1,0 +1,433 @@
+{{#extend "layout" title="Sing App - Analytics"}}
+    {{#content "sidebar"}}
+        {{> sidebar active="dashboard"}}
+    {{/content}}
+    {{#content "content" mode="replace"}}
+        <h1 class="page-title">
+            Analytics
+            <small>
+                <small>Summarized company performance</small>
+            </small>
+        </h1>
+        <div class="analytics">
+            <div class="analytics-side">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 mb-xlg">
+                        <section class="widget mb-0 h-100">
+                            <header>
+                                <h4>Visits Today</h4>
+                            </header>
+                            <div class="widget-body">
+                               <div class="d-flex justify-content-between align-items-center mb-lg">
+                                   <h2>4,332</h2>
+                                   <i class="la la-arrow-right text-success rotate-315"></i>
+                               </div>
+                               <div class="d-flex flex-wrap justify-content-between">
+                                    <div class="mt visit-element">
+                                        <h6>+830</h6>
+                                        <p class="text-muted mb-0 mr"><small>Registrations</small></p>
+                                    </div>
+                                    <div class="mt visit-element">
+                                        <h6>0.5%</h6>
+                                        <p class="text-muted mb-0"><small>Sign Out</small></p>
+                                    </div>
+                                    <div class="mt visit-element">
+                                        <h6>4.5%</h6>
+                                        <p class="text-muted mb-0 mr"><small>Rate</small></p>
+                                    </div>
+                               </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-xlg">
+                        <section class="widget mb-0 h-100">
+                            <header>
+                                <h4>Revenue Breakdown</h4>
+                            </header>
+                            <div class="widget-body">
+                                <div class="row">
+                                    <div class="col-lg-7 col-md-6 col-xs-12" id="flot-donut" style="height: 100px;"></div>
+                                    <div class="col-lg-4 col-md-5" id="flot-donut-legend"></div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-xlg">
+                        <section class="widget mb-0 h-100">
+                            <header>
+                                <h4>App Perfomance</h4>
+                            </header>
+                            <div class="widget-body">
+                                <p class="text-muted d-flex flex-wrap">
+                                    <small class="mr-lg d-flex align-items-center">
+                                        <span class="circle bg-success text-success mr-xs" style="font-size: 4px;">.</span>
+                                        This Period
+                                    </small>
+                                    <small class="mr-lg d-flex align-items-center">
+                                        <span class="circle bg-warning text-warning mr-xs" style="font-size: 4px;">.</span>
+                                        Last Period
+                                    </small>
+                                </p>
+                                <h6>SDK</h6>
+                                <div class="progress mb-xs" style="height: 5px;">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="progress" style="height: 5px;">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <h6 class="mt-sm">Integration</h6>
+                                <div class="progress mb-xs" style="height: 5px;">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="progress" style="height: 5px;">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-xlg">
+                        <section class="widget mb-0 h-100">
+                            <header>
+                                <h4>Server Overview</h4>
+                            </header>
+                            <div class="widget-body">
+                                <div class="d-flex justify-content-between flex-wrap mb-sm">
+                                    <p class="width-150"><small>60% / 37°С / 3.3 Ghz</small></p>
+                                    <div class="sparkline-wrapper">
+                                        <div id="sparkline"></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between flex-wrap mb-sm">
+                                    <p class="width-150"><small>54% / 31°С / 3.3 Ghz</small></p>
+                                    <div class="sparkline-wrapper">
+                                        <div id="sparkline-1"></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between flex-wrap">
+                                    <p class="width-150"><small>57% / 21°С / 3.3 Ghz</small></p>
+                                    <div class="sparkline-wrapper">
+                                        <div id="sparkline-2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-12">
+                        <section class="widget mb-xlg">
+                            <header class="row">
+                                <h5 class="col-sm-5">
+                                    Daily <span class="fw-semi-bold">Line Chart</span>
+                                </h5>
+                                <div class="col-sm-7" id="main-chart-legend"></div>
+                            </header>
+                            <div class="widget-body">
+                                <div id="main-chart" style="width: 100%; height: 250px;"></div>
+                                <div class="chart-tooltip" id="main-chart-tooltip"></div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 col-xl-4 mb-xlg">
+                        <section class="widget mb-0 h-100">
+                            <header class="d-flex justify-content-between flex-wrap">
+                                <h4 class="d-flex align-items-center pb-1 big-stat-title">
+                                    <span class="circle bg-primary mr-sm" style="font-size: 6px;"></span>   
+                                    Statistic <span class="fw-normal ml-xs">Light Blue</span>
+                                </h4>
+                                <select class="selectpicker" data-style="btn-gray"
+                                        data-width="auto"
+                                        tabindex="-1" id="simple-select">
+                                    <option class="dropdown-item" value="1">Weekly</option>
+                                    <option class="dropdown-item" value="2">Daily</option>
+                                    <option class="dropdown-item" value="3">Monthly</option>
+                                </select>
+                            </header>
+                            <div class="widget-body p-0">
+                                <h4 class="fw-semi-bold ml-lg mb-lg">4,232</h4>
+                                <div class="d-flex border-top">
+                                    <div class="w-50 border-right p-3 px-4">
+                                         <div class="d-flex justify-content-between align-items-center">
+                                            <h6>+830</h6>
+                                            <i class="la la-arrow-right text-success rotate-315"></i>
+                                        </div>
+                                        <p class="text-muted mb-0 mr"><small>Registrations</small></p>
+                                    </div>
+                                    <div class="w-50 p-3 px-4">
+                                         <div class="d-flex justify-content-between align-items-center">
+                                            <h6>4.5%</h6>
+                                            <i class="la la-arrow-right text-danger rotate-45"></i>
+                                        </div>
+                                        <p class="text-muted mb-0 mr"><small>Bounce Rate</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 col-xl-4 mb-xlg">
+                        <section class="widget mb-0 h-100">
+                            <header class="d-flex justify-content-between flex-wrap">
+                                <h4 class="d-flex align-items-center pb-1 big-stat-title">
+                                    <span class="circle bg-warning mr-sm" style="font-size: 6px;"></span>   
+                                    Statistic <span class="fw-normal ml-xs">Sing App</span>
+                                </h4>
+                                <select class="selectpicker" data-style="btn-gray"
+                                        data-width="auto"
+                                        tabindex="-1" id="simple-select">
+                                    <option class="dropdown-item" value="1">Weekly</option>
+                                    <option class="dropdown-item" value="2">Daily</option>
+                                    <option class="dropdown-item" value="3">Monthly</option>
+                                </select>
+                            </header>
+                            <div class="widget-body p-0">
+                                <h4 class="fw-semi-bold ml-lg mb-lg">754</h4>
+                                <div class="d-flex border-top">
+                                    <div class="w-50 border-right p-3 px-4">
+                                         <div class="d-flex justify-content-between align-items-center">
+                                            <h6>+30</h6>
+                                            <i class="la la-arrow-right text-success rotate-315"></i>
+                                        </div>
+                                        <p class="text-muted mb-0 mr"><small>Registrations</small></p>
+                                    </div>
+                                    <div class="w-50 p-3 px-4">
+                                         <div class="d-flex justify-content-between align-items-center">
+                                            <h6>2.5%</h6>
+                                            <i class="la la-arrow-right text-success rotate-315"></i>
+                                        </div>
+                                        <p class="text-muted mb-0 mr"><small>Bounce Rate</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 col-xl-4 mb-xlg">
+                        <section class="widget mb-0 h-100">
+                            <header class="d-flex justify-content-between flex-wrap">
+                                <h4 class="d-flex align-items-center pb-1 big-stat-title">
+                                    <span class="circle bg-info mr-sm" style="font-size: 6px;"></span>   
+                                    Statistic <span class="fw-normal ml-xs">RNS</span>
+                                </h4>
+                                <select class="selectpicker" data-style="btn-gray"
+                                        data-width="auto"
+                                        tabindex="-1" id="simple-select">
+                                    <option class="dropdown-item" value="1">Weekly</option>
+                                    <option class="dropdown-item" value="2">Daily</option>
+                                    <option class="dropdown-item" value="3">Monthly</option>
+                                </select>
+                            </header>
+                            <div class="widget-body p-0">
+                                <h4 class="fw-semi-bold ml-lg mb-lg">1,025</h4>
+                                <div class="d-flex border-top">
+                                    <div class="w-50 border-right p-3 px-4">
+                                         <div class="d-flex justify-content-between align-items-center">
+                                            <h6>+230</h6>
+                                            <i class="la la-arrow-right text-success rotate-315"></i>
+                                        </div>
+                                        <p class="text-muted mb-0 mr"><small>Registrations</small></p>
+                                    </div>
+                                    <div class="w-50 p-3 px-4">
+                                         <div class="d-flex justify-content-between align-items-center">
+                                            <h6>21.5%</h6>
+                                            <i class="la la-arrow-right text-danger rotate-45"></i>
+                                        </div>
+                                        <p class="text-muted mb-0 mr"><small>Bounce Rate</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-12 mb-lg">
+                        <section class="widget pb-0">
+                            <header>
+                                <h4>
+                                    Support <strong>Requests</strong>
+                                </h4>
+                                <div class="widget-controls">
+                                    <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+                                    <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+                                </div>
+                            </header>
+                            <div class="widget-body p-0 support table-wrapper">
+                                <table class="table table-striped mb-0">
+                                    <thead>
+                                        <tr class="text-muted">
+                                            <th scope="col"><span class=" pl-3">NAME</span></th>
+                                            <th scope="col">EMAIL</th>
+                                            <th scope="col">PRODUCT</th>
+                                            <th scope="col">PRICE</th>
+                                            <th scope="col">DATE</th>
+                                            <th scope="col">CITY</th>
+                                            <th scope="col">STATUS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-dark">
+                                        <tr>
+                                            <th class="pl-4 fw-normal">Mark Otto</th>
+                                            <td>ottoto@wxample.com</td>
+                                            <td>ON the Road</td>
+                                            <td>$25 224.2</td>
+                                            <td>11 May 2017</td>
+                                            <td>Otsego</td>
+                                            <td><button class="btn btn-xs p-1 px-3 btn-info">Sent</button></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="pl-4">Jacob Thornton</th>
+                                            <td>thornton@wxample.com</td>
+                                            <td>HP Core i7</td>
+                                            <td>$1 254.2</td>
+                                            <td>4 Jun 2017</td>
+                                            <td>Fivepointville</td>
+                                            <td><button class="btn btn-xs p-1 px-3 btn-info">Sent</button></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="pl-4">Larry the Bird</th>
+                                            <td>bird@wxample.com</td>
+                                            <td>Air Pro</td>
+                                            <td>$1 570.0</td>
+                                            <td>27 Aug 2017</td>
+                                            <td>Leadville North</td>
+                                            <td><button class="btn btn-xs p-1 px-3 btn-success">Pending</button></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="pl-4">Joseph May</th>
+                                            <td>josephmay@wxample.com</td>
+                                            <td>Version Control</td>
+                                            <td>$5 224.5</td>
+                                            <td>19 Feb 2018</td>
+                                            <td>Seaforth</td>
+                                            <td><button class="btn btn-xs p-1 px-3 btn-danger">Declined</button></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="pl-4">Peter Horadnia</th>
+                                            <td>horadnia@wxample.com</td>
+                                            <td>Let's Dance</td>
+                                            <td>$43 594.7</td>
+                                            <td>1 Mar 2018</td>
+                                            <td>Hanoverton</td>
+                                            <td><button class="btn btn-xs p-1 px-3 btn-info">Sent</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="analytics-side">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-xl-12 last-side-element">
+                        <section class="widget mb-xlg">
+                            <div class="widget-body p-0">
+                                <div id="events-calendar"></div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-xl-12 last-side-element">
+                        <section class="widget pb-2 mb-xlg">
+                            <header>
+                                <h4>Today's Tasks <span class="badge badge-pill badge-success fw-normal pull-right mt-xs">11</span></h4>
+                                <p class="text-primary mb-0"><small class="tasks-stat"></small></p>
+                            </header>
+                            <div class="widget-body task-container">
+                                <div class="task d-flex align-items-start">
+                                    <div class="form-check abc-checkbox abc-checkbox-success d-flex">
+                                        <input class="form-check-input" id="checkbox1" type="checkbox">
+                                        <label class="form-check-label" for="checkbox1"></label>
+                                    </div>
+                                    <div class="task-content">
+                                        <p class="text-muted mb-xs"><small>Meeting</small></p>
+                                        <h6>Meeting with Andrew Piker</h6>
+                                        <p class="text-muted"><small>9:00</small></p>
+                                    </div>
+                                </div>
+                                <div class="task d-flex align-items-start">
+                                    <div class="form-check abc-checkbox abc-checkbox-success d-flex">
+                                        <input class="form-check-input" id="checkbox2" type="checkbox">
+                                        <label class="form-check-label" for="checkbox2"></label>
+                                    </div>
+                                    <div class="task-content">
+                                        <p class="text-muted mb-xs"><small>Call</small></p>
+                                        <h6>Call with HT Company</h6>
+                                        <p class="text-muted"><small>12:00</small></p>
+                                    </div>
+                                </div>
+                                <div class="task d-flex align-items-start">
+                                    <div class="form-check abc-checkbox abc-checkbox-success d-flex">
+                                        <input class="form-check-input" id="checkbox3" type="checkbox">
+                                        <label class="form-check-label" for="checkbox3"></label>
+                                    </div>
+                                    <div class="task-content">
+                                        <p class="text-muted mb-xs"><small>Meeting</small></p>
+                                        <h6>Meeting with Zoe Alison</h6>
+                                        <p class="text-muted"><small>14:00</small></p>
+                                    </div>
+                                </div>
+                                <div class="task d-flex align-items-start">
+                                    <div class="form-check abc-checkbox abc-checkbox-success d-flex">
+                                        <input class="form-check-input" id="checkbox4" type="checkbox">
+                                        <label class="form-check-label" for="checkbox4"></label>
+                                    </div>
+                                    <div class="task-content">
+                                        <p class="text-muted mb-xs"><small>Interview</small></p>
+                                        <h6>Interview with HR</h6>
+                                        <p class="text-muted"><small>15:00</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-transparent w-100 text-center text-muted" role="button">See All <i class="la la-arrow-down"></i></a>
+                        </section>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-xl-12 last-side-element">
+                        <section class="widget">
+                            <header>
+                                <h4>Notifications <span class="badge badge-pill badge-success fw-normal pull-right mt-xs">6</span></h4>
+                            </header>
+                            <div class="widget-body w-100 notifications">
+                                <div class="d-flex align-items-start">
+                                    <i class="la la-thumbs-up mr text-primary"></i>
+                                    <p>Ken <span class="fw-semi-bold">accepts</span> your invitation</p>
+                                </div>
+                                <div class="d-flex w-100">
+                                    <i class="la la-file mr text-success"></i>
+                                    <p>Report from LT Company</p>
+                                </div>
+                                <div class="d-flex w-100">
+                                    <i class="la la-envelope mr text-danger"></i>
+                                    <p>4 <span class="fw-semi-bold">Private</span> Mails</p>
+                                </div>
+                                <div class="d-flex w-100">
+                                    <i class="la la-comment mr text-success"></i>
+                                    <p>3 <span class="fw-semi-bold">Comments</span> to your Post</p>
+                                </div>
+                                <div class="d-flex w-100">
+                                    <i class="la la-cog mr text-light"></i>
+                                    <p>New <span class="fw-semi-bold">Version</span> of RNS app</p>
+                                </div>
+                                <div class="d-flex w-100">
+                                    <i class="la la-bell mr text-info"></i>
+                                    <p>15 <span class="fw-semi-bold">Notifications</span> from Social Apps</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/content}}
+    {{#content "scripts"}}
+        <script src="../bower_components/flot.animator/jquery.flot.animator.min.js"></script>
+        <script src="../bower_components/flot/jquery.flot.js"></script>
+        <script src="../bower_components/flot-orderBars/js/jquery.flot.orderBars.js"></script>
+        <script src="../bower_components/flot/jquery.flot.selection.js"></script>
+        <script src="../bower_components/flot/jquery.flot.time.js"></script>
+        <script src="../bower_components/flot/jquery.flot.pie.js"></script>
+        <script src="../bower_components/flot/jquery.flot.stack.js"></script>
+        <script src="../bower_components/flot/jquery.flot.crosshair.js"></script>
+        <script src="../bower_components/flot/jquery.flot.symbol.js"></script>
+        <script src="../bower_components/flot.dashes/jquery.flot.dashes.js"></script>
+        <script src="../bower_components/jquery.sparkline/index.js"></script>
+        <script src="../bower_components/bootstrap_calendar/bootstrap_calendar/js/bootstrap_calendar.min.js"></script>
+        <script src="../bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+        <!-- page specific js -->
+        <script src="js/index.js"></script>
+    {{/content}}
+{{/extend}}

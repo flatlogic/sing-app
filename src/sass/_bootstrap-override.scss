@@ -1,0 +1,1318 @@
+//
+// Typography
+// --------------------------------------------------
+
+.blockquote-sm{
+  padding: 3px 15px;
+  font-size: $font-size-base;
+}
+
+blockquote{
+  font-size: $font-size-lg;
+
+  footer {
+    font-size: 80%;
+    &:after {
+      content: '\00A0 \2014';
+    }
+  }
+}
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6{
+  small,
+  .small {
+    font-weight: $headings-font-weight;
+    font-size: 75%;
+    color: $text-muted;
+  }
+}
+
+small, .small {
+  font-size: 85%;
+}
+
+
+//
+// Forms
+// --------------------------------------------------
+
+
+.form-control {
+  font-weight: $font-weight-normal;
+  @include box-shadow(none);
+  &:focus{
+    @include box-shadow(none);
+  }
+}
+
+label {
+  font-weight: $font-weight-normal;
+}
+
+.help-block{
+  margin-top: 5px;
+  font-size: $font-size-smaller;
+  color: $text-muted;
+  display: block;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: $spacer;
+  line-height: inherit;
+  color: $legend-color;
+  border: 0;
+  border-bottom: 1px solid $gray-300;
+  font-size: 15px;
+  font-weight: $font-weight-normal;
+}
+
+.form-group {
+  margin-bottom: $spacer;
+}
+
+.input-group-addon{
+  &.bg-primary{
+    border-color: darken(theme-color('primary'), 10%);
+  }
+  &.bg-success{
+    border-color: darken($state-success-bg, 10%);
+  }
+  &.bg-info{
+    border-color: darken($state-info-bg, 10%);
+  }
+  &.bg-warning{
+    border-color: darken($state-warning-bg, 10%);
+  }
+  &.bg-danger{
+    border-color: darken($state-danger-bg, 10%);
+  }
+}
+
+.form-horizontal.form-label-left {
+  @include media-breakpoint-up(md){
+    .control-label {
+      text-align: left;
+    }
+  }
+}
+
+// Feedback states
+.has-success {
+  @include form-control-validation(theme-color('success'));
+}
+.has-warning {
+  @include form-control-validation(theme-color('warning'));
+}
+.has-error {
+  @include form-control-validation(theme-color('danger'));
+}
+
+//turn off shadow
+.has-success,
+.has-warning,
+.has-error {
+  .form-control {
+    &:focus {
+      @include box-shadow(none);
+    }
+  }
+}
+
+.input-rounded{
+  border-radius: $border-radius;
+}
+
+//
+// Tables
+// --------------------------------------------------
+
+.table td > .abc-checkbox,
+.table th > .abc-checkbox{
+  padding-left: 0;
+
+  > label {
+    padding-left: 0;
+  }
+
+  > label:before,
+  > label:after{
+    margin-left: 0;
+  }
+}
+
+.table > thead > tr > th {
+  border-top: none;
+}
+
+.table > thead > tr > th{
+  font-weight: $font-weight-semi-bold;
+  text-transform: uppercase;
+  border-bottom-width: 1px;
+}
+
+.table-bordered th{
+  background-color: $gray-200;
+}
+
+.table-lg {
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: 10px;
+      }
+    }
+  }
+}
+
+.table-sm {
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: 6px;
+      }
+    }
+  }
+}
+
+.table-hover > tbody > tr:hover .progress{
+  background-color: $white;
+}
+
+.table th, .table td {
+  padding: 0.55rem;
+}
+
+//
+// Dropdown menus
+// --------------------------------------------------
+
+.dropdown-toggle {
+  &:after {
+    content: none;
+  }
+}
+
+.dropdown-menu{
+  font-size: $font-size-mini;
+  border-radius: 0;
+
+  & > li > a{
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+.navbar-nav .dropdown-menu {
+  position: absolute;
+
+  &.dropdown-menu-right {
+    right: 0;
+    left: auto;
+  }
+}
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top:   4px dashed;
+  border-top:   4px solid \9; // IE8
+  border-right: 4px solid transparent;
+  border-left:  4px solid transparent;
+}
+//
+// Navs
+// --------------------------------------------------
+
+.nav-pills .nav-item + .nav-item {
+  margin-left: 0;
+}
+
+.nav-tabs {
+  & .nav-item+.nav-item { margin-left: 0}
+  border-bottom: none;
+  background-color: $gray-light;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  > .nav-item {
+    margin-bottom: -2px;
+    > .nav-link {
+      padding: 12px 18px;
+      border: none;
+      color: $text-muted;
+
+      .badge {
+        margin-bottom: -2px;
+      }
+
+      @include transition(color .15s ease-in-out);
+      &:hover {
+        background-color: transparent;
+        color: $body-color;
+      }
+    }
+
+    .nav-link.open {
+      &,
+      &:hover,
+      &:focus{
+        background-color: $nav-tabs-active-link-hover-bg;
+        color: $nav-tabs-active-link-hover-color;
+      }
+    }
+
+    .nav-link.active {
+      &,
+      &:hover,
+      &:focus {
+        background-color: $nav-tabs-active-link-hover-bg;
+        color: $nav-tabs-active-link-hover-color;
+        border: none;
+        @include box-shadow(1px 1px 2px #ccc);
+      }
+    }
+  }
+}
+
+.tab-content {
+  position: relative;
+  z-index: 1;
+  background-color: $white;
+  > .tab-pane {
+    padding: $spacer*2 $spacer*2;
+  }
+}
+
+// LEFT & RIGHT
+// ------------
+
+// TABBABLE
+// --------
+
+
+// COMMON STYLES
+// -------------
+
+.tabbable {
+  @include clearfix();
+}
+.tab-content {
+  overflow: auto; // prevent content from running below tabs
+}
+
+// Remove border on bottom, left, right
+.tabs-below > .nav-tabs,
+.tabs-right > .nav-tabs,
+.tabs-left > .nav-tabs {
+  border-bottom: 0;
+}
+
+// Show/hide tabbable areas
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+  display: none;
+}
+.tab-content > .active,
+.pill-content > .active {
+  display: block;
+}
+
+// LEFT & RIGHT
+// ------------
+
+// Common styles
+.tabs-left > .nav-tabs > li,
+.tabs-right > .nav-tabs > li {
+  float: none;
+}
+.tabs-left > .nav-tabs > li > a,
+.tabs-right > .nav-tabs > li > a {
+  min-width: 74px;
+  margin-right: 0;
+  margin-bottom: 3px;
+}
+
+.tabs-left > .nav-tabs > li:last-child > a,
+.tabs-right > .nav-tabs > li:last-child > a{
+  margin-bottom: 0;
+}
+
+// Tabs on the left
+.tabs-left > .nav-tabs {
+  float: left;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: $border-radius;
+}
+.tabs-left > .nav-tabs > li > a {
+  margin-right: -1px;
+  @include border-radius(4px 0 0 4px);
+}
+
+// Tabs on the right
+.tabs-right > .nav-tabs {
+  float: right;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: $border-radius;
+}
+.tabs-right > .nav-tabs > li > a {
+  margin-left: -1px;
+  @include border-radius(0 4px 4px 0);
+}
+
+.tabs-right > .nav-tabs > li.active > a{
+  @include box-shadow(-1px 1px 2px #ccc);
+}
+
+
+//
+// Navbars
+// --------------------------------------------------
+
+.navbar {
+  border: none;
+  font-size: $navbar-font-size;
+  min-height: 50px;
+  margin-bottom: 0;
+  padding: 0;
+
+  h5{
+    font-size: $navbar-font-size;
+  }
+
+  .deemphasize{
+    font-size: $font-size-sm;
+  }
+}
+
+.navbar-form {
+  .input-group {
+    width: 245px;
+    display: flex;
+
+    .form-control {
+      order: 2;
+      font-size: $font-size-base;
+      padding: 0.6rem 0.85rem 0.6rem 0;
+      border-top-right-radius: $border-radius !important;
+      border-bottom-right-radius: $border-radius !important;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+    .input-group-text {
+      order: 1;
+      color: $navbar-dashboard-link-color;
+      padding: 0.6rem 0.85rem;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: $border-radius;
+      border-top-left-radius: $border-radius;
+    }
+  }
+}
+
+.navbar-header > .navbar-nav{
+  float: left;
+
+  &.navbar-right{
+    float: right;
+
+    @include media-breakpoint-down(sm) {
+      > li > a {
+        padding-right: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-left: $spacer / 2;
+
+    + .navbar-brand{
+      height: 60px;
+      line-height: 35px;
+    }
+  }
+}
+
+@media (min-width: map_get($grid-breakpoints, md)) {
+  .navbar-nav.navbar-right:last-child {
+    margin-right: 0;
+  }
+}
+
+.navbar-collapse {
+  overflow-x: visible;
+  padding-right: $spacer;
+  padding-left:  $spacer;
+  border-top: 1px solid transparent;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+  @include clearfix;
+
+  &.in {
+    overflow-y: auto;
+  }
+
+  @media (min-width: map_get($grid-breakpoints, md)) {
+    width: auto;
+    border-top: 0;
+    box-shadow: none;
+
+    &.collapse {
+      display: block !important;
+      height: auto !important;
+      padding-bottom: 0; // Override default setting
+      overflow: visible !important;
+    }
+
+    &.in {
+      overflow-y: visible;
+    }
+
+    // Undo the collapse side padding for navbars with containers to ensure
+    // alignment of right-aligned contents.
+    .navbar-fixed-top &,
+    .navbar-static-top &,
+    .navbar-fixed-bottom & {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .nav.navbar-nav > li {
+    margin-left: 0;
+  }
+
+  .nav.navbar-nav > li > a {
+    padding: 16px 14px 14px 14px;
+  }
+
+  .nav.navbar-nav > li:first-child .dropdown-toggle {
+
+    .circle {
+      color: $gray-700;
+    }
+  }
+
+  .nav.navbar-nav .nav-item {
+    li:first-child .dropdown-item {
+      padding-top: 10px;
+    }
+
+    li:last-child .dropdown-item {
+      padding-bottom: 10px;
+    }
+  }
+
+  .nav.navbar-nav li:nth-child(2) > a:after {
+    content: none;
+  }
+
+  .navbar-nav {
+
+    .dropdown-menu {
+      margin-top: 0px;
+      padding: 0;
+    }
+  }
+}
+
+.navbar-nav .nav-item {
+  .nav-link {
+    padding: 0 $spacer/2;
+  }
+
+  &:first-child {
+    .nav-link {
+      padding-left: 0;
+    }
+  }
+
+  &:last-child {
+    .nav-link {
+      padding-right: 0;
+    }
+  }
+}
+
+.landing .navbar {
+  margin: 1.75rem 0;
+
+  @include media-breakpoint-down(sm) {
+    margin: 0;
+  }
+
+  .navbar-collapse {
+    @include media-breakpoint-down(sm) {
+      background: $white;
+      margin: 0 -1.4rem;
+      box-shadow: 0 0 .75rem 0 rgba(0, 0, 0, 0.15);
+      padding: 1rem;
+    }
+  }
+
+  .navbar-brand {
+    color: $body-color;
+    font-size: 1.7rem;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 1.3rem;
+    }
+  }
+
+  .navbar-toggler {
+    padding: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .navbar-nav {
+    .nav-item {
+      margin: .3rem 0 0 1rem;
+      font-size: $font-size-lg;
+
+      @include media-breakpoint-down(sm) {
+        margin: 0;
+        padding: 1rem 0;
+        display: flex;
+        justify-content: center;
+      }
+      
+      .nav-link {
+        color: $body-color;
+        font-weight: $font-weight-normal;
+
+        &:hover {
+          color: theme-color('warning');
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+//
+// Breadcrumbs
+// --------------------------------------------------
+
+
+.breadcrumb {
+  padding-left: 0;
+  padding-right: 0;
+  color: $gray-600;
+  margin-bottom: $spacer*1.5;
+
+  > .active {
+    color: $body-color;
+    font-weight: $font-weight-semi-bold;
+  }
+}
+
+//
+// Buttons
+// --------------------------------------------------
+
+.btn {
+  // add tiny gradient to background
+  background-image: linear-gradient(to right, #ffffff26, #fff0);
+}
+
+.btn .glyphicon {
+  top: 3px;
+}
+
+.btn, .btn-inverse, .btn-gray {
+  &:not(.active) {
+    box-shadow: none !important;
+  }
+}
+
+.btn-sm {
+  padding-top: .35rem;
+  padding-bottom: .35rem;
+}
+
+.btn-rounded{
+  @include border-radius(6px);
+
+  &-f {
+    @include border-radius(50px);
+  }
+}
+
+.btn-gray{
+  @include button-variant($gray-light, darken($gray-light, 5%));
+}
+
+.btn-outline{
+  @include button-variant(transparent, $white);
+
+  &:hover,
+  &:focus {
+    background-color: rgba($white, .1);
+  }
+}
+
+.btn-link:focus,
+.btn-link:active:focus,
+.btn-link.active:focus{
+  outline: 0;
+}
+
+//
+// Button groups
+// --------------------------------------------------
+
+.btn-toolbar{
+  margin-top: $spacer/2;
+  margin-bottom: $spacer/2;
+
+  > .btn + .btn,
+  > .btn-group + .btn-group {
+    margin-left: $spacer / 2;
+  }
+}
+
+//
+// Progress bars
+// --------------------------------------------------
+
+.js-progress-animate {
+  transition: all 0.6s ease !important;
+}
+
+.progress{
+  @include box-shadow(none);
+  transition: width 0.6s ease;
+  height: 1.3rem;
+  border-radius: $border-radius;
+}
+
+.progress-bar{
+  border-radius: $border-radius;
+  @include box-shadow(none);
+}
+
+.progress-sm{
+  height: 10px;
+  margin-bottom: $spacer/2;
+}
+
+.progress-xs{
+  height: 5px;
+  margin-bottom: $spacer/2;
+}
+
+
+.progress-bar-gray {
+  background-color: $gray-300;
+}
+
+.progress-bar-gray-light {
+  background-color: $gray-600;
+}
+
+.progress-primary {
+  background-color: theme-color('primary');
+}
+
+
+//
+// List groups
+// --------------------------------------------------
+
+.card {
+  margin-bottom: 0;
+  border: none;
+}
+
+.card-footer {
+  border-top: none;
+}
+
+.card > .list-group > .list-group-item {
+  border-width: 1px 0;
+
+  &:first-child {
+    border-radius: 0;
+  }
+}
+
+.list-group{
+  .widget-body.p-0 > &{
+    margin: 0;
+
+    .list-group-item{
+      border-width: 1px 0;
+    }
+  }
+}
+
+.list-group-item{
+  &,
+  &:hover {
+    color: $body-color;
+  }
+
+  &:hover {
+    background: $gray-100;
+  }
+
+  .list-group-lg & {
+    padding: 15px 15px;
+  }
+
+  .list-group:last-of-type &:last-child{
+    border-bottom: 0;
+  }
+
+  &:first-child {
+    border-radius: 0;
+  }
+}
+
+
+//
+// Tooltips
+// --------------------------------------------------
+
+.tooltip-inner{
+  @include border-radius(3px);
+}
+//
+// Alerts
+// --------------------------------------------------
+
+.alert-rounded {
+  border-radius: 100px;
+}
+
+.alert-sm{
+  padding: 10px 12px;
+  font-size: $font-size-mini;
+
+  .close{
+    font-size: 26px;
+    font-weight: $font-weight-thin;
+    line-height: 0.75;
+    text-shadow: none;
+    color: #fff;
+  }
+}
+
+.alert-dismissable .close{
+  position: static;
+  color: $close-color;
+}
+
+.alert {
+  border: none;
+
+  .btn {
+    border: none;
+  }
+
+  &.alert-transparent {
+    .close {
+      color: inherit;
+      opacity: 1;
+    }
+  }
+}
+
+.alert-success {
+  background: theme-color('success');
+  color: $white;
+
+  &.alert-transparent {
+    color: theme-color('success');
+    background: rgba(theme-color('success'), $alert-transparent);
+  }
+
+  .btn:not(.btn-default) {
+    background: rgba($white, 0.8);
+    color: theme-color('success');
+  }
+}
+
+.alert-info {
+  background: theme-color('info');
+  color: $white;
+
+  &.alert-transparent {
+    color: theme-color('info');
+    background: rgba(theme-color('info'), $alert-transparent);
+  }
+
+  .btn:not(.btn-default) {
+    background: rgba($white, 0.8);
+    color: theme-color('info');
+  }
+}
+
+.alert-warning {
+  background: theme-color('warning');
+  color: $white;
+
+  &.alert-transparent {
+    color: theme-color('warning');
+    background: rgba(theme-color('warning'), $alert-transparent);
+  }
+
+  .btn:not(.btn-default) {
+    background: rgba($white, 0.8);
+    color: theme-color('warning');
+  }
+}
+
+.alert-danger {
+  background: theme-color('danger');
+  color: $white;
+
+  &.alert-transparent {
+    color: theme-color('danger');
+    background: rgba(theme-color('danger'), $alert-transparent);
+  }
+
+  .btn:not(.btn-default) {
+    background: rgba($white, 0.8);
+    color: theme-color('danger');
+  }
+}
+
+//
+// Popovers
+
+.popover{
+  border: none;
+  @include box-shadow(none);
+}
+
+.popover-content {
+  padding: 20px;
+}
+
+//
+// Modals
+// --------------------------------------------------
+
+// z-index fix. modal doesn't show up properly when .content-wrap is relative
+.modal-open{
+  &, &.nav-collapsed, &.nav-static{
+    .content-wrap{
+      -webkit-transform: none;
+      -ms-transform: none;
+      transform: none;
+      position: static;
+    }
+
+    .sidebar{
+      z-index: -1;
+    }
+  }
+}
+
+.modal {
+  .close {
+    opacity: 0.2;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+//
+// Pagination
+// --------------------------------------------------
+
+.pagination{
+  margin-top: $spacer;
+
+  .page-item {
+    .page-link,
+    > span{
+      border-radius: $border-radius;
+      margin: 0 2px;
+    }
+
+    .page-link {
+      color: $body-color;
+      border: none;
+    }
+
+    &.active {
+      .page-link {
+        background: $gray-300;
+        color: $gray-800;
+      }
+    }
+
+    &.disabled {
+      .page-link {
+        color: $text-muted;
+      }
+    }
+  }
+}
+
+.pagination-sm .page-link {
+  padding: $pagination-padding-y-sm $pagination-padding-x;
+}
+
+//
+// Jumbotron
+// --------------------------------------------------
+
+.jumbotron {
+  @include media-breakpoint-up(md){
+    padding-left: $jumbotron-padding;
+    padding-right: $jumbotron-padding;
+  }
+
+  .landing & {
+    background: none;
+
+    h1 {
+      color: #2e3957;
+      font-weight: $font-weight-thin;
+      line-height: 1;
+      margin-top: 200px;
+      letter-spacing: -1px;
+      word-spacing: 4px;
+      font-size: 95px;
+  
+      @include media-breakpoint-down(lg) {
+        font-size: 80px;
+      }
+  
+      @include media-breakpoint-down(md) {
+        font-size: 60px;
+        text-align: center;
+        margin-top: 100px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        font-size: 49px;
+      }
+  
+      span {
+        font-weight: $font-weight-semi-bold;
+      }
+    }
+  
+    p {
+      color: $body-color;
+      font-size: 24px;
+      line-height: 1.7;
+      text-align: left;
+      font-weight: $font-weight-normal;
+  
+      @include media-breakpoint-down(sm) {
+        font-size: 20px;
+      }
+    }
+  
+    .btn {
+      letter-spacing: 0.5px;
+      max-width: 100%;
+      min-width: 330px;
+  
+      @include media-breakpoint-down(md) {
+        min-width: 300px;
+      }
+  
+      @include media-breakpoint-down(sm) {
+        min-width: 100%;
+      }
+    }
+  }
+}
+
+
+// Navbar form
+//
+// Extension of the `.form-inline` with some extra flavor for optimum display in
+// our navbars.
+
+.navbar-form {
+  padding: 7px 0 6.5px $spacer;
+
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  // Undo 100% width for pull classes
+  @media (min-width: map_get($grid-breakpoints, md)) {
+    width: auto;
+    border: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+//
+// Navbar Dasboard
+// --------------------------------------------------
+
+.navbar-dashboard {
+  background-color: $navbar-dashboard-bg;
+  border-color: $navbar-dashboard-border;
+
+  .container-fluid {
+    flex-wrap: unset;
+    @include media-breakpoint-up(md) {
+      padding: 0 $content-padding-horizontal;
+    }
+  }
+
+  .navbar-header {
+    &.mobile-hidden {
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+
+      &.mobile-hidden {
+        display: none;
+      }
+    }
+  }
+
+  .navbar-brand {
+    color: $navbar-dashboard-brand-color;
+    margin-right: 0;
+    padding-top: 10px;
+    font-size: $font-size-lg;
+    &:hover,
+    &:focus {
+      color: $navbar-dashboard-brand-hover-color;
+      background-color: $navbar-dashboard-brand-hover-bg;
+    }
+  }
+
+  .navbar-text {
+    color: $navbar-dashboard-color;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+
+    > li > a {
+      position: relative;
+      color: $navbar-dashboard-link-color;
+
+      &:hover,
+      &:focus {
+        color: $navbar-dashboard-link-hover-color;
+        background-color: $navbar-dashboard-link-hover-bg;
+      }
+    }
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $navbar-dashboard-link-active-color;
+        background-color: $navbar-dashboard-link-active-bg;
+      }
+    }
+    > .disabled > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $navbar-dashboard-link-disabled-color;
+        background-color: $navbar-dashboard-link-disabled-bg;
+      }
+    }
+  }
+
+  .navbar-nav {
+    // Remove background color from open dropdown
+    > .open > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: $navbar-dashboard-link-active-bg;
+        color: $navbar-dashboard-link-active-color;
+      }
+    }
+
+    @media (max-width: map_get($grid-breakpoints, md) - 1px) {
+      // Dropdowns get custom display when collapsed
+      .open .dropdown-menu {
+        > li > a {
+          color: $navbar-dashboard-link-color;
+          &:hover,
+          &:focus {
+            color: $navbar-dashboard-link-hover-color;
+            background-color: $navbar-dashboard-link-hover-bg;
+          }
+        }
+        > .active > a {
+          &,
+          &:hover,
+          &:focus {
+            color: $navbar-dashboard-link-active-color;
+            background-color: $navbar-dashboard-link-active-bg;
+          }
+        }
+        > .disabled > a {
+          &,
+          &:hover,
+          &:focus {
+            color: $navbar-dashboard-link-disabled-color;
+            background-color: $navbar-dashboard-link-disabled-bg;
+          }
+        }
+      }
+    }
+  }
+
+  // Links in navbars
+  //
+  // Add a class to ensure links outside the navbar nav are colored correctly.
+
+  .btn-link {
+    color: $navbar-dashboard-link-color;
+    &:hover,
+    &:focus {
+      color: $navbar-dashboard-link-hover-color;
+    }
+    &[disabled],
+    fieldset[disabled] & {
+      &:hover,
+      &:focus {
+        color: $navbar-dashboard-link-disabled-color;
+      }
+    }
+  }
+}
+
+
+@mixin bg-variant($parent, $color) {
+  #{$parent} {
+    background-color: $color !important;
+  }
+  a#{$parent} {
+    @include hover-focus {
+      background-color: darken($color, 10%);
+    }
+  }
+}
+
+//
+// Code
+// -----------------
+
+pre {
+  padding: 6.5px;
+  margin: 0 0 ($spacer / 2);
+  line-height: $spacer;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: $pre-bg;
+  border-radius: $border-radius;
+
+  code {
+    background: transparent;
+  }
+}
+
+code {
+  background: theme-color('danger-light');
+}
+
+//
+// Badges
+// --------------------------------------------------
+.badge {
+  display: inline-block;
+  padding: 2px 4px;
+  line-height: 14px; // ensure proper line-height if floated
+  text-shadow: none;
+  font-weight: $font-weight-bold;
+  font-size: 11px;
+  color: white;
+
+  &.bg-default {
+    color: $body-color;
+  }
+}
+
+a.badge {
+  &:hover,
+  &:active {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.badge-pill {
+  padding: 2px 6px;
+}
+
+//
+// Accordion
+// --------------------------------------------------
+
+.accordion {
+  .card {
+    background: transparent;
+  }
+
+  .card + .card {
+    margin-top: $spacer / 2;
+  }
+
+  .card-header {
+    background: $gray-light;
+    border-bottom: none;
+    border-radius: $border-radius;
+
+    a {
+      &,
+      &:hover,
+      &:active {
+        color: $body-color;
+        text-decoration: none;
+      }
+
+      .fa {
+        transition: $transition-base;
+      }
+
+      &.collapsed .fa {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
+
+//
+// Card
+// --------------------------------------------------
+
+.card-img-bg {
+  padding: 1.25rem;
+  background-size: cover;
+  background-position: center;
+}
