@@ -6,7 +6,7 @@
 
 #### Premium free admin dashboard template
 
-[View Demo](http://wrapbootstrap.com/preview/WB0J6BJ85)|[Download]() | [Visit our website](https://www.flatlogic.com/)
+[View Demo](http://wrapbootstrap.com/preview/WB0J6BJ85) | [Download]() | [Visit our website](https://www.flatlogic.com/)
 
 ![header_illustration_fb](https://user-images.githubusercontent.com/36201579/40110692-554a4650-5909-11e8-8cde-30a0dd1f65ad.jpg)
 
