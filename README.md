@@ -8,9 +8,9 @@
 
 [View Demo](http://wrapbootstrap.com/preview/WB0J6BJ85)|[Download]()| [Visit our website] (https://www.flatlogic.com/)
 
-Sing Web App is a template that gives us all the necessary templates and functions that we only need to code within our project to make them work properly. 
+![header_illustration_fb](https://user-images.githubusercontent.com/36201579/40110692-554a4650-5909-11e8-8cde-30a0dd1f65ad.jpg)
 
-<img width="867" alt="screen shot 2018-05-15 at 11 06 26 am" src="https://user-images.githubusercontent.com/36201579/40107847-0d8164e0-5902-11e8-91b9-e9f8acb03f0f.png">
+Sing Web App is a template that gives us all the necessary templates and functions that we only need to code within our project to make them work properly. 
 
 Light version of a Sing-app include only next features:
 * Dasboard sample
@@ -21,6 +21,7 @@ Light version of a Sing-app include only next features:
 * Icons
 * Maps
 
+<img width="867" alt="screen shot 2018-05-15 at 11 06 26 am" src="https://user-images.githubusercontent.com/36201579/40107847-0d8164e0-5902-11e8-91b9-e9f8acb03f0f.png">
 
 Building a project from scratch means that there is a lot of things to keep track of all at once: analytics, dynamic forms data, UI and UX elements, and much more. This simple admin template is well suited for web apps or any other website or project that requires admin dashboard. This template will serve as a solid foundation for your upcoming project and will save you a lot of time.
 
