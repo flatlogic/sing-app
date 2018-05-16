@@ -1,0 +1,177 @@
+/***********************/
+/*                     */
+/*   Custom Widgets    */
+/*                     */
+/***********************/
+
+
+/***********************/
+/*    Part:Stats Row   */
+/***********************/
+
+.stats-row{
+  margin-bottom: 15px;
+}
+
+.stat-item{
+  display: inline-block;
+  padding-right: 15px;
+
+  & + .stat-item{
+    padding-left: 15px;
+    border-left: 1px solid $hr-border-color;
+  }
+  .name{
+    margin-bottom: 2px;
+    margin-top: 10px;
+  }
+
+  &.stat-item-mini-chart{
+    position: relative;
+    top: -12px;
+    padding-left: 0;
+    border-left: none;
+  }
+}
+
+/***********************************/
+/**           ICON LIST           **/
+/***********************************/
+
+.icon-list{
+  margin-top: $spacer;
+}
+
+.icon-list-item{
+  display: flex;
+  height: 32px;
+  font-size: 14px;
+  line-height: 32px;
+  > a{
+    color: $body-color;
+    text-decoration: none;
+  }
+
+
+  .glyphicon,
+  .fa,
+  .fi{
+    width: 32px;
+    margin-right: 10px;
+  }
+
+  .glyphicon {
+    top: 10px;
+  }
+
+  &:hover{
+    .glyphicon,
+    .fa,
+    .fi{
+      font-size: 28px;
+      top: 2px;
+    }
+
+    .fa,
+    .fi{
+      vertical-align: -5px;
+    }
+
+    .glyphicon{
+      vertical-align: -6px;
+    }
+  }
+}
+
+/***********************************/
+/**        Theme helper           **/
+/***********************************/
+
+.theme-helper {
+  width: $sidebar-width;
+  position: fixed;
+  right: -$sidebar-width;
+  top: $navbar-height * 1.5;
+  z-index: 100;
+  @include transition(right $sidebar-transition-time ease-in-out);
+
+  &.theme-helper-opened {
+    right: 0;
+  }
+
+  .theme-helper-toggler {
+    width: $sidebar-width / 4;
+    margin-left: -($sidebar-width / 4);
+    cursor: pointer;
+
+    i {
+      animation-duration: 6500ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    i:first-of-type {
+      animation-name: spin;
+      margin-right: -$spacer * 1.15;
+      vertical-align: text-bottom;
+    }
+
+    i:last-of-type {
+      animation-name: spin-reverse;
+      vertical-align: $font-size-sm;
+    }
+  }
+
+  .theme-helper-spinner {
+    z-index: 200;
+    border-radius: 50% 0 0 50%;
+    padding: $spacer * 0.8 $spacer / 2 $spacer * 0.8 $spacer;
+    font-size: $font-size-lg * 1.4;
+    line-height: initial;
+    box-shadow: $widget-shadow-designated;
+  }
+
+  .theme-helper-header {
+    padding-top: 0;
+
+    h6 {
+      margin: auto;
+    }
+  }
+
+  .theme-helper-content {
+    box-shadow: $widget-shadow-designated;
+    border-radius: 0;
+  }
+
+  .theme-sharing, .theme-switcher {
+    font-size: $font-size-lg;
+    cursor: pointer;
+  }
+
+  .abc-radio-warning input[type="radio"]:not(:checked) + label::before {
+    background-color: theme-color('warning');
+  }
+
+  .abc-radio-secondary input[type="radio"]:not(:checked) + label::before {
+    background-color: theme-color('secondary');
+  }
+
+  @keyframes spin {
+    0% {
+      transform:rotate(0deg);
+    }
+    50% {
+      transform:rotate(360deg);
+    }
+  }
+
+  @keyframes spin-reverse {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-360deg);
+    }
+  }
+}
