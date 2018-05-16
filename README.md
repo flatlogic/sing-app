@@ -29,10 +29,7 @@ Building a project from scratch means that there is a lot of things to keep trac
 * Typography
 * Tables basic
 * Notifications
-* Components
-Charts
-Icons
-Maps
+* Components (charts, icons, maps)
 
 <img width="1278" alt="screen shot 2018-05-15 at 11 07 11 am" src="https://user-images.githubusercontent.com/36201579/40107708-aa2939d6-5901-11e8-8fc1-b31ad46326b7.png">
 
@@ -56,3 +53,7 @@ Strong businesses can try custom integration. We can connect admin dashboard wit
 ## Creators
 
 https://www.flatlogic.com/
+
+## Copyright and license
+
+Code and documentation copyright 2018 www.flatlogic.com. Code released under the MIT License.
