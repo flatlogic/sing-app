@@ -1,0 +1,314 @@
+// Sing variables
+// -------------------------
+// -------------------------
+
+$vendor-folder: '../../bower_components' !default;
+
+// Glyphicons
+
+$glyphicons-halflings-include-bonus: false !default;
+$glyphicons-halflings-class-prefix: glyphicon !default;
+$glyphicons-halflings-font-base-size: 14px !default;
+
+// Bootstrap options
+
+$enable-shadows:            true !default;
+
+// Color system
+//
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #d6dee5 !default;
+$gray-400: #c1ccd3 !default;
+$gray-500: #a3aeb7 !default;
+$gray-600: #798892 !default;
+$gray-700: #495057 !default;
+$gray-800: #3c484f !default;
+$gray-900: #29323a !default;
+$black:    #000 !default;
+$gray-light: $gray-100 !default;
+
+$blue:    #547fff !default;
+$indigo:  #7f3ddb !default;
+$purple:  #9964e3 !default;
+$pink:    #e54e9a !default;
+$red:     #f55d5d !default;
+$orange:  #ff7d47 !default;
+$yellow:  #ffc247 !default;
+$green:   #68ca66 !default;
+$teal:    #3abf94 !default;
+$cyan:    #17a2b8 !default;
+
+$theme-colors: (
+        primary: $blue,
+        secondary: $gray-600,
+        success: $teal,
+        primary-light: #dee4ee,
+        success-light: #ecfaec,
+        info-light: #f2fafa,
+        warning-light: #fdf7e6,
+        danger-light: #fff2ef,
+        info: $purple,
+        warning: $yellow,
+        danger: $red,
+        dark: $gray-800,
+        inverse: $gray-700,
+        gray: $gray-300,
+        default: #e9ecef
+);
+
+//== Scaffolding
+//
+$body-bg: #fafbff !default;
+$body-bg-light: lighten($body-bg, 3%);
+
+$addition-bg: $gray-100 !default;
+
+$logo-color: $gray-800;
+
+// Typography
+// -------------------------
+
+$body-color:            $gray-700 !default;
+
+$font-size-initial:       14px; // reset default browser value from 16px to 13px
+$font-size-base:          1rem !default;
+$font-size-lg:            1.25rem !default;
+$font-size-sm:            0.875rem !default;
+$font-size-larger:        1.1rem;
+$font-size-mini:          0.9rem;
+$font-size-index:         0.7rem;
+
+$font-weight-bold: 700 !default;
+$font-weight-semi-bold: 600 !default;
+$font-weight-normal: 400 !default;
+$font-weight-thin: 300 !default;
+$font-weight-base: $font-weight-thin !default;
+
+$font-size-smaller: 85% !default;
+
+$line-height-base:        1.55 !default;
+$link-color: #218BC3 !default;
+
+// Layout
+// -------------------------
+$sidebar-padding-horizontal: 11px;
+$sidebar-icon-state-width: 50px !default;
+$sidebar-slim-scroll-width: 4px;
+$sidebar-width: 220px + $sidebar-slim-scroll-width !default;
+
+$sidebar-transition-time: .3s !default;
+
+$sidebar-action-bg: #f9fafe !default;
+$sidebar-bg-color: #fff !default;
+$sidebar-color: #6c757d !default;
+$sidebar-font-weight: 300;
+$sidebar-item-border-color: transparent !default;
+$sidebar-item-active-color: $yellow !default;
+$sidebar-item-hover-color: lighten($sidebar-color, 10%);
+$sidebar-item-hover-bg-color: $sidebar-action-bg;
+$sidebar-ul-background: $sidebar-action-bg;
+$sidebar-border-color: darken($sidebar-ul-background, 2%);
+
+$navbar-height:                    60px !default;
+$navbar-font-size:              13px !default;
+$navbar-bg: transparent;
+
+$content-padding-vertical: 42px !default;
+$content-padding-top: $content-padding-vertical + $navbar-height !default;
+$content-padding-horizontal: 40px !default;
+
+$grid-gutter-width: 40px;
+
+// Screens
+// -------------------------
+
+$screen-lg-height: 670px !default;
+
+// Widgets
+// -------------------------
+
+$widget-padding-vertical: 20px !default;
+$widget-padding-horizontal: 20px !default;
+$widget-bg-color: $white;
+$widget-shadow: 0 0 40px darken($body-bg, 2%);
+
+$widget-shadow-designated: -1px 0 8px $gray-400;
+
+// Bootstrap variables
+// ------------------------
+// ------------------------
+
+//== Breadcrumbs
+//
+$breadcrumb-divider: '>';
+$breadcrumb-padding-y: 0;
+$breadcrumb-bg: transparent;
+
+// Typography
+// -------------------------
+
+$font-family-sans-serif: 'Montserrat', sans-serif !default;
+
+$headings-font-weight: 400 !default;
+
+//== Forms
+//
+$legend-color:                   lighten($body-color, 15%) !default;
+$cursor-disabled:                not-allowed !default;
+
+//== Tables
+//
+$table-accent-bg:             $gray-100 !default;
+$table-hover-bg:              $gray-200 !default;
+
+//== Buttons
+//
+
+$btn-default-bg: $addition-bg !default;
+$btn-default-border: $addition-bg !default;
+
+//== Dropdowns
+//
+$dropdown-link-color:            $body-color !default;
+$dropdown-border-color:          $gray-200;
+
+
+//== Navs
+//
+
+$nav-tabs-active-link-hover-bg:             $white !default;
+$nav-tabs-active-link-hover-color:          $gray-700 !default;
+$nav-tabs-active-link-hover-border-color:   #ddd !default;
+
+//== Navbar
+//
+
+$navbar-margin-bottom:             0 !default;
+$navbar-border-radius:             0 !default;
+
+$navbar-dashboard-bg:                $white !default;
+$navbar-dashboard-color:             #777 !default;
+$navbar-dashboard-border:            darken($navbar-dashboard-bg, 6.5%) !default;
+
+// Navbar links
+$navbar-dashboard-link-color:                #666 !default;
+
+// Navbar links
+$navbar-dashboard-link-hover-color:          #333 !default;
+$navbar-dashboard-link-hover-bg:             transparent !default;
+$navbar-dashboard-link-active-color:         #555 !default;
+$navbar-dashboard-link-active-bg:            darken($navbar-dashboard-bg, 6.5%) !default;
+$navbar-dashboard-link-disabled-color:       #ccc !default;
+$navbar-dashboard-link-disabled-bg:          transparent !default;
+
+// Navbar brand label
+$navbar-dashboard-brand-color:               $navbar-dashboard-link-color !default;
+$navbar-dashboard-brand-hover-color:         darken($navbar-dashboard-brand-color, 10%) !default;
+$navbar-dashboard-brand-hover-bg:            transparent !default;
+
+// Navbar toggle
+$navbar-dashboard-toggle-hover-bg:           #ddd !default;
+$navbar-dashboard-toggle-icon-bar-bg:        #888 !default;
+$navbar-dashboard-toggle-border-color:       #ddd !default;
+
+
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+$state-success-bg:               #ecfaec !default;
+$state-info-bg:                  #f2fafa !default;
+$state-warning-bg:               #fdf7e6 !default;
+$state-danger-bg:                #fff2ef !default;
+
+$state-success-text:             #3c763d !default;
+$state-success-border:           darken($state-success-bg, 5%) !default;
+
+$state-info-text:                #31708f !default;
+$state-info-border:              darken($state-info-bg, 7%) !default;
+
+$state-warning-text:             #8a6d3b !default;
+$state-warning-border:           darken($state-warning-bg, 5%) !default;
+
+$state-danger-text:              #a94442 !default;
+$state-danger-border:            darken($state-danger-bg, 5%) !default;
+
+//== Progress bars
+//
+
+//** Background color of the whole progress component
+$progress-bg:                 $gray-200 !default;
+
+//== Tooltips
+//
+
+$tooltip-bg:                  rgba(#000, .85) !default;
+
+//== Code
+//
+
+$code-bg:                     #f9f2f4 !default;
+$pre-bg:                      #f5f5f5 !default;
+
+
+//== Popovers
+//
+
+$popover-bg:                          #ebeff1 !default;
+$popover-arrow-outer-color:           $popover-bg !default;
+$popover-arrow-color:                 $popover-bg !default;
+
+//== Thumbnails
+//
+//##
+
+$thumbnail-bg:                $white !default;
+$thumbnail-box-shadow: $widget-shadow;
+
+//== Breadcrumbs
+//
+
+$breadcrumb-padding-horizontal: 0 !default;
+$breadcrumb-bg:                 transparent !default;
+$breadcrumb-color:              $body-color !default;
+$breadcrumb-active-color:       $body-color !default;
+$breadcrumb-separator:          ">" !default;
+
+//== Pagination
+//
+//##
+
+$pagination-color:                     $gray-600 !default;
+$pagination-bg:                        #fff !default;
+$pagination-border:                    transparent !default;
+
+$pagination-hover-color:               $body-color !default;
+$pagination-hover-bg:                  $gray-200 !default;
+$pagination-hover-border:              transparent !default;
+
+$pagination-active-color:              $body-color !default;
+$pagination-active-bg:                 $gray-200 !default;
+$pagination-active-border:             transparent !default;
+
+$pagination-disabled-color:            $gray-600 !default;
+$pagination-disabled-bg:               #fff !default;
+$pagination-disabled-border:           transparent !default;
+
+// Alerts
+
+$alert-transparent: 0.25;
+
+//-- Iconography
+//
+
+$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/" !default;
+
+// Font Awesome variables
+// ------------------------
+// ------------------------
+
+$fa-font-path: "../../bower_components/font-awesome/fonts" !default;

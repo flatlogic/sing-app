@@ -1,0 +1,162 @@
+/*
+ * Font Awesome 2x spin
+ */
+
+.#{$fa-css-prefix}-spin-fast {
+  -webkit-animation: fa-spin 1s infinite linear;
+  -moz-animation: fa-spin 1s infinite linear;
+  -o-animation: fa-spin 1s infinite linear;
+  animation: fa-spin 1s infinite linear;
+}
+
+/**
+ * Animate.css
+ */
+
+.animated{
+  animation-duration: .5s;
+}
+
+/**
+ * Pace
+ */
+.pace .pace-progress{
+  background: $gray-400;
+  position: absolute;
+}
+
+.pace .pace-activity{
+  position: absolute;
+  top: 65px;
+  border-width: 1px;
+  left: 15px;
+  right: auto;
+  width: 18px;
+  height: 18px;
+  border-top-color: theme-color('primary');
+  border-left-color: theme-color('primary');
+}
+
+
+
+.pace .pace-progress-inner{
+  right: -10px;
+  width: 10px;
+}
+
+/**
+ * No More Tables
+ * http://css-tricks.com/responsive-data-tables/
+ * Just mark your cells with col header attribute <td data-col-title="Surname">Otto</td>
+ */
+
+//.table-no-more{
+//  @include media-breakpoint-down(sm) {
+//    /* Force table to not be like tables anymore */
+//    &, thead, tbody, th, td, tr {
+//      display: block;
+//    }
+//
+//    /* Hide table headers (but not display: none;, for accessibility) */
+//    thead > tr {
+//      position: absolute;
+//      top: -9999px;
+//      left: -9999px;
+//    }
+//
+//    tbody > tr > td {
+//      /* Behave  like a "row" */
+//      border: none;
+//      border-bottom: 1px solid #eee;
+//      position: relative;
+//      padding-left: 50%;
+//    }
+//
+//    tbody > tr > td:before {
+//      /* Now like a table header */
+//      position: absolute;
+//      /* Top/left values mimic padding */
+//      top: 6px;
+//      left: 6px;
+//      width: 45%;
+//      padding-right: 10px;
+//      white-space: nowrap;
+//      content: attr(data-col-title);
+//    }
+//  }
+//}
+
+/**
+ * Bootstrap select
+ */
+
+.bootstrap-select {
+  .dropdown-toggle {
+    padding-left: 10px;
+
+    &:after {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+
+  .dropdown-menu > li > a {
+    display: block;
+    width: 100%; // For `<button>`s
+    clear: both;
+    font-weight: normal;
+    color: $dropdown-link-color;
+    text-align: inherit; // For `<button>`s
+    white-space: nowrap; // prevent links from randomly breaking onto new lines
+    background: none; // For `<button>`s
+    border: 0; // For `<button>`s
+
+    @include hover-focus {
+      color: $dropdown-link-hover-color;
+      text-decoration: none;
+      background-color: $dropdown-link-hover-bg;
+    }
+
+    // Active state
+    &.active {
+      @include plain-hover-focus {
+        color: $dropdown-link-active-color;
+        text-decoration: none;
+        background-color: $dropdown-link-active-bg;
+        outline: 0;
+      }
+    }
+
+    // Disabled state
+    //
+    // Gray out text and ensure the hover/focus state remains gray
+    &.disabled {
+      @include plain-hover-focus {
+        color: $dropdown-link-disabled-color;
+      }
+
+      // Nuke hover/focus effects
+      @include hover-focus {
+        text-decoration: none;
+        cursor: $cursor-disabled;
+        background-color: transparent;
+        background-image: none; // Remove CSS gradient
+        @include reset-filter();
+      }
+    }
+  }
+
+  .show .dropdown-menu.inner {
+    display: block;
+  }
+}
+
+.input-group-append .bootstrap-select > .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group-prepend .bootstrap-select > .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}

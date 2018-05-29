@@ -1,0 +1,133 @@
+{{#extend "layout" title="Sing App - Typography"}}
+    {{#content "sidebar"}}
+        {{> sidebar active="typography"}}
+    {{/content}}
+    {{#content "content" mode="replace"}}
+      <ol class="breadcrumb">
+            <li class="breadcrumb-item">YOU ARE HERE</li>
+            <li class="breadcrumb-item active">Typography</li>
+        </ol>
+        <h1 class="page-title">Typography - <span class="fw-semi-bold">Texts & Display</span></h1>
+        <div class="row">
+            <div class="col-md">
+                <section class="widget">
+                    <header>
+                        <h5>
+                            Headings
+                            <small>Default and customized</small>
+                        </h5>
+                        <div class="widget-controls">
+                            <a data-widgster="expand" title="Expand" href="#" style="display: none;"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                            <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            <a data-widgster="close" title="Close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+                        </div>
+                    </header>
+                    <div class="widget-body">
+                        <h4>Default headings</h4>
+                        <p>Basic headings for everyday use</p>
+                        <div class="widget-padding-md border rounded">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <h1>h1. Heading</h1>
+                                    <h2>h2. Heading</h2>
+                                    <h3>h3. Heading</h3>
+                                    <h4>h4. Heading</h4>
+                                    <h5>h5. Heading</h5>
+                                    <h6>h6. Heading</h6>
+                                </div>
+                                <div class="col-sm">
+                                    <h1 class="text-danger">h1. Heading</h1>
+                                    <h2 class="text-warning">h2. Heading</h2>
+                                    <h3 class="text-success">h3. Heading</h3>
+                                    <h4 class="text-primary">h4. Heading</h4>
+                                    <h5 class="text-info">h5. Heading</h5>
+                                    <h6 class="text-inverse">h6. Heading</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="mt-5">Customized headings</h4>
+                        <p>Enhanced with additional text</p>
+                        <div class="widget-padding-md border rounded">
+                            <h3>
+                                Headings
+                                <small>And some clarification text</small>
+                            </h3>
+                        </div>
+                        <h4 class="mt-5">Display</h4>
+                        <p>Headings to stand out</p>
+                        <div class="widget-padding-md border rounded">
+                            <h1 class="display-1">Display 1</h1>
+                            <h1 class="display-2">Display 2</h1>
+                            <h1 class="display-3">Display 3</h1>
+                            <h1 class="display-4">Display 4</h1>
+                        </div>
+                        <h4 class="mt-5">Lead</h4>
+                        <p>Make a paragraph stand out by adding <code class="highlighter-rouge">.lead</code>.</p>
+                        <div class="widget-padding-md border rounded">
+                            <p class="lead">Sing App is admin dashboard template built with Bootstrap</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md">
+                <section class="widget">
+                    <header>
+                        <h5>
+                            Body texts
+                            <small>Variations</small>
+                        </h5>
+                        <div class="widget-controls">
+                            <a data-widgster="expand" title="Expand" href="#" style="display: none;"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                            <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            <a data-widgster="close" title="Close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+                        </div>
+                    </header>
+                    <div class="widget-body">
+                        <h4>Basic texts</h4>
+                        <p>Styling for common texts</p>
+                        <div class="widget-padding-md border rounded">
+                            <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+                            <p><del>This line of text is meant to be treated as deleted text.</del></p>
+                            <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+                            <p><small>This line of text is meant to be treated as fine print.</small></p>
+                            <p><em>This line rendered as italicized text.</em></p>
+                            <p><strong>This line rendered as bold text.</strong></p>
+                        </div>
+                        <h4 class="mt-5">Font weights</h4>
+                        <p>Various font weights supported</p>
+                        <div class="widget-padding-md border rounded">
+                            <p>Thin (default) font weight</p>
+                            <p class="fw-normal">Normal font weight</p>
+                            <p class="fw-semi-bold">Semi bold to empasize important thing</p>
+                            <p class="fw-bold">Bold font as a high priority</p>
+                        </div>
+                        <h4 class="mt-5">Colors</h4>
+                        <p>Bootstrap state colors can be applied to texts too</p>
+                        <div class="widget-padding-md border rounded">
+                            <p class="text-danger">Some danger text</p>
+                            <p class="text-warning">Some warning text</p>
+                            <p class="text-success">Some succes text</p>
+                            <p class="text-primary">Some primary text</p>
+                            <p class="text-info">Some info text</p>
+                        </div>
+                        <h4 class="mt-5">Blockquotes</h4>
+                        <p>Citing someone is really easy</p>
+                        <div class="widget-padding-md border rounded">
+                            <blockquote class="blockquote">
+                                <p>Don't get set into one form, adapt it and build your own, and let
+                                    it grow, be like water. Empty your mind, be formless, shapeless — like water.
+                                    Now you put water in a cup, it becomes the cup; You put water into a bottle it
+                                    becomes the bottle; You put it in a teapot it becomes the teapot. Now water can
+                                    flow or it can crash. Be water, my friend.</p>
+                                <footer class="blockquote-footer">Bruce Lee in <cite title="A Warrior's Journey">A Warrior's Journey</cite></footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    {{/content}}
+    {{#content "scripts"}}
+      <script src="js/typography.js"></script>
+    {{/content}}
+{{/extend}}

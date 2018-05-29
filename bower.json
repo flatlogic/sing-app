@@ -1,0 +1,49 @@
+{
+  "name": "sing",
+  "version": "4.1.0",
+  "description": "Sing Dashboard App",
+  "main": "index.html",
+  "authors": [
+    "okendoken flatlogic.com"
+  ],
+  "dependencies": {
+    "jquery": "2.1.4",
+    "jquery-pjax": "1.9.6",
+    "font-awesome": "4.5.0",
+    "bootstrap-select": "1.6.5",
+    "jasny-bootstrap": "3.1.3",
+    "slimScroll": "1.3.7",
+    "widgster": "0.0.2",
+    "pace.js": "https://github.com/HubSpot/pace.git#v0.7.1",
+    "animate.css": "3.5.0",
+    "awesome-bootstrap-checkbox": "1.0.0",
+    "backbone": "1.2.3",
+    "jquery.sparkline": "http://omnipotent.net/jquery.sparkline/2.1.2/jquery.sparkline.min.js",
+    "flot": "0.8.3",
+    "flot.animator": "https://github.com/Codicode/flotanimator.git#3c256c0183d713fd3bf41d04417873928eb1a751",
+    "flot-orderBars": "https://github.com/emmerich/flot-orderBars.git#d44ff4f2fec4c8bb1254e59567ee39fa3684372e",
+    "flot.dashes": "https://github.com/cquartier/flot.dashes.git#454016a8d61b3e7af375e4ffda36c7c55413f62b",
+    "gmaps": "0.4.19",
+    "bootstrap_calendar": "1.0.1",
+    "jquery-ui": "1.11.4",
+    "jquery-ui-touch-punch": "git://github.com/furf/jquery-ui-touch-punch.git#4bc009145202d9c7483ba85f3a236a8f3470354d",
+    "messenger": "1.4.2",
+    "bootstrap": "4.0.0",
+    "hammerjs": "hammer#^2.0.8",
+    "jquery-hammerjs": "^2.0.0",
+    "owl.carousel": "^2.3.3"
+  },
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "vendor"
+  ],
+  "resolutions": {
+    "jquery": "~2.1.3",
+    "bootstrap": "~4"
+  },
+  "devDependencies": {
+    "glyphicons-halflings": "*",
+    "popper.js": "1.12.9"
+  }
+}

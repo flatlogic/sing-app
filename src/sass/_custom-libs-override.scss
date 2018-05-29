@@ -1,0 +1,638 @@
+/**
+ * override custom libs styles. This files is not required for core sing functionality and may be removed
+ */
+
+/**
+ * Jasny Bootstrap
+ * Fileinput.less
+ */
+
+.fileinput.fileinput-new {
+  .thumbnail {
+    padding: $thumbnail-padding;
+    line-height: $spacer;
+    background-color: $thumbnail-bg;
+    border: $thumbnail-border-width solid $thumbnail-border-color;
+    border-radius: $thumbnail-border-radius;
+    transition: all .2s ease-in-out;
+    @include box-shadow(0 1px 2px rgba(0,0,0,.075));
+  }
+}
+
+.fileinput-preview.fileinput-exists {
+  border: 1px solid $input-border-color;
+  border-radius: $border-radius;
+  padding: 5px;
+}
+
+.fileinput-new.input-group .btn-file,
+.fileinput-new .input-group .btn-file {
+  border-radius: 0 $border-radius $border-radius 0;
+
+  &.btn-xs,
+  &.btn-sm {
+    border-radius: 0 $border-radius-sm $border-radius-sm 0;
+  }
+  &.btn-lg {
+    border-radius: 0 $border-radius-lg $border-radius-lg 0;
+  }
+}
+
+.form-group.has-warning .fileinput {
+  .fileinput-preview {
+    color: $state-warning-text;
+  }
+  .thumbnail {
+    border-color: $state-warning-border;
+  }
+}
+.form-group.has-error .fileinput {
+  .fileinput-preview {
+    color: $state-danger-text;
+  }
+  .thumbnail {
+    border-color: $state-danger-border;
+  }
+}
+.form-group.has-success .fileinput {
+  .fileinput-preview {
+    color: $state-success-text;
+  }
+  .thumbnail {
+    border-color: $state-success-border;
+  }
+}
+
+.fileinput {
+  &.input-group {
+    display: flex;
+  }
+
+  .form-control {
+    padding: $input-btn-padding-y $input-btn-padding-x;
+    display: inline-block;
+    margin-bottom: 0px;
+    vertical-align: middle;
+    cursor: text;
+  }
+
+  .input-group-addon {
+    padding: $input-btn-padding-y $input-btn-padding-x;
+  }
+}
+
+.btn-label {
+  background: transparent;
+  left: 2px;
+  padding: 1px 6px;
+}
+
+/*
+ * Bootstrap calendar
+ */
+
+.calendar{
+  font-size: $font-size-mini;
+  padding: $spacer/2 0;
+}
+.calendar td > a{
+  text-decoration: none;
+  cursor: pointer;
+  color: $gray-800 !important;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  position: relative;
+}
+.calendar td{
+  text-align: center;
+}
+.calendar .header{
+  padding: 10px 0 10px 0;
+  color: #666;
+  i{
+    cursor: pointer;
+  }
+}
+.calendar .prev_month{
+  float: left;
+}
+.calendar .next_month{
+  float: right;
+}
+.calendar .year{
+  text-align: center;
+  font-weight: 500;
+}
+.calendar .week_days{
+  color: $gray-600;
+}
+.calendar .event{
+  color: white;
+  font-weight: bold;
+  background-color: transparent;
+
+  &:hover{
+    > a{
+      background-color: $gray-200;
+    }
+  }
+
+  > a {
+    background-color: $white;
+    @include border-radius(50%);
+
+    > span{
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      position: absolute;
+      bottom: 1px;
+      right: 1px;
+      @include border-radius(50%);
+    }
+  }
+
+  .popover{
+    color: $body-color;
+  }
+}
+.calendar .table td{
+  padding: 1px 0;
+  border-top: 0;
+}
+.calendar .table{
+  margin-bottom: 3px;
+  &.header{
+    margin-bottom: $spacer/2;
+  }
+}
+.calendar .week_days td{
+}
+.calendar .visualmonthyear {
+  color: $gray-600;
+}
+.dropdown-menu .calendar td a {
+  padding: 0px;
+}
+/***********************/
+/*      Messenger      */
+/***********************/
+
+//copying theme-air here as we don't want to use Raleway font included into theme-air.css
+
+@-webkit-keyframes ui-spinner-rotate-right {
+  /* line 64, ../../src/sass/messenger-spinner.scss */
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 65, ../../src/sass/messenger-spinner.scss */
+  25% {
+    -webkit-transform: rotate(180deg);
+  }
+
+  /* line 66, ../../src/sass/messenger-spinner.scss */
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+
+  /* line 67, ../../src/sass/messenger-spinner.scss */
+  75% {
+    -webkit-transform: rotate(360deg);
+  }
+
+  /* line 68, ../../src/sass/messenger-spinner.scss */
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes ui-spinner-rotate-left {
+  /* line 72, ../../src/sass/messenger-spinner.scss */
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 73, ../../src/sass/messenger-spinner.scss */
+  25% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 74, ../../src/sass/messenger-spinner.scss */
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+
+  /* line 75, ../../src/sass/messenger-spinner.scss */
+  75% {
+    -webkit-transform: rotate(180deg);
+  }
+
+  /* line 76, ../../src/sass/messenger-spinner.scss */
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes ui-spinner-rotate-right {
+  /* line 80, ../../src/sass/messenger-spinner.scss */
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+
+  /* line 81, ../../src/sass/messenger-spinner.scss */
+  25% {
+    -moz-transform: rotate(180deg);
+  }
+
+  /* line 82, ../../src/sass/messenger-spinner.scss */
+  50% {
+    -moz-transform: rotate(180deg);
+  }
+
+  /* line 83, ../../src/sass/messenger-spinner.scss */
+  75% {
+    -moz-transform: rotate(360deg);
+  }
+
+  /* line 84, ../../src/sass/messenger-spinner.scss */
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes ui-spinner-rotate-left {
+  /* line 88, ../../src/sass/messenger-spinner.scss */
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+
+  /* line 89, ../../src/sass/messenger-spinner.scss */
+  25% {
+    -moz-transform: rotate(0deg);
+  }
+
+  /* line 90, ../../src/sass/messenger-spinner.scss */
+  50% {
+    -moz-transform: rotate(180deg);
+  }
+
+  /* line 91, ../../src/sass/messenger-spinner.scss */
+  75% {
+    -moz-transform: rotate(180deg);
+  }
+
+  /* line 92, ../../src/sass/messenger-spinner.scss */
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@keyframes ui-spinner-rotate-right {
+  /* line 96, ../../src/sass/messenger-spinner.scss */
+  0% {
+    transform: rotate(0deg);
+  }
+
+  /* line 97, ../../src/sass/messenger-spinner.scss */
+  25% {
+    transform: rotate(180deg);
+  }
+
+  /* line 98, ../../src/sass/messenger-spinner.scss */
+  50% {
+    transform: rotate(180deg);
+  }
+
+  /* line 99, ../../src/sass/messenger-spinner.scss */
+  75% {
+    transform: rotate(360deg);
+  }
+
+  /* line 100, ../../src/sass/messenger-spinner.scss */
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ui-spinner-rotate-left {
+  /* line 104, ../../src/sass/messenger-spinner.scss */
+  0% {
+    transform: rotate(0deg);
+  }
+
+  /* line 105, ../../src/sass/messenger-spinner.scss */
+  25% {
+    transform: rotate(0deg);
+  }
+
+  /* line 106, ../../src/sass/messenger-spinner.scss */
+  50% {
+    transform: rotate(180deg);
+  }
+
+  /* line 107, ../../src/sass/messenger-spinner.scss */
+  75% {
+    transform: rotate(180deg);
+  }
+
+  /* line 108, ../../src/sass/messenger-spinner.scss */
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* line 116, ../../src/sass/messenger-spinner.scss */
+.messenger-spinner {
+  position: relative;
+  border-radius: 100%;
+}
+/* line 120, ../../src/sass/messenger-spinner.scss */
+ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
+  display: block;
+}
+/* line 124, ../../src/sass/messenger-spinner.scss */
+.messenger-spinner .messenger-spinner-side {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+/* line 130, ../../src/sass/messenger-spinner.scss */
+.messenger-spinner .messenger-spinner-side .messenger-spinner-fill {
+  border-radius: 999px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+/* line 140, ../../src/sass/messenger-spinner.scss */
+.messenger-spinner .messenger-spinner-side-left {
+  left: 0;
+}
+/* line 143, ../../src/sass/messenger-spinner.scss */
+.messenger-spinner .messenger-spinner-side-left .messenger-spinner-fill {
+  left: 100%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  animation-name: ui-spinner-rotate-left;
+  transform-origin: 0 50%;
+}
+/* line 152, ../../src/sass/messenger-spinner.scss */
+.messenger-spinner .messenger-spinner-side-right {
+  left: 50%;
+}
+/* line 155, ../../src/sass/messenger-spinner.scss */
+.messenger-spinner .messenger-spinner-side-right .messenger-spinner-fill {
+  left: -100%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  animation-name: ui-spinner-rotate-right;
+  transform-origin: 100% 50%;
+}
+
+/* line 16, ../../src/sass/messenger-theme-air.sass */
+ul.messenger-theme-air {
+  user-select: none;
+}
+/* line 20, ../../src/sass/messenger-theme-air.sass */
+ul.messenger-theme-air .messenger-message {
+  transition: background-color 0.4s;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1px white, inset 0 2px white, 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px rgba(0, 0, 0, 0.2);
+  border: 0px;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  margin-bottom: 1em;
+  font-size: 13px;
+  color: $body-color;
+  font-weight: 500;
+  padding: 10px 30px 11px 46px;
+}
+/* line 33, ../../src/sass/messenger-theme-air.sass */
+ul.messenger-theme-air .messenger-message:hover {
+  background-color: white;
+}
+/* line 36, ../../src/sass/messenger-theme-air.sass */
+ul.messenger-theme-air .messenger-message .messenger-close {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  color: $gray-200;
+  opacity: 1;
+  font-weight: bold;
+  display: block;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 8px 10px 7px 7px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+/* line 52, ../../src/sass/messenger-theme-air.sass */
+ul.messenger-theme-air .messenger-message .messenger-close:hover {
+  color: $gray-600;
+}
+/* line 55, ../../src/sass/messenger-theme-air.sass */
+ul.messenger-theme-air .messenger-message .messenger-close:active {
+  color: $gray-800;
+}
+/* line 58, ../../src/sass/messenger-theme-air.sass */
+ul.messenger-theme-air .messenger-message .messenger-actions {
+  float: none;
+  margin-top: 10px;
+}
+/* line 62, ../../src/sass/messenger-theme-air.sass */
+ul.messenger-theme-air .messenger-message .messenger-actions a {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), inset 0px 1px rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  color: $gray-800;
+  margin-right: 10px;
+  padding: 3px 10px 5px;
+  text-transform: capitalize;
+}
+/* line 73, ../../src/sass/messenger-theme-air.sass */
+ul.messenger-theme-air .messenger-message .messenger-actions a:hover {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), inset 0px 1px rgba(255, 255, 255, 0.15);
+  color: $gray-600;
+}
+/* line 77, ../../src/sass/messenger-theme-air.sass */
+ul.messenger-theme-air .messenger-message .messenger-actions a:active {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.18), inset 0px 1px rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.04);
+  color: $gray-600;
+}
+/* line 82, ../../src/sass/messenger-theme-air.sass */
+ul.messenger-theme-air .messenger-message .messenger-actions .messenger-phrase {
+  display: none;
+}
+/* line 85, ../../src/sass/messenger-theme-air.sass */
+ul.messenger-theme-air .messenger-message .messenger-message-inner:before {
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  left: 17px;
+  display: block;
+  content: " ";
+  top: 50%;
+  margin-top: -8px;
+  height: 13px;
+  width: 13px;
+  z-index: 20;
+}
+/* line 99, ../../src/sass/messenger-theme-air.sass */
+ul.messenger-theme-air .messenger-message.alert-success .messenger-message-inner:before {
+  background-color: theme-color('success');
+}
+/* line 32, ../../src/sass/messenger-spinner.scss */
+ul.messenger-theme-air .messenger-message.alert-error.messenger-retry-soon .messenger-spinner {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+}
+/* line 37, ../../src/sass/messenger-spinner.scss */
+ul.messenger-theme-air .messenger-message.alert-error.messenger-retry-soon .messenger-spinner .messenger-spinner-side .messenger-spinner-fill {
+  background: theme-color('danger');
+  animation-duration: 20s;
+  opacity: 1;
+}
+/* line 45, ../../src/sass/messenger-spinner.scss */
+ul.messenger-theme-air .messenger-message.alert-error.messenger-retry-soon .messenger-spinner:after {
+  content: "";
+  background: white;
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  display: block;
+}
+/* line 32, ../../src/sass/messenger-spinner.scss */
+ul.messenger-theme-air .messenger-message.alert-error.messenger-retry-later .messenger-spinner {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+}
+/* line 37, ../../src/sass/messenger-spinner.scss */
+ul.messenger-theme-air .messenger-message.alert-error.messenger-retry-later .messenger-spinner .messenger-spinner-side .messenger-spinner-fill {
+  background: theme-color('danger');
+  animation-duration: 600s;
+  opacity: 1;
+}
+/* line 45, ../../src/sass/messenger-spinner.scss */
+ul.messenger-theme-air .messenger-message.alert-error.messenger-retry-later .messenger-spinner:after {
+  content: "";
+  background: white;
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  display: block;
+}
+/* line 109, ../../src/sass/messenger-theme-air.sass */
+ul.messenger-theme-air .messenger-message.alert-error .messenger-message-inner:before {
+  background-color: theme-color('danger');
+}
+/* line 113, ../../src/sass/messenger-theme-air.sass */
+ul.messenger-theme-air .messenger-message.alert-info .messenger-message-inner:before {
+  background-color: #61c4b8;
+}
+/* line 116, ../../src/sass/messenger-theme-air.sass */
+ul.messenger-theme-air .messenger-spinner {
+  display: block;
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  margin-top: -13px;
+  height: 24px;
+  width: 24px;
+  z-index: 10;
+}
+
+
+ul.messenger-theme-air .messenger-message{
+  background-color: $white;
+}
+
+.location-selector {
+  width: 100%;
+  height: 220px;
+  border: 1px dashed #bbb;
+  background-color: $white;
+  position: relative; }
+.location-selector .bit {
+  background-color: $gray-200;
+  @include transition(background-color .15s ease-in-out);
+  cursor: pointer;
+  position: absolute; }
+.location-selector .bit:hover {
+  background-color: $gray-light; }
+.location-selector .bit.top, .location-selector .bit.bottom {
+  height: 25%;
+  width: 40%;
+  margin: 0 30%; }
+.location-selector .bit.top {
+  top: 0; }
+.location-selector .bit.bottom {
+  bottom: 0; }
+.location-selector .bit.right, .location-selector .bit.left {
+  height: 20%;
+  width: 20%;
+  margin-left: 0;
+  margin-right: 0; }
+.location-selector .bit.right {
+  right: 0; }
+.location-selector .bit.left {
+  left: 0; }
+
+
+/***********************/
+/*         Flot        */
+/***********************/
+
+
+.chart-tooltip{
+  position: fixed;
+  padding: $input-btn-padding-y-sm $input-btn-padding-x-sm;
+  border: 1px solid $gray-light;
+  font-size: $font-size-mini;
+  background-color: $white;
+}
+
+/***********************/
+/*glyphicons-halflings */
+/***********************/
+
+.glyphicon-comment:before {
+  content:"\E111";
+}
+
+.fa-lg {
+  vertical-align: -15%;
+}
+
+/**********************************/
+/*   Awesome Bootstrap Checkbox   */
+/**********************************/
+
+@include checkbox-variant('.abc-checkbox-secondary', theme-color(secondary));
+@include checkbox-variant-indeterminate('.abc-checkbox-secondary', theme-color(secondary));
+@include radio-variant('.abc-radio-secondary', theme-color(secondary));
+
+// Fix input height
+.abc-radio {
+  label {
+    &::before, &::after {
+      margin-top: -10px;
+    }
+  }
+}
