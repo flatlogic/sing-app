@@ -61,7 +61,8 @@ For more information please refer to full [documentation](https://demo.flatlogic
 
 
 ## Integration
-![integration sample](https://user-images.githubusercontent.com/1212194/40719370-1931c15c-641c-11e8-8285-a950eb155582.png)
+[![integration sample](https://user-images.githubusercontent.com/1212194/40719370-1931c15c-641c-11e8-8285-a950eb155582.png)](http://demo.flatlogic.com/sing-app/html-bs4/)
+
 Sing App is a part of admin dashboard solution provided by Flatlogic. We can integrate admin dashboards with such systems as your accounting software, customer relationship management (CRM) system, email management, marketing automation, website analytics program, etc.  Customized Sing App can be a great way to learn about your products usability and extendability. With this dashboard, the owner of the website (platform) can easily track orders and their success rate, track social metrics such as the most popular referring social media sites and their appropriate URLs, monitor sales states and periods of growth to better understand what makes users tick. [Contact us](https://flatlogic.com/contact) to learn more.
 
 ## Documentation
