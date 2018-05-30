@@ -41,7 +41,7 @@ $ git clone -o sing-app-lite -b master --single-branch \
 $ cd MyApp
 ```
 
-#### 2. Run `npm install` followed by `bower install`
+#### 2. Run `npm install && bower install`
 
 This will install both run-time project dependencies and developer tools listed
 in [package.json](../package.json) file. We are moving all dependencies to npm, so there will be no bower dependencies soon.
