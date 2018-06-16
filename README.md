@@ -14,7 +14,7 @@ Using this template you will be able to leverage lots of built-in components and
 * Bootstrap 4+ & SCSS
 * Responsive layout
 * Styled Bootstrap components like buttons, modals, etc
-* Dasboard sample
+* Dashboard sample
 * Typography
 * Tables
 * Notifications
