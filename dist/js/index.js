@@ -329,9 +329,9 @@ $(function () {
         });
 
         function changeTasksStat() {
-            const numberOfComplited = $tasksContainer.children('.checked').length;
+            const numberOfCompleted = $tasksContainer.children('.checked').length;
 
-            $tasksStat.innerHTML = `${numberOfComplited} of 11 complited`;
+            $tasksStat.innerHTML = `${numberOfCompleted} of 11 completed`;
         }
     }
 
