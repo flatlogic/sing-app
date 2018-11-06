@@ -79,6 +79,10 @@ For any additional information please refer to [Flatlogic homepage](https://flat
 - Subscribe to Flatlogic newsletter at [flatlogic.com](https://flatlogic.com/)
 - Like our page on [Facebook](https://www.facebook.com/flatlogic/) :thumbsup:
 
+## More from Flatlogic
+- [Awesome Bootstrap Checkboxes & Radios](https://github.com/flatlogic/awesome-bootstrap-checkbox) - ✔️Pure css way to make inputs look prettier
+- [React Native Starter](https://github.com/flatlogic/react-native-starter) - 🚀 A powerful react native starter template that bootstraps development of your mobile application
+
 ## Premium themes
 Looking for premium themes and templates? Check out our other template at [flatlogic.com](https://flatlogic.com/templates).
 
