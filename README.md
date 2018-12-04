@@ -25,7 +25,7 @@ Using this template you will be able to leverage lots of built-in components and
 * Maps
 * Hover sidebar
 
-All other features like themining, login, additional pages, etc are available in [full version](https://demo.flatlogic.com/sing-app/).
+All other features like themining, login, additional pages, etc are available in a [full version](https://flatlogic.com/admin-dashboards/sing-app-html5).
 
 [![full-version](https://user-images.githubusercontent.com/36201579/40107708-aa2939d6-5901-11e8-8fc1-b31ad46326b7.png)](https://demo.flatlogic.com/sing-app/)
 
