@@ -2,7 +2,7 @@
 # Sing App Lite - free and open source admin dashboard template
 Including responsive layout and high quality UI built with Bootstrap 4.
 
-[View Demo](https://flatlogic.github.io/sing-app/) | [Download](https://github.com/flatlogic/sing-app/archive/master.zip) | [Available versions](https://demo.flatlogic.com/sing-app/) | [More templates](https://flatlogic.com/admin-dashboards)
+[View Demo](https://flatlogic.com/admin-dashboards/sing-app-html5-lite/demo) | [Download](https://github.com/flatlogic/sing-app/archive/master.zip) | [Available versions](https://demo.flatlogic.com/sing-app/) | [More templates](https://flatlogic.com/admin-dashboards)
 
 [![header_illustration_fb](https://user-images.githubusercontent.com/36201579/40110692-554a4650-5909-11e8-8cde-30a0dd1f65ad.jpg)](https://flatlogic.github.io/sing-app/)
 
@@ -27,7 +27,7 @@ Using this template you will be able to leverage lots of built-in components and
 
 All other features like themining, login, additional pages, etc are available in a [full version](https://flatlogic.com/admin-dashboards/sing-app-html5).
 
-[![full-version](https://user-images.githubusercontent.com/36201579/40107708-aa2939d6-5901-11e8-8fc1-b31ad46326b7.png)](https://demo.flatlogic.com/sing-app/)
+[![full-version](https://user-images.githubusercontent.com/36201579/40107708-aa2939d6-5901-11e8-8fc1-b31ad46326b7.png)](https://flatlogic.com/admin-dashboards/sing-app-html5/demo)
 
 Building a project from scratch means that there is a lot of things to keep track of all at once: analytics, dynamic forms data, UI and UX elements, and much more. This simple admin template is well suited for web apps or any other website or project that requires admin dashboard. This template will serve as a solid foundation for your upcoming project and will save you a lot of time and, hence, money.
 
