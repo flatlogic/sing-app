@@ -28,7 +28,7 @@
     "jquery-ui": "1.12.1",
     "jquery-ui-touch-punch": "git://github.com/furf/jquery-ui-touch-punch.git#4bc009145202d9c7483ba85f3a236a8f3470354d",
     "messenger": "1.5.0",
-    "bootstrap": "4.1.3",
+    "bootstrap": "4.3.1",
     "hammerjs": "hammer#^2.0.8",
     "jquery-hammerjs": "^2.0.0",
     "owl.carousel": "^2.3.3"
