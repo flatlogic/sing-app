@@ -1,11 +1,11 @@
-{{#extend "layout" title="Sing App Dashboard - Notifications"}}
+{{#extend "layout" title="Sing App Dashboard - UI Notifications"}}
     {{#content "sidebar"}}
-        {{> sidebar active="notifications"}}
+        {{> sidebar active="ui_notifications"}}
     {{/content}}
     {{#content "content" mode="replace"}}
         <ol class="breadcrumb">
             <li class="breadcrumb-item">YOU ARE HERE</li>
-            <li class="breadcrumb-item active">Notifications</li>
+            <li class="breadcrumb-item active">UI Notifications</li>
         </ol>
         <h1 class="page-title">Messages - <span class="fw-semi-bold">Notifications</span></h1>
         <section class="widget">
@@ -17,10 +17,19 @@
                     <a title="Properties" href="#"><i class="glyphicon glyphicon-cog"></i></a>
                     <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-plus"></i></a>
                     <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-minus"></i></a>
-                    <a data-widgster="close" title="Close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+                    <a data-widgster="close" title="Close" href="#"><i class="la la-remove"></i></a>
                 </div>
             </header>
             <div class="widget-body">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="alert alert-success alert-sm alert-transparent">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            For built-in Bootstrap notifications please check
+                            out <a class="fw-semi-bold" href="../components/ui_toasts.html">toasts page</a>.
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-4">
                         <h5 class="mt-3">Layout options</h5>
@@ -39,12 +48,13 @@
                         <h5 class="mt-3">Notification Types</h5>
                         <p>Different types of notifications for lost of use cases. Custom classes are also supported.</p>
                         <p><a class="btn btn-info" id="show-info-message" href="#">Info Message</a></p>
-                        <p><a class="btn btn-danger" id="show-error-message" href="#">Error + Retry Message</a></p>
+                        <p><a class="btn btn-danger" id="show-error-message" href="#">Error Message</a></p>
                         <p><a class="btn btn-success" id="show-success-message" href="#">Success Message</a></p>
                     </div>
                     <div class="col-lg-4">
                         <h5 class="mt-3">Dead Simple Usage</h5>
-                        <p>Just few lines of code to instantiate a notifications object. Does not require passing any options:</p>
+                        <p>Just few lines of code to instantiate a notifications object. Does not require passing any options:
+                        </p>
                         <pre><code>Messenger().post("Thanks for checking out Messenger!");</code></pre>
                         <p>More complex example:</p>
                         <pre><code>Messenger().post({
@@ -58,13 +68,12 @@
         </section>
     {{/content}}
     {{#content "scripts"}}
-        <script src="../node_modules/underscore/underscore-min.js"></script>
-        <script src="../node_modules/backbone/backbone.js"></script>
-        <script src="../node_modules/messenger/build/js/messenger.js"></script>
-        <script src="../node_modules/messenger/build/js/messenger-theme-flat.js"></script>
-        <script src="../node_modules/messenger/docs/welcome/javascripts/location-sel.js"></script>
-
+        <script src="../../node_modules/underscore/underscore-min.js"></script>
+        <script src="../../node_modules/backbone/backbone.js"></script>
+        <script src="../../node_modules/messenger/build/js/messenger.js"></script>
+        <script src="../../node_modules/messenger/build/js/messenger-theme-flat.js"></script>
+        <script src="../../node_modules/messenger/docs/welcome/javascripts/location-sel.js"></script>
         <!-- page specific js -->
-        <script src="js/notifications.js"></script>
+        <script src="../js/components/ui-notifications.js"></script>
     {{/content}}
 {{/extend}}

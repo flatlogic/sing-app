@@ -1,13 +1,13 @@
-{{#extend "layout" title="Sing App Dashboard - Tables"}}
+{{#extend "layout" title="Sing App Dashboard - Tables Basic"}}
     {{#content "sidebar"}}
-        {{> sidebar active="tables"}}
+        {{> sidebar active="tables_basic"}}
     {{/content}}
     {{#content "content" mode="replace"}}
         <ol class="breadcrumb">
             <li class="breadcrumb-item">YOU ARE HERE</li>
-            <li class="breadcrumb-item active">Tables</li>
+            <li class="breadcrumb-item active">Tables Basic</li>
         </ol>
-        <h1 class="page-title">Tables - <span class="fw-semi-bold">Static</span></h1>
+        <h2 class="page-title">Tables - <span class="fw-semi-bold">Static</span></h2>
         <div class="row">
             <div class="col-lg-12">
                 <section class="widget">
@@ -16,7 +16,7 @@
                             Table <span class="fw-semi-bold">Styles</span>
                         </h5>
                         <div class="widget-controls">
-                            <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+                            <a href="#"><i class="la la-cog"></i></a>
                             <a data-widgster="close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
                         </div>
                     </header>
@@ -64,8 +64,9 @@
                                 </td>
                                 <td class="width-150">
                                     <div class="bg-gray-lighter progress progress-sm">
-                                        <div class="progress-bar progress-sm bg-success js-progress-animate" style="width: 0;" data-width="29%"></div>
-                                      </div>
+                                        <div class="progress-bar progress-sm bg-success js-progress-animate"
+                                             style="width: 0;" data-width="29%"></div>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -98,8 +99,9 @@
                                 </td>
                                 <td class="width-150">
                                     <div class="bg-gray-lighter progress progress-sm">
-                                        <div class="progress-bar progress-sm bg-warning js-progress-animate" style="width: 0;" data-width="33%"></div>
-                                      </div>
+                                        <div class="progress-bar progress-sm bg-warning js-progress-animate"
+                                             style="width: 0;" data-width="33%"></div>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -134,8 +136,9 @@
                                 </td>
                                 <td class="width-150">
                                     <div class="bg-gray-lighter progress progress-sm">
-                                        <div class="progress-bar progress-sm progress-bar-gray js-progress-animate" style="width: 0;" data-width="38%"></div>
-                                      </div>
+                                        <div class="progress-bar progress-sm bg-info js-progress-animate"
+                                             style="width: 0;" data-width="38%"></div>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -168,8 +171,9 @@
                                 </td>
                                 <td class="width-150">
                                     <div class="bg-gray-lighter progress progress-sm">
-                                        <div class="progress-bar progress-sm bg-danger js-progress-animate" style="width: 0;" data-width="17%"></div>
-                                      </div>
+                                        <div class="progress-bar progress-sm bg-danger js-progress-animate"
+                                             style="width: 0;" data-width="17%"></div>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -202,8 +206,9 @@
                                 </td>
                                 <td class="width-150">
                                     <div class="bg-gray-lighter progress progress-sm">
-                                        <div class="progress-bar progress-sm bg-primary js-progress-animate" style="width: 0;" data-width="41%"></div>
-                                      </div>
+                                        <div class="progress-bar progress-sm bg-primary js-progress-animate"
+                                             style="width: 0;" data-width="41%"></div>
+                                    </div>
                                 </td>
                             </tr>
                             </tbody>
@@ -217,7 +222,6 @@
                                 <div class="btn-group">
                                     <button class="btn btn-sm btn-inverse dropdown-toggle" data-toggle="dropdown">
                                         &nbsp; Clear &nbsp;
-                                        <i class="fa fa-caret-down"></i>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li><a class="dropdown-item" href="#">Clear</a></li>
@@ -238,14 +242,14 @@
             <div class="col-lg-6">
                 <section class="widget">
                     <header>
-                        <h6>Table <span class="fw-semi-bold">Styles</span></h6>
+                        <h5>Table <span class="fw-semi-bold">Styles</span></h5>
                         <div class="widget-controls">
-                            <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+                            <a href="#"><i class="la la-cog"></i></a>
                             <a data-widgster="close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
                         </div>
                     </header>
                     <div class="widget-body">
-                        <h3>Striped <span class="fw-semi-bold">Table</span></h3>
+                        <h3>Stripped <span class="fw-semi-bold">Table</span></h3>
                         <p>Each row is highlighted. You will never lost there. Just <code>.table-striped</code> it.</p>
                         <table class="table table-striped">
                             <thead>
@@ -271,7 +275,7 @@
                                 </td>
                                 <td>Mark</td>
                                 <td>Otto</td>
-                                <td><span class="badge bg-danger">Online</span></td>
+                                <td><span class="badge bg-success">Online</span></td>
                             </tr>
                             <tr>
                                 <td>
@@ -324,7 +328,8 @@
                                     <td>Jacob</td>
                                     <td>Thornton</td>
                                     <td><a href="#">fat.thor@example.com</a></td>
-                                    <td><span class="badge badge-pill bg-gray-lighter text-gray-light">Unconfirmed</span></td>
+                                    <td><span class="badge badge-pill bg-gray-lighter text-gray-light">Unconfirmed</span>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
@@ -349,14 +354,14 @@
             <div class="col-lg-6">
                 <section class="widget">
                     <header>
-                        <h6>Table <span class="fw-semi-bold">Styles</span></h6>
+                        <h5>Table <span class="fw-semi-bold">Styles</span></h5>
                         <div class="widget-controls">
-                            <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+                            <a href="#"><i class="la la-cog"></i></a>
                             <a data-widgster="close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
                         </div>
                     </header>
                     <div class="widget-body">
-                        <h3>Bordered  <span class="fw-semi-bold">Table</span></h3>
+                        <h3>Bordered <span class="fw-semi-bold">Table</span></h3>
                         <p>Each row is highlighted. You will never lost there. That's how
                             all of us learned in school the table should look like. Just add
                             <code>.table-bordered</code> to it.</p>
@@ -370,7 +375,7 @@
                                     </div>
                                 </th>
                                 <th>Product</th>
-                                <th class="text-right">Price</th>
+                                <th >Price</th>
                                 <th class="text-center">Sales</th>
                             </tr>
                             </thead>
@@ -383,9 +388,10 @@
                                     </div>
                                 </td>
                                 <td>On the Road</td>
-                                <td class="text-right">$25 224.2</td>
+                                <td>$25 224.2</td>
                                 <td class="text-center">
-                                    <div class="sparkline" data-type="bar" data-bar-color="#618fb0">13,14,16,15,4,14,20</div>
+                                    <div class="sparkline" data-type="bar" data-bar-color="#3abf94">13,14,16,15,4,14,20
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -396,9 +402,9 @@
                                     </div>
                                 </td>
                                 <td>HP Core i7</td>
-                                <td class="text-right">$87 346.1</td>
+                                <td>$87 346.1</td>
                                 <td class="text-center">
-                                    <div class="sparkline" data-type="bar" data-bar-color="#999">14,12,16,11,17,19,16</div>
+                                    <div class="sparkline" data-type="bar" data-bar-color="#1a86d0">14,12,16,11,17,19,16</div>
                                 </td>
                             </tr>
                             <tr>
@@ -409,9 +415,10 @@
                                     </div>
                                 </td>
                                 <td>Let's Dance</td>
-                                <td class="text-right">$57 944.6</td>
+                                <td>$57 944.6</td>
                                 <td class="text-center">
-                                    <div class="sparkline" data-type="bar" data-bar-color="#f0b518">11,17,19,16,14,12,16</div>
+                                    <div class="sparkline" data-type="bar" data-bar-color="#3abf94">11,17,19,16,14,12,16
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -422,9 +429,10 @@
                                     </div>
                                 </td>
                                 <td>Air Pro</td>
-                                <td class="text-right">$118 533.1</td>
+                                <td>$118 533.1</td>
                                 <td class="text-center">
-                                    <div class="sparkline" data-type="bar" data-bar-color="#e5603b">13,14,20,16,15,4,14</div>
+                                    <div class="sparkline" data-type="bar" data-bar-color="#005792">13,14,20,16,15,4,14
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -435,9 +443,10 @@
                                     </div>
                                 </td>
                                 <td>Version Control</td>
-                                <td class="text-right">$72 854.5</td>
+                                <td>$72 854.5</td>
                                 <td class="text-center">
-                                    <div class="sparkline" data-type="bar" data-bar-color="#618fb0">16,15,4,14,13,14,20</div>
+                                    <div class="sparkline" data-type="bar" data-bar-color="#005792">16,15,4,14,13,14,20
+                                    </div>
                                 </td>
                             </tr>
                             </tbody>
@@ -446,14 +455,14 @@
                 </section>
                 <section class="widget">
                     <header>
-                        <h6>Table <span class="fw-semi-bold">Styles</span></h6>
+                        <h5>Table <span class="fw-semi-bold">Styles</span></h5>
                         <div class="widget-controls">
-                            <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+                            <a href="#"><i class="la la-cog"></i></a>
                             <a data-widgster="close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
                         </div>
                     </header>
                     <div class="widget-body">
-                        <h3>Overflow  <span class="fw-semi-bold">Table</span></h3>
+                        <h3>Overflow <span class="fw-semi-bold">Table</span></h3>
                         <p>
                             Add any non-bordered .table within a widget for a seamless design.
                             Awesome look for no cost.
@@ -472,7 +481,7 @@
                                     </div>
                                 </th>
                                 <th>Product</th>
-                                <th class="text-right">Price</th>
+                                <th>Price</th>
                                 <th class="text-center">Sales</th>
                             </tr>
                             </thead>
@@ -485,9 +494,10 @@
                                     </div>
                                 </td>
                                 <td>On the Road</td>
-                                <td class="text-right">$25 224.2</td>
+                                <td>$25 224.2</td>
                                 <td class="text-center">
-                                    <div class="sparkline" data-type="bar" data-bar-color="#618fb0">13,14,16,15,4,14,20</div>
+                                    <div class="sparkline" data-type="bar" data-bar-color="#005792">13,14,16,15,4,14,20
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -498,9 +508,9 @@
                                     </div>
                                 </td>
                                 <td>HP Core i7</td>
-                                <td class="text-right">$87 346.1</td>
+                                <td>$87 346.1</td>
                                 <td class="text-center">
-                                    <div class="sparkline" data-type="bar" data-bar-color="#999">14,12,16,11,17,19,16</div>
+                                    <div class="sparkline" data-type="bar" data-bar-color="#005792">14,12,16,11,17,19,16</div>
                                 </td>
                             </tr>
                             <tr>
@@ -511,9 +521,10 @@
                                     </div>
                                 </td>
                                 <td>Let's Dance</td>
-                                <td class="text-right">$57 944.6</td>
+                                <td>$57 944.6</td>
                                 <td class="text-center">
-                                    <div class="sparkline" data-type="bar" data-bar-color="#f0b518">11,17,19,16,14,12,16</div>
+                                    <div class="sparkline" data-type="bar" data-bar-color="#fd5e00">11,17,19,16,14,12,16
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -524,9 +535,10 @@
                                     </div>
                                 </td>
                                 <td>Air Pro</td>
-                                <td class="text-right">$118 533.1</td>
+                                <td>$118 533.1</td>
                                 <td class="text-center">
-                                    <div class="sparkline" data-type="bar" data-bar-color="#e5603b">13,14,20,16,15,4,14</div>
+                                    <div class="sparkline" data-type="bar" data-bar-color="#005792">13,14,20,16,15,4,14
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -537,9 +549,10 @@
                                     </div>
                                 </td>
                                 <td>Version Control</td>
-                                <td class="text-right">$72 854.5</td>
+                                <td>$72 854.5</td>
                                 <td class="text-center">
-                                    <div class="sparkline" data-type="bar" data-bar-color="#618fb0">16,15,4,14,13,14,20</div>
+                                    <div class="sparkline" data-type="bar" data-bar-color="#1a86d0">16,15,4,14,13,14,20
+                                    </div>
                                 </td>
                             </tr>
                             </tbody>
