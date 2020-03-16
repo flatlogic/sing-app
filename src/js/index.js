@@ -15,9 +15,12 @@ $(function () {
             return $.plot(this.$chartContainer, data, {
                 series: {
                     pie: {
-                        innerRadius: 0.8,
+                        innerRadius: 0.6,
                         show: true,
-                        fill: 0.5
+                        fill: 1,
+                        stroke: {
+                            width: 0
+                        }
                     }
                 },
                 colors: [
@@ -43,22 +46,25 @@ $(function () {
         createChart(color) {
             const randomData = [];
 
-            for (let i = 0; i < 25; i++) {
-                randomData.push(Math.random().toFixed(1) * 10);
+            for (let i = 0; i < 40; i++) {
+                randomData.push((i/9+Math.sin(i/6)*8+Math.random() * 2).toFixed(2));
             }
 
             return this.$container.sparkline(randomData, {
                 type: 'line',
-                lineWidth: 2,
+                lineWidth: 1.67,
                 lineColor: Sing.colors[color],
                 normalRangeMin: '10px',
+                width: '160px',
+                height: '20px',
                 fillColor: false,
                 spotColor: false,
                 minSpotColor: false,
                 maxSpotColor: false,
                 highlightSpotColor: false,
                 highlightLineColor: false,
-                drawNormalOnTop: false
+                drawNormalOnTop: false,
+                tooltipClassname: 'line-chart-tooltip'
             });
         }
     }
@@ -88,11 +94,11 @@ $(function () {
                 data: data[0],
                 lines: {
                     show: true,
-                    fill: .3,
+                    fill: .45,
                     lineWidth: 0
                 },
                 points: {
-                    fillColor: Sing.palette['brand-primary-light'],
+                    fillColor: Sing.palette['brand-primary'],
                     symbol: (ctx, x, y, radius, shadow, i) => {
                         // count for every 8nd point to show on line
                         if (counter % 8 === 0)
@@ -105,13 +111,8 @@ $(function () {
             }, {
                 label: "RNS App",
                 data: data[1],
-                dashes: {
-                    show: true,
-                    lineWidth: 1.5,
-                    dashLength: [5, 2]
-                },
                 points: {
-                    fillColor: Sing.colors['brand-success']
+                    fillColor: Sing.colors['brand-danger']
                 },
                 shadowSize: 0
             }, {
@@ -119,7 +120,7 @@ $(function () {
                 data: data[2],
                 lines: {
                     show: true,
-                    lineWidth: 1.5
+                    lineWidth: 2.5
                 },
                 points: {
                     fillColor: Sing.colors['brand-warning'],
@@ -128,6 +129,7 @@ $(function () {
                 shadowSize: 0
             }], {
                 xaxis: {
+                    tickColor: "#fafbfc",
                     tickSize: tickInterval,
                     tickFormatter: (i) => {
                         return ticks[i / tickInterval];
@@ -139,25 +141,12 @@ $(function () {
                     }
                 },
                 yaxis: {
-                    tickColor: Sing.colors['gray-100'],
+
                     max: 5,
                     font: {
                         lineHeight: 11,
                         weight: 400,
                         color: FONT_COLOR
-                    }
-                },
-                points: {
-                    show: true,
-                    fill: true,
-                    lineWidth: 1,
-                    radius: 1,
-                    symbol: (ctx, x, y, radius, shadow, i) => {
-                        // show every 5th point on line
-                        if (counter % 5 === 0)
-                            ctx.arc(x, y, 2, 0, Math.PI * 2, false);
-
-                        counter++;
                     }
                 },
                 grid: {
@@ -176,9 +165,9 @@ $(function () {
                     container: this.$legend
                 },
                 colors: [
-                    Sing.palette['brand-info-pale'],
-                    Sing.colors['brand-success'],
-                    Sing.colors['brand-warning']
+                    "#1a88d0",
+                    Sing.colors['brand-primary'],
+                    Sing.colors['brand-danger']
                 ],
                 hooks: {
                     draw: [this.onDrawHook.bind(this)]
@@ -235,9 +224,9 @@ $(function () {
 
     function createCharts() {
         new DonutChart(getPieChartData());
-        new LineChart('brand-warning', '#sparkline');
-        new LineChart('brand-info', '#sparkline-1');
-        new LineChart('brand-success', '#sparkline-2');
+        new LineChart('brand-danger', '#sparkline');
+        new LineChart('brand-primary', '#sparkline-1');
+        new LineChart('brand-info', '#sparkline-2');
         new MainChart(getMainChartData(), $("#main-chart"), $('#main-chart-tooltip'), $('#main-chart-legend'));
     }
 

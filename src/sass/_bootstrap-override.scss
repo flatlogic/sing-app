@@ -198,12 +198,6 @@ legend {
 // Dropdown menus
 // --------------------------------------------------
 
-.dropdown-toggle {
-  &:after {
-    content: none;
-  }
-}
-
 .dropdown-menu{
   font-size: $font-size-mini;
   border-radius: 0;
@@ -400,8 +394,15 @@ legend {
 
 .navbar-form {
   .input-group {
-    width: 245px;
+    width: 300px;
     display: flex;
+    .form-control {
+      background-color: rgba(0, 0, 0, .1);
+
+      &:focus {
+        background-color: rgba(0, 0, 0, .1);
+      }
+    }
 
     .form-control {
       order: 2;
@@ -421,13 +422,16 @@ legend {
       border-bottom-right-radius: 0;
       border-bottom-left-radius: $border-radius;
       border-top-left-radius: $border-radius;
+      background-color: rgba(0, 0, 0, .1)!important;
     }
   }
 }
 
-.navbar-header > .navbar-nav{
+.navbar-header > .navbar-nav {
   float: left;
-
+  @include media-breakpoint-down(sm) {
+    margin-bottom: -6px;
+  }
   &.navbar-right{
     float: right;
 
@@ -443,7 +447,7 @@ legend {
 
     + .navbar-brand{
       height: 60px;
-      line-height: 35px;
+      line-height: 28px;
     }
   }
 }

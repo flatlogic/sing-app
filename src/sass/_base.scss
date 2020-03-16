@@ -74,12 +74,13 @@
   }
 }
 
+
 .page-controls {
   position: absolute;
   z-index: 1;
   background: $navbar-bg;
   height: $navbar-height;
-
+  box-shadow: $navbar-shadow;
 
   @include media-breakpoint-down(sm) {
     font-size: $font-size-lg;
@@ -894,6 +895,7 @@
 
   .sparkline-wrapper {
     display: flex;
+    overflow: hidden;
     justify-content: center;
     min-width: calc(100% - 150px);
   }

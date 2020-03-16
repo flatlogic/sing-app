@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Sing App Dashboard - Analytics</title>
-        <link href="css/application.css" rel="stylesheet">
+        <link href="css/application.min.css" rel="stylesheet">
         <!-- as of IE9 cannot parse css files with more that 4K classes separating in two files -->
         <!--[if IE 9]>
         <link href="css/application-ie9-part2.css" rel="stylesheet">
@@ -163,19 +163,28 @@
                             <li class="nav-item">
                                 <!-- whether to automatically collapse sidebar on mouseleave. If activated acts more like usual admin templates -->
                                 <a class="d-none d-lg-block nav-link" id="nav-state-toggle" href="#">
-                                    <i class="la la-bars"></i>
+                                    <i class="la la-bars" data-step="1" data-intro="You can adjust sidebar, or leave it closed 🙂"></i>
                                 </a>
                                 <!-- shown on xs & sm screen. collapses and expands navigation -->
+            
                                 <a class="d-lg-none nav-link" id="nav-collapse-toggle" href="#">
-                                    <span class="square square-lg bg-gray text-white d-md-none"><i class="la la-bars"></i></span>
+                                    <span class="square square-lg d-md-none"><i class="la la-bars"></i></span>
                                     <i class="la la-bars d-none d-md-block"></i>
                                 </a>
                             </li>
-                            <li class="nav-item d-none d-md-block"><a href="#" class="nav-link"><i class="la la-refresh"></i></a></li>
-                            <li class="nav-item ml-n-xs d-none d-md-block"><a href="#" class="nav-link"><i class="la la-times"></i></a></li>
+                            <li class="nav-item d-none d-md-block ml-3"><a href="#" class="nav-link"><i class="la la-refresh"></i></a></li>
+                            <li class="nav-item ml-n-xs d-none d-md-block ml-3"><a href="#" class="nav-link"><i class="la la-times"></i></a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right d-md-none">
+                            <li class="nav-item">
+                                <!-- toggles chat -->
+                                <a class="nav-link" href="#" data-toggle="chat-sidebar">
+                                    <span class="square square-lg"><i class="la la-globe"></i></span>
+                                </a>
+                            </li>
                         </ul>
                         <!-- xs & sm screen logo -->
-                        <a class="navbar-brand d-md-none" href="index.html">
+                        <a class="navbar-brand d-md-none" href="../dashboard/index.html">
                             <i class="fa fa-circle text-gray mr-n-sm"></i>
                             <i class="fa fa-circle text-warning"></i>
                             &nbsp;
@@ -191,13 +200,13 @@
                         <!-- search form! link it to your search server -->
                         <form class="navbar-form" role="search">
                             <div class="form-group">
-                                <div class="input-group input-group-no-border">
-                                    <input class="form-control" type="text" placeholder="Search Dashboard">
+                                <div class="input-group input-group-no-border ml-4">
+                                    <input class="form-control" id="main-search" type="text" placeholder="Search Dashboard">
                                     <span class="input-group-append">
-                                        <span class="input-group-text">
-                                            <i class="la la-search"></i>
+                                            <span class="input-group-text">
+                                                <i class="la la-search"></i>
+                                            </span>
                                         </span>
-                                    </span>
                                 </div>
                             </div>
                         </form>
@@ -217,7 +226,7 @@
                                     </span>
                                     &nbsp;
                                     Philip <strong>Smith</strong>&nbsp;
-                                    <span class="circle bg-warning fw-bold text-white">
+                                    <span class="circle bg-primary fw-bold text-white">
                                         15
                                     </span>
                                     <b class="caret"></b>
@@ -445,7 +454,7 @@
         <h1 class="page-title">
             Analytics
             <small>
-                <small>Summarized company performance</small>
+                <small>Company Performance</small>
             </small>
         </h1>
         <div class="analytics">
@@ -454,17 +463,17 @@
                     <div class="col-xl-3 col-md-6 mb-xlg">
                         <section class="widget mb-0 h-100">
                             <header>
-                                <h4>Visits Today</h4>
+                                <h5>Visits Today</h5>
                             </header>
                             <div class="widget-body">
                                <div class="d-flex justify-content-between align-items-center mb-lg">
                                    <h2>4,332</h2>
-                                   <i class="la la-arrow-right text-success rotate-315"></i>
+                                   <i class="la la-lg la-arrow-right text-primary rotate-315"></i>
                                </div>
                                <div class="d-flex flex-wrap justify-content-between">
                                     <div class="mt visit-element">
                                         <h6>+830</h6>
-                                        <p class="text-muted mb-0 mr"><small>Registrations</small></p>
+                                        <p class="text-muted mb-0 mr"><small>Logins</small></p>
                                     </div>
                                     <div class="mt visit-element">
                                         <h6>0.5%</h6>
@@ -481,7 +490,7 @@
                     <div class="col-xl-3 col-md-6 mb-xlg">
                         <section class="widget mb-0 h-100">
                             <header>
-                                <h4>Revenue Breakdown</h4>
+                                <h5>Revenue Breakdown</h5>
                             </header>
                             <div class="widget-body">
                                 <div class="row">
@@ -494,7 +503,7 @@
                     <div class="col-xl-3 col-md-6 mb-xlg">
                         <section class="widget mb-0 h-100">
                             <header>
-                                <h4>App Perfomance</h4>
+                                <h5>App Perfomance</h5>
                             </header>
                             <div class="widget-body">
                                 <p class="text-muted d-flex flex-wrap">
@@ -525,31 +534,37 @@
                         </section>
                     </div>
                     <div class="col-xl-3 col-md-6 mb-xlg">
-                        <section class="widget mb-0 h-100">
-                            <header>
-                                <h4>Server Overview</h4>
-                            </header>
-                            <div class="widget-body">
-                                <div class="d-flex justify-content-between flex-wrap mb-sm">
-                                    <p class="width-150"><small>60% / 37°С / 3.3 Ghz</small></p>
-                                    <div class="sparkline-wrapper">
-                                        <div id="sparkline"></div>
+                        <div class="pb-xlg h-100">
+                            <section class="widget mb-0 h-100">
+                                <header>
+                                    <h5>Server Overview</h5>
+                                    <div class="widget-controls">
+                                        <a data-widgster="close" title="Close" href="#"><i class="la la-remove"></i></a>
+                                    </div>
+                                </header>
+
+                                <div class="widget-body">
+                                    <div class="d-flex align-items-center mb-sm">
+                                        <p class="width-150" data-toggle="tooltip" data-placement="top" title="" data-original-title="+23% vs last period"><small>60% / 37°С / 3.3 Ghz</small></p>
+                                        <div class="sparkline-wrapper" style="width: calc(100% - 150px);">
+                                            <div id="sparkline"><canvas width="160" height="20" style="display: inline-block; width: 160px; height: 20px; vertical-align: top;"></canvas></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-sm">
+                                        <p class="width-150" data-toggle="tooltip" data-placement="top" title="" data-original-title="+30% vs last period"><small>54% / 31°С / 3.3 Ghz</small></p>
+                                        <div class="sparkline-wrapper" style="width: calc(100% - 150px);">
+                                            <div id="sparkline-1"><canvas width="160" height="20" style="display: inline-block; width: 160px; height: 20px; vertical-align: top;"></canvas></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-sm">
+                                        <p class="width-150" data-toggle="tooltip" data-placement="top" title="" data-original-title="+21% vs last period"><small>57% / 21°С / 3.3 Ghz</small></p>
+                                        <div class="sparkline-wrapper" style="width: calc(100% - 150px);">
+                                            <div id="sparkline-2"><canvas width="160" height="20" style="display: inline-block; width: 160px; height: 20px; vertical-align: top;"></canvas></div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-between flex-wrap mb-sm">
-                                    <p class="width-150"><small>54% / 31°С / 3.3 Ghz</small></p>
-                                    <div class="sparkline-wrapper">
-                                        <div id="sparkline-1"></div>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between flex-wrap">
-                                    <p class="width-150"><small>57% / 21°С / 3.3 Ghz</small></p>
-                                    <div class="sparkline-wrapper">
-                                        <div id="sparkline-2"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+                            </section>
+                        </div>
                     </div>
                     <div class="col-12">
                         <section class="widget mb-xlg">
@@ -566,112 +581,115 @@
                         </section>
                     </div>
                     <div class="col-sm-12 col-lg-6 col-xl-4 mb-xlg">
-                        <section class="widget mb-0 h-100">
-                            <header class="d-flex justify-content-between flex-wrap">
-                                <h4 class="d-flex align-items-center pb-1 big-stat-title">
-                                    <span class="circle bg-primary mr-sm" style="font-size: 6px;"></span>   
-                                    Statistic <span class="fw-normal ml-xs">Light Blue</span>
-                                </h4>
-                                <select class="selectpicker" data-style="btn-gray"
-                                        data-width="auto"
-                                        tabindex="-1" id="simple-select">
-                                    <option class="dropdown-item" value="1">Weekly</option>
-                                    <option class="dropdown-item" value="2">Daily</option>
-                                    <option class="dropdown-item" value="3">Monthly</option>
-                                </select>
-                            </header>
-                            <div class="widget-body p-0">
-                                <h4 class="fw-semi-bold ml-lg mb-lg">4,232</h4>
-                                <div class="d-flex border-top">
-                                    <div class="w-50 border-right p-3 px-4">
-                                         <div class="d-flex justify-content-between align-items-center">
-                                            <h6>+830</h6>
-                                            <i class="la la-arrow-right text-success rotate-315"></i>
+                        <div class="pb-xlg h-100">
+                            <section class="widget mb-0 h-100">
+                                <header class="d-flex justify-content-between flex-wrap">
+                                    <h4 class="d-flex align-items-center pb-1 big-stat-title">
+                                        <span class="circle bg-primary mr-sm" style="font-size: 6px;"></span>
+                                        Statistic <span class="fw-normal ml-xs">Light Blue</span>
+                                    </h4>
+                                    <select class="selectpicker" data-style="btn-default" data-width="auto" tabindex="-1"
+                                            id="simple-select">
+                                        <option class="dropdown-item" value="1">Weekly</option>
+                                        <option class="dropdown-item" value="2">Daily</option>
+                                        <option class="dropdown-item" value="3">Monthly</option>
+                                    </select>
+                                </header>
+                                <div class="widget-body p-0">
+                                    <h4 class="fw-semi-bold ml-lg mb-lg">4,232</h4>
+                                    <div class="d-flex border-top">
+                                        <div class="w-50 border-right p-3 px-4">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h6>+830</h6>
+                                                <i class="la la-arrow-right la-lg text-primary rotate-315"></i>
+                                            </div>
+                                            <p class="text-muted mb-0 mr"><small>Registrations</small></p>
                                         </div>
-                                        <p class="text-muted mb-0 mr"><small>Registrations</small></p>
-                                    </div>
-                                    <div class="w-50 p-3 px-4">
-                                         <div class="d-flex justify-content-between align-items-center">
-                                            <h6>4.5%</h6>
-                                            <i class="la la-arrow-right text-danger rotate-45"></i>
+                                        <div class="w-50 p-3 px-4">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h6>4.5%</h6>
+                                                <i class="la la-arrow-right la-lg text-danger rotate-45"></i>
+                                            </div>
+                                            <p class="text-muted mb-0 mr"><small>Bounce Rate</small></p>
                                         </div>
-                                        <p class="text-muted mb-0 mr"><small>Bounce Rate</small></p>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
+                            </section>
+                        </div>
                     </div>
                     <div class="col-sm-12 col-lg-6 col-xl-4 mb-xlg">
-                        <section class="widget mb-0 h-100">
-                            <header class="d-flex justify-content-between flex-wrap">
-                                <h4 class="d-flex align-items-center pb-1 big-stat-title">
-                                    <span class="circle bg-warning mr-sm" style="font-size: 6px;"></span>   
-                                    Statistic <span class="fw-normal ml-xs">Sing App</span>
-                                </h4>
-                                <select class="selectpicker" data-style="btn-gray"
-                                        data-width="auto"
-                                        tabindex="-1" id="simple-select">
-                                    <option class="dropdown-item" value="1">Weekly</option>
-                                    <option class="dropdown-item" value="2">Daily</option>
-                                    <option class="dropdown-item" value="3">Monthly</option>
-                                </select>
-                            </header>
-                            <div class="widget-body p-0">
-                                <h4 class="fw-semi-bold ml-lg mb-lg">754</h4>
-                                <div class="d-flex border-top">
-                                    <div class="w-50 border-right p-3 px-4">
-                                         <div class="d-flex justify-content-between align-items-center">
-                                            <h6>+30</h6>
-                                            <i class="la la-arrow-right text-success rotate-315"></i>
+                        <div class="pb-xlg h-100">
+                            <section class="widget mb-0 h-100">
+                                <header class="d-flex justify-content-between flex-wrap">
+                                    <h4 class="d-flex align-items-center pb-1 big-stat-title">
+                                        <span class="circle bg-danger mr-sm" style="font-size: 6px;"></span>
+                                        Statistic <span class="fw-normal ml-xs">Sing App</span>
+                                    </h4>
+                                    <select class="selectpicker" data-style="btn-default" data-width="auto" tabindex="-1"
+                                            id="simple-select">
+                                        <option class="dropdown-item" value="1">Weekly</option>
+                                        <option class="dropdown-item" value="2">Daily</option>
+                                        <option class="dropdown-item" value="3">Monthly</option>
+                                    </select>
+                                </header>
+                                <div class="widget-body p-0">
+                                    <h4 class="fw-semi-bold ml-lg mb-lg">754</h4>
+                                    <div class="d-flex border-top">
+                                        <div class="w-50 border-right p-3 px-4">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h6>+30</h6>
+                                                <i class="la la-arrow-right la-lg text-primary rotate-315"></i>
+                                            </div>
+                                            <p class="text-muted mb-0 mr"><small>Registrations</small></p>
                                         </div>
-                                        <p class="text-muted mb-0 mr"><small>Registrations</small></p>
-                                    </div>
-                                    <div class="w-50 p-3 px-4">
-                                         <div class="d-flex justify-content-between align-items-center">
-                                            <h6>2.5%</h6>
-                                            <i class="la la-arrow-right text-success rotate-315"></i>
+                                        <div class="w-50 p-3 px-4">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h6>2.5%</h6>
+                                                <i class="la la-arrow-right la-lg text-primary rotate-315"></i>
+                                            </div>
+                                            <p class="text-muted mb-0 mr"><small>Bounce Rate</small></p>
                                         </div>
-                                        <p class="text-muted mb-0 mr"><small>Bounce Rate</small></p>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
+                            </section>
+                        </div>
                     </div>
                     <div class="col-sm-12 col-lg-6 col-xl-4 mb-xlg">
-                        <section class="widget mb-0 h-100">
-                            <header class="d-flex justify-content-between flex-wrap">
-                                <h4 class="d-flex align-items-center pb-1 big-stat-title">
-                                    <span class="circle bg-info mr-sm" style="font-size: 6px;"></span>   
-                                    Statistic <span class="fw-normal ml-xs">RNS</span>
-                                </h4>
-                                <select class="selectpicker" data-style="btn-gray"
-                                        data-width="auto"
-                                        tabindex="-1" id="simple-select">
-                                    <option class="dropdown-item" value="1">Weekly</option>
-                                    <option class="dropdown-item" value="2">Daily</option>
-                                    <option class="dropdown-item" value="3">Monthly</option>
-                                </select>
-                            </header>
-                            <div class="widget-body p-0">
-                                <h4 class="fw-semi-bold ml-lg mb-lg">1,025</h4>
-                                <div class="d-flex border-top">
-                                    <div class="w-50 border-right p-3 px-4">
-                                         <div class="d-flex justify-content-between align-items-center">
-                                            <h6>+230</h6>
-                                            <i class="la la-arrow-right text-success rotate-315"></i>
+                        <div class="pb-xlg h-100">
+                            <section class="widget mb-0 h-100">
+                                <header class="d-flex justify-content-between flex-wrap">
+                                    <h4 class="d-flex align-items-center pb-1 big-stat-title">
+                                        <span class="circle bg-info mr-sm" style="font-size: 6px;"></span>
+                                        Statistic <span class="fw-normal ml-xs">RNS</span>
+                                    </h4>
+                                    <select class="selectpicker" data-style="btn-default" data-width="auto" tabindex="-1"
+                                            id="simple-select">
+                                        <option class="dropdown-item" value="1">Weekly</option>
+                                        <option class="dropdown-item" value="2">Daily</option>
+                                        <option class="dropdown-item" value="3">Monthly</option>
+                                    </select>
+                                </header>
+                                <div class="widget-body p-0">
+                                    <h4 class="fw-semi-bold ml-lg mb-lg">1,025</h4>
+                                    <div class="d-flex border-top">
+                                        <div class="w-50 border-right p-3 px-4">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h6>+230</h6>
+                                                <i class="la la-arrow-right la-lg text-primary rotate-315"></i>
+                                            </div>
+                                            <p class="text-muted mb-0 mr"><small>Registrations</small></p>
                                         </div>
-                                        <p class="text-muted mb-0 mr"><small>Registrations</small></p>
-                                    </div>
-                                    <div class="w-50 p-3 px-4">
-                                         <div class="d-flex justify-content-between align-items-center">
-                                            <h6>21.5%</h6>
-                                            <i class="la la-arrow-right text-danger rotate-45"></i>
+                                        <div class="w-50 p-3 px-4">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h6>21.5%</h6>
+                                                <i class="la la-arrow-right la-lg text-danger rotate-45"></i>
+                                            </div>
+                                            <p class="text-muted mb-0 mr"><small>Bounce Rate</small></p>
                                         </div>
-                                        <p class="text-muted mb-0 mr"><small>Bounce Rate</small></p>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
+                            </section>
+                        </div>
                     </div>
                     <div class="col-12 mb-lg">
                         <section class="widget pb-0">
@@ -680,69 +698,69 @@
                                     Support <strong>Requests</strong>
                                 </h4>
                                 <div class="widget-controls">
-                                    <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
-                                    <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+                                    <a href="#"><i class="la la-cog"></i></a>
+                                    <a href="#" data-widgster="close"><i class="la la-remove"></i></a>
                                 </div>
                             </header>
                             <div class="widget-body p-0 support table-wrapper">
                                 <table class="table table-striped mb-0">
                                     <thead>
-                                        <tr class="text-muted">
-                                            <th scope="col"><span class=" pl-3">NAME</span></th>
-                                            <th scope="col">EMAIL</th>
-                                            <th scope="col">PRODUCT</th>
-                                            <th scope="col">PRICE</th>
-                                            <th scope="col">DATE</th>
-                                            <th scope="col">CITY</th>
-                                            <th scope="col">STATUS</th>
-                                        </tr>
+                                    <tr class="text-muted">
+                                        <th scope="col"><span class=" pl-3">NAME</span></th>
+                                        <th scope="col">EMAIL</th>
+                                        <th scope="col">PRODUCT</th>
+                                        <th scope="col">PRICE</th>
+                                        <th scope="col">DATE</th>
+                                        <th scope="col">CITY</th>
+                                        <th scope="col">STATUS</th>
+                                    </tr>
                                     </thead>
                                     <tbody class="text-dark">
-                                        <tr>
-                                            <th class="pl-4 fw-normal">Mark Otto</th>
-                                            <td>ottoto@wxample.com</td>
-                                            <td>ON the Road</td>
-                                            <td>$25 224.2</td>
-                                            <td>11 May 2017</td>
-                                            <td>Otsego</td>
-                                            <td><button class="btn btn-xs p-1 px-3 btn-info">Sent</button></td>
-                                        </tr>
-                                        <tr>
-                                            <th class="pl-4">Jacob Thornton</th>
-                                            <td>thornton@wxample.com</td>
-                                            <td>HP Core i7</td>
-                                            <td>$1 254.2</td>
-                                            <td>4 Jun 2017</td>
-                                            <td>Fivepointville</td>
-                                            <td><button class="btn btn-xs p-1 px-3 btn-info">Sent</button></td>
-                                        </tr>
-                                        <tr>
-                                            <th class="pl-4">Larry the Bird</th>
-                                            <td>bird@wxample.com</td>
-                                            <td>Air Pro</td>
-                                            <td>$1 570.0</td>
-                                            <td>27 Aug 2017</td>
-                                            <td>Leadville North</td>
-                                            <td><button class="btn btn-xs p-1 px-3 btn-success">Pending</button></td>
-                                        </tr>
-                                        <tr>
-                                            <th class="pl-4">Joseph May</th>
-                                            <td>josephmay@wxample.com</td>
-                                            <td>Version Control</td>
-                                            <td>$5 224.5</td>
-                                            <td>19 Feb 2018</td>
-                                            <td>Seaforth</td>
-                                            <td><button class="btn btn-xs p-1 px-3 btn-danger">Declined</button></td>
-                                        </tr>
-                                        <tr>
-                                            <th class="pl-4">Peter Horadnia</th>
-                                            <td>horadnia@wxample.com</td>
-                                            <td>Let's Dance</td>
-                                            <td>$43 594.7</td>
-                                            <td>1 Mar 2018</td>
-                                            <td>Hanoverton</td>
-                                            <td><button class="btn btn-xs p-1 px-3 btn-info">Sent</button></td>
-                                        </tr>
+                                    <tr>
+                                        <th class="pl-4 fw-normal">Mark Otto</th>
+                                        <td>ottoto@wxample.com</td>
+                                        <td>ON the Road</td>
+                                        <td>$25 224.2</td>
+                                        <td>11 May 2017</td>
+                                        <td>Otsego</td>
+                                        <td><button class="btn btn-xs p-1 px-3 btn-info">Sent</button></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="pl-4">Jacob Thornton</th>
+                                        <td>thornton@wxample.com</td>
+                                        <td>HP Core i7</td>
+                                        <td>$1 254.2</td>
+                                        <td>4 Jun 2017</td>
+                                        <td>Fivepointville</td>
+                                        <td><button class="btn btn-xs p-1 px-3 btn-info">Sent</button></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="pl-4">Larry the Bird</th>
+                                        <td>bird@wxample.com</td>
+                                        <td>Air Pro</td>
+                                        <td>$1 570.0</td>
+                                        <td>27 Aug 2017</td>
+                                        <td>Leadville North</td>
+                                        <td><button class="btn btn-xs p-1 px-3 btn-success">Pending</button></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="pl-4">Joseph May</th>
+                                        <td>josephmay@wxample.com</td>
+                                        <td>Version Control</td>
+                                        <td>$5 224.5</td>
+                                        <td>19 Feb 2018</td>
+                                        <td>Seaforth</td>
+                                        <td><button class="btn btn-xs p-1 px-3 btn-danger">Declined</button></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="pl-4">Peter Horadnia</th>
+                                        <td>horadnia@wxample.com</td>
+                                        <td>Let's Dance</td>
+                                        <td>$43 594.7</td>
+                                        <td>1 Mar 2018</td>
+                                        <td>Hanoverton</td>
+                                        <td><button class="btn btn-xs p-1 px-3 btn-info">Sent</button></td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -762,7 +780,8 @@
                     <div class="col-sm-12 col-md-6 col-xl-12 last-side-element">
                         <section class="widget pb-2 mb-xlg">
                             <header>
-                                <h4>Today's Tasks <span class="badge badge-pill badge-success fw-normal pull-right mt-xs">11</span></h4>
+                                <h4>Today's Tasks <span
+                                        class="badge badge-pill badge-primary fw-normal pull-right mt-xs">11</span></h4>
                                 <p class="text-primary mb-0"><small class="tasks-stat"></small></p>
                             </header>
                             <div class="widget-body task-container">
@@ -796,7 +815,7 @@
                                     <div class="task-content">
                                         <p class="text-muted mb-xs"><small>Meeting</small></p>
                                         <h6>Meeting with Zoe Alison</h6>
-                        /7              <p class="text-muted"><small>14:00</small></p>
+                                        <p class="text-muted"><small>14:00</small></p>
                                     </div>
                                 </div>
                                 <div class="task d-flex align-items-start">
@@ -811,38 +830,40 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-transparent w-100 text-center text-muted" role="button">See All <i class="la la-arrow-down"></i></a>
+                            <a href="#" class="btn btn-transparent w-100 text-center text-muted" role="button">See All <i
+                                    class="la la-arrow-down"></i></a>
                         </section>
                     </div>
                     <div class="col-sm-12 col-md-6 col-xl-12 last-side-element">
                         <section class="widget">
                             <header>
-                                <h4>Notifications <span class="badge badge-pill badge-success fw-normal pull-right mt-xs">6</span></h4>
+                                <h4>Notifications <span
+                                        class="badge badge-pill badge-primary fw-normal pull-right mt-xs">6</span></h4>
                             </header>
                             <div class="widget-body w-100 notifications">
                                 <div class="d-flex align-items-start">
-                                    <i class="la la-thumbs-up mr text-primary"></i>
+                                    <i class="la la-thumbs-up mr text-info"></i>
                                     <p>Ken <span class="fw-semi-bold">accepts</span> your invitation</p>
                                 </div>
                                 <div class="d-flex w-100">
-                                    <i class="la la-file mr text-success"></i>
+                                    <i class="la la-file mr text-info"></i>
                                     <p>Report from LT Company</p>
                                 </div>
                                 <div class="d-flex w-100">
-                                    <i class="la la-envelope mr text-danger"></i>
+                                    <i class="la la-envelope mr text-info"></i>
                                     <p>4 <span class="fw-semi-bold">Private</span> Mails</p>
                                 </div>
                                 <div class="d-flex w-100">
-                                    <i class="la la-comment mr text-success"></i>
+                                    <i class="la la-comment mr text-info"></i>
                                     <p>3 <span class="fw-semi-bold">Comments</span> to your Post</p>
                                 </div>
                                 <div class="d-flex w-100">
-                                    <i class="la la-cog mr text-light"></i>
+                                    <i class="la la-cog mr text-info"></i>
                                     <p>New <span class="fw-semi-bold">Version</span> of RNS app</p>
                                 </div>
                                 <div class="d-flex w-100">
                                     <i class="la la-bell mr text-info"></i>
-                                    <p>15 <span class="fw-semi-bold">Notifications</span> from Social Apps апв
+                                    <p>15 <span class="fw-semi-bold">Notifications</span> from Social Apps</p>
                                 </div>
                             </div>
                         </section>

@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Sing App Dashboard - Charts</title>
-        <link href="css/application.css" rel="stylesheet">
+        <link href="css/application.min.css" rel="stylesheet">
         <!-- as of IE9 cannot parse css files with more that 4K classes separating in two files -->
         <!--[if IE 9]>
         <link href="css/application-ie9-part2.css" rel="stylesheet">
@@ -163,19 +163,28 @@
                             <li class="nav-item">
                                 <!-- whether to automatically collapse sidebar on mouseleave. If activated acts more like usual admin templates -->
                                 <a class="d-none d-lg-block nav-link" id="nav-state-toggle" href="#">
-                                    <i class="la la-bars"></i>
+                                    <i class="la la-bars" data-step="1" data-intro="You can adjust sidebar, or leave it closed 🙂"></i>
                                 </a>
                                 <!-- shown on xs & sm screen. collapses and expands navigation -->
+            
                                 <a class="d-lg-none nav-link" id="nav-collapse-toggle" href="#">
-                                    <span class="square square-lg bg-gray text-white d-md-none"><i class="la la-bars"></i></span>
+                                    <span class="square square-lg d-md-none"><i class="la la-bars"></i></span>
                                     <i class="la la-bars d-none d-md-block"></i>
                                 </a>
                             </li>
-                            <li class="nav-item d-none d-md-block"><a href="#" class="nav-link"><i class="la la-refresh"></i></a></li>
-                            <li class="nav-item ml-n-xs d-none d-md-block"><a href="#" class="nav-link"><i class="la la-times"></i></a></li>
+                            <li class="nav-item d-none d-md-block ml-3"><a href="#" class="nav-link"><i class="la la-refresh"></i></a></li>
+                            <li class="nav-item ml-n-xs d-none d-md-block ml-3"><a href="#" class="nav-link"><i class="la la-times"></i></a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right d-md-none">
+                            <li class="nav-item">
+                                <!-- toggles chat -->
+                                <a class="nav-link" href="#" data-toggle="chat-sidebar">
+                                    <span class="square square-lg"><i class="la la-globe"></i></span>
+                                </a>
+                            </li>
                         </ul>
                         <!-- xs & sm screen logo -->
-                        <a class="navbar-brand d-md-none" href="index.html">
+                        <a class="navbar-brand d-md-none" href="../dashboard/index.html">
                             <i class="fa fa-circle text-gray mr-n-sm"></i>
                             <i class="fa fa-circle text-warning"></i>
                             &nbsp;
@@ -191,13 +200,13 @@
                         <!-- search form! link it to your search server -->
                         <form class="navbar-form" role="search">
                             <div class="form-group">
-                                <div class="input-group input-group-no-border">
-                                    <input class="form-control" type="text" placeholder="Search Dashboard">
+                                <div class="input-group input-group-no-border ml-4">
+                                    <input class="form-control" id="main-search" type="text" placeholder="Search Dashboard">
                                     <span class="input-group-append">
-                                        <span class="input-group-text">
-                                            <i class="la la-search"></i>
+                                            <span class="input-group-text">
+                                                <i class="la la-search"></i>
+                                            </span>
                                         </span>
-                                    </span>
                                 </div>
                             </div>
                         </form>
@@ -217,7 +226,7 @@
                                     </span>
                                     &nbsp;
                                     Philip <strong>Smith</strong>&nbsp;
-                                    <span class="circle bg-warning fw-bold text-white">
+                                    <span class="circle bg-primary fw-bold text-white">
                                         15
                                     </span>
                                     <b class="caret"></b>
