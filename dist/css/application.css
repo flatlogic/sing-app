@@ -5,8 +5,8 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url(../../node_modules/line-awesome/dist/css/line-awesome.css);
-@import url(../../bower_components/owl.carousel/dist/assets/owl.carousel.min.css);
+@import url(../../node_modules/line-awesome/dist/line-awesome/css/line-awesome.css);
+@import url(../../node_modules/owl.carousel/dist/assets/owl.carousel.min.css);
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,500i,600,700");
 :root {
   --blue: #547fff;
@@ -9106,8 +9106,12 @@ a.text-default:hover, a.text-default:focus {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("../../bower_components/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0");
-  src: url("../../bower_components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("../../bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("../../bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("../../bower_components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("../../bower_components/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+  src: url("../../node_modules/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0");
+  src: url("../../node_modules/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"),
+  url("../../node_modules/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
+  url("../../node_modules/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"),
+  url("../../node_modules/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
+  url("../../node_modules/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
