@@ -25,7 +25,7 @@ Using this template you will be able to leverage lots of built-in components and
 * Maps
 * Hover sidebar
 
-All other features like themining, login, additional pages, etc are available in a [full version](https://flatlogic.com/admin-dashboards/sing-app-html5).
+All other features like themining, login, additional pages, etc are available in a [full version](https://flatlogic.com/templates/sing-app-html5).
 
 [![full-version](https://user-images.githubusercontent.com/36201579/40107708-aa2939d6-5901-11e8-8fc1-b31ad46326b7.png)](https://flatlogic.com/admin-dashboards/sing-app-html5/demo)
 
@@ -48,7 +48,7 @@ $ cd MyApp
 This will install both run-time project dependencies and developer tools listed
 in [package.json](../package.json) file. We are moving all dependencies to npm, so there will be no bower dependencies soon.
 
-#### 3. Run `gulp build`
+#### 3. Run `yarn build`
 
 This command will build the app from the source files (`/src`) into the output
 `/dist` folder. Then open `dist/index.html` in your browser.
@@ -56,7 +56,7 @@ This command will build the app from the source files (`/src`) into the output
 Now you can open your web app in a browser, on mobile devices and start
 hacking. The page must be served from a web server, e.g. apache, nginx, WebStorm built-in web server, etc., otherwise some features may not work properly.
 
-#### 3. Run `gulp watch`
+#### 3. Run `yarn watch`
 This command will watch for changes in `/src` and recompile handlebars' templates & scss styles on the fly into html & css accordingly.
 
 For more information please refer to full [documentation](https://demo.flatlogic.com/sing-app/documentation).
