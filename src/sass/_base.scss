@@ -182,7 +182,6 @@
   vertical-align: middle;
   font-weight: $font-weight-normal;
   font-size: 18px;
-  letter-spacing: 1px;
 
   @include transition(width $sidebar-transition-time ease-in-out);
   > a {
@@ -191,11 +190,16 @@
     text-decoration: none;
     text-transform: capitalize;
     white-space: nowrap;
-    padding: 0 2px;
+    padding: 0 5px;
+    font-weight: 300;
+    span{
+      font-weight: $font-weight-normal;
+    }
   }
 
   .nav-collapsed &{
     width: $sidebar-icon-state-width;
+    @include transition(left $sidebar-transition-time ease-in-out);
   }
 
   .nav-static &{

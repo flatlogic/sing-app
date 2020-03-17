@@ -2,14 +2,14 @@ $(function () {
     'use strict';
 
     const COLORS = {
-        lineChart: [Sing.palette['brand-warning-light'], Sing.palette['brand-warning-pale'], Sing.colors['brand-warning']],
-        barChart: [Sing.palette['brand-primary-light'], Sing.palette['brand-success-pale'], Sing.palette['brand-danger-pale']],
-        trackingChart: [Sing.palette['brand-success-light'], Sing.palette['brand-danger-pale']],
-        pieChart: Object.values(Sing.palette).slice(5),
-        markers: Object.values(Sing.palette).slice(3),
-        donutChart: Object.values(Sing.palette).slice(6),
+        lineChart: [Sing.colors['brand-warning'], Sing.colors['brand-info'], Sing.colors['brand-primary']],
+        barChart: Object.values(Sing.colors).slice(13),
+        trackingChart: [Sing.colors['brand-danger'], Sing.colors['brand-info']],
+        pieChart: [Sing.colors['brand-warning'], Sing.colors['brand-info'], Sing.colors['brand-success'], Sing.colors['brand-danger']],
+        markers: Object.values(Sing.colors).slice(11),
+        donutChart: Object.values(Sing.colors).slice(12),
         fontColor: Sing.colors['gray-400'],
-        gridBorder: Sing.colors['white']
+        gridBorder: [Sing.colors['brand-warning'], Sing.colors['brand-info'], Sing.colors['brand-primary']]
     };
     let debouncedTmeout = 0;
 
@@ -100,175 +100,6 @@ $(function () {
         }
     }
 
-    class TrackingChart {
-        constructor(data) {
-            this.$chartContainer = $("#flot-tracking");
-            this.chart = this.createChart(data);
-            this.legend = this.$chartContainer.find(".legendLabel");
-            this.initEventListeners();
-        }
-
-        createChart(data) {
-            return $.plotAnimator(this.$chartContainer, [{
-                label: data[0].label,
-                data: data[0].data
-            }, {
-                label: data[1].label,
-                data: data[1].data,
-                animator: {steps: 60, duration: 1000, start: 0},
-            }], {
-                series: {
-                    lines: {
-                        show: true
-                    }
-                },
-                colors: COLORS.trackingChart,
-                crosshair: {
-                    mode: "x",
-                    color: Sing.palette['brand-danger-pale']
-                },
-                grid: {
-                    hoverable: true,
-                    autoHighlight: false,
-                    backgroundColor: {colors: [Sing.colors['white'], Sing.colors['white']]},
-                    borderWidth: 1,
-                    borderColor: COLORS.gridBorder,
-                    margin: 0,
-                    minBorderMargin: 0,
-                    labelMargin: 40,
-                    mouseActiveRadius: 6
-                },
-                xaxis: {
-                    tickLength: 0,
-                    tickDecimals: 0,
-                    min: 1,
-                    max: 6,
-                    font: {
-                        lineHeight: 13,
-                        weight: "bold",
-                        color: COLORS.fontColor
-                    }
-                },
-                yaxis: {
-                    min: -1.2,
-                    max: 1.2,
-                    tickDecimals: 0,
-                    font: {
-                        lineHeight: 13,
-                        weight: "bold",
-                        color: Sing.colors['gray-400']
-                    }
-                }
-            })
-        }
-
-        initEventListeners() {
-            let self = this;
-
-            this.$chartContainer.bind("plothover", function (event, pos) {
-                if (!self.updateLegendTimeout) {
-                    self.updateLegendTimeout = setTimeout(self.updateLegendContent.bind(self, event, pos), 50);
-                }
-            });
-        }
-
-        updateLegendContent(event, pos) {
-            this.updateLegendTimeout = null;
-
-            let axes = this.chart.getAxes();
-            if (pos.x < axes.xaxis.min || pos.x > axes.xaxis.max ||
-                pos.y < axes.yaxis.min || pos.y > axes.yaxis.max) {
-                return;
-            }
-
-            let dataset = this.chart.getData();
-            for (let i = 0; i < dataset.length; ++i) {
-                let series = dataset[i];
-                let point1;
-                let point2;
-
-                // Find the nearest points, x-wise
-                for (let j = 0; j < series.data.length; ++j) {
-                    if (series.data[j][0] > pos.x) {
-                        point1 = series.data[j - 1];
-                        point2 = series.data[j];
-                        break;
-                    }
-                }
-
-                let y;
-                // Now Interpolate
-                if (point1 == null && point2) {
-                    y = point2[1];
-                } else if (point2 == null && point1) {
-                    y = point1[1];
-                } else {
-                    y = point1[1] + (point2[1] - point1[1]) * (pos.x - point1[0]) / (point2[0] - point1[0]);
-                }
-
-                this.legend.eq(i).text(series.label.replace(/=.*/, "= " + y.toFixed(2)));
-            }
-        }
-    }
-
-    class Markers {
-        constructor() {
-            this.data = [
-                { data: this.generate(2, 0.6), points: { symbol: "circle" } },
-                { data: this.generate(3, 0.5), points: { symbol: "square" } },
-                { data: this.generate(4, 0.8), points: { symbol: "diamond" } },
-                { data: this.generate(6, 0.7), points: { symbol: "triangle" } },
-                { data: this.generate(7, 0.2), points: { symbol: "cross" } }
-            ];
-
-            this.$chartContainer = $('#flot-markers');
-            this.chart = this.createChart(this.data);
-        }
-
-        generate(offset, amplitude) {
-            let result = [];
-            let start = 0;
-            let end = 10;
-            let point;
-
-            for (let i = 0; i <= 50; i++) {
-                point = start + i / 50 * (end - start);
-                result.push([point, amplitude * Math.sin(point + offset)]);
-            }
-
-            return result;
-        }
-
-        createChart(data) {
-            return $.plot(this.$chartContainer, data, {
-                series: {
-                    points: {
-                        show: true,
-                        radius: 3
-                    }
-                },
-                yaxis: {
-                    ticks: []
-                },
-                xaxis: {
-                    min: 1,
-                    font: {
-                        lineHeight: 13,
-                        weight: "bold",
-                        color: COLORS.fontColor
-                    }
-                },
-                grid: {
-                    hoverable: true,
-                    backgroundColor: {colors: [Sing.colors['white'], Sing.colors['white']]},
-                    borderWidth: 1,
-                    borderColor: COLORS.gridBorder
-                },
-                colors: COLORS.markers
-            });
-        }
-    }
-
     class BarChart {
         constructor(data) {
             this.$chartContainer = $("#flot-bar");
@@ -334,23 +165,13 @@ $(function () {
                     axisLabel: 'Month',
                     axisLabelUseCanvas: true,
                     axisLabelFontSizePixels: 13,
-                    axisLabelPadding: 15,
-                    font: {
-                        lineHeight: 13,
-                        weight: "bold",
-                        color: COLORS.fontColor
-                    }
+                    axisLabelPadding: 15
                 },
                 yaxis: {
                     axisLabel: 'Value',
                     axisLabelUseCanvas: true,
                     axisLabelFontSizePixels: 13,
-                    axisLabelPadding: 5,
-                    font: {
-                        lineHeight: 13,
-                        weight: "bold",
-                        color: COLORS.fontColor
-                    }
+                    axisLabelPadding: 5
                 },
                 grid: {
                     hoverable: true,
@@ -362,6 +183,117 @@ $(function () {
                 },
                 colors: COLORS.barChart
             });
+        }
+    }
+
+    class TrackingChart {
+        constructor(data) {
+            this.$chartContainer = $("#flot-tracking");
+            this.chart = this.createChart(data);
+            this.legend = this.$chartContainer.find(".legendLabel");
+            this.initEventListeners();
+        }
+
+        createChart(data) {
+            return $.plotAnimator(this.$chartContainer, [{
+                label: data[0].label,
+                data: data[0].data
+            }, {
+                label: data[1].label,
+                data: data[1].data,
+                animator: {steps: 60, duration: 1000, start: 0},
+            }], {
+                series: {
+                    lines: {
+                        show: true
+                    }
+                },
+                colors: COLORS.trackingChart,
+                crosshair: {
+                    mode: "x",
+                    color: Sing.colors['brand-danger']
+                },
+                grid: {
+                    hoverable: true,
+                    autoHighlight: false,
+                    backgroundColor: {colors: [Sing.colors['white'], Sing.colors['white']]},
+                    borderWidth: 1,
+                    borderColor: COLORS.gridBorder,
+                    margin: 0,
+                    minBorderMargin: 0,
+                    labelMargin: 40,
+                    mouseActiveRadius: 6
+                },
+                xaxis: {
+                    tickLength: 0,
+                    tickDecimals: 0,
+                    min: 1,
+                    max: 6,
+                    font: {
+                        lineHeight: 13,
+                        weight: "bold",
+                        color: Sing.colors['gray-400']
+                    }
+                },
+                yaxis: {
+                    min: -1.2,
+                    max: 1.2,
+                    tickDecimals: 0,
+                    font: {
+                        lineHeight: 13,
+                        weight: "bold",
+                        color: Sing.colors['gray-400']
+                    }
+                }
+            })
+        }
+
+        initEventListeners() {
+            let self = this;
+
+            this.$chartContainer.bind("plothover", function (event, pos) {
+                if (!self.updateLegendTimeout) {
+                    self.updateLegendTimeout = setTimeout(self.updateLegendContent.bind(self, event, pos), 50);
+                }
+            });
+        }
+
+        updateLegendContent(event, pos) {
+            this.updateLegendTimeout = null;
+
+            let axes = this.chart.getAxes();
+            if (pos.x < axes.xaxis.min || pos.x > axes.xaxis.max ||
+                pos.y < axes.yaxis.min || pos.y > axes.yaxis.max) {
+                return;
+            }
+
+            let dataset = this.chart.getData();
+            for (let i = 0; i < dataset.length; ++i) {
+                let series = dataset[i];
+                let point1;
+                let point2;
+
+                // Find the nearest points, x-wise
+                for (let j = 0; j < series.data.length; ++j) {
+                    if (series.data[j][0] > pos.x) {
+                        point1 = series.data[j - 1];
+                        point2 = series.data[j];
+                        break;
+                    }
+                }
+
+                let y;
+                // Now Interpolate
+                if (point1 == null && point2) {
+                    y = point2[1];
+                } else if (point2 == null && point1) {
+                    y = point1[1];
+                } else {
+                    y = point1[1] + (point2[1] - point1[1]) * (pos.x - point1[0]) / (point2[0] - point1[0]);
+                }
+
+                this.legend.eq(i).text(series.label.replace(/=.*/, "= " + y.toFixed(2)));
+            }
         }
     }
 
@@ -379,6 +311,9 @@ $(function () {
                     pie: {
                         show: true,
                         radius: 1,
+                        stroke: {
+                            width: 0
+                        },
                         label: {
                             show: true,
                             radius: 2 / 3,
@@ -413,7 +348,10 @@ $(function () {
                     pie: {
                         innerRadius: 0.5,
                         show: true,
-                        fill: 0.7
+                        fill: 0.1,
+                        stroke: {
+                            width: 0
+                        }
                     }
                 },
                 colors: COLORS.donutChart,
@@ -437,10 +375,9 @@ $(function () {
                     stack: true,
                     bars: {
                         show: true,
-                        barWidth: 0.5,
-                        align: 'center',
+                        barWidth: 0.45,
                         lineWidth: 1,
-                        fill: 0.75
+                        fill: 1
                     }
                 },
                 grid: {
@@ -455,36 +392,66 @@ $(function () {
                     mouseActiveRadius: 6
                 },
                 xaxis: {
-                    ticks: [
-                        [0,'Apr 01 2009'],
-                        [1,'Apr 01 2010'],
-                        [2,'Apr 01 2011'],
-                        [3,'Apr 01 2012'],
-                        [4,'Apr 01 2013'],
-                        [5,'Apr 01 2014'],
-                        [6,'Apr 01 2015'],
-                        [7,'Apr 01 2016'],
-                        [8,'Apr 01 2017'],
-                        [9,'Apr 01 2018']
-                    ],
+                    min: 1,
                     tickLength: 0,
                     axisLabelUseCanvas: true,
                     axisLabelFontSizePixels: 13,
-                    axisLabelPadding: 15,
-                    font: {
-                        lineHeight: 13,
-                        weight: "bold",
-                        color: COLORS.fontColor
+                    axisLabelPadding: 15
+                },
+                colors: Object.values(Sing.colors).slice(13)
+            });
+        }
+    }
+
+    class Markers {
+        constructor() {
+            this.data = [
+                { data: this.generate(2, 0.6), points: { symbol: "circle" } },
+                { data: this.generate(3, 0.5), points: { symbol: "square" } },
+                { data: this.generate(4, 0.8), points: { symbol: "diamond" } },
+                { data: this.generate(6, 0.7), points: { symbol: "triangle" } },
+                { data: this.generate(7, 0.2), points: { symbol: "cross" } }
+            ];
+
+            this.$chartContainer = $('#flot-markers');
+            this.chart = this.createChart(this.data);
+        }
+
+        generate(offset, amplitude) {
+            let result = [];
+            let start = 0;
+            let end = 10;
+            let point;
+
+            for (let i = 0; i <= 50; i++) {
+                point = start + i / 50 * (end - start);
+                result.push([point, amplitude * Math.sin(point + offset)]);
+            }
+
+            return result;
+        }
+
+        createChart(data) {
+            return $.plot(this.$chartContainer, data, {
+                series: {
+                    points: {
+                        show: true,
+                        radius: 3
                     }
                 },
                 yaxis: {
-                    font: {
-                        lineHeight: 13,
-                        weight: "bold",
-                        color: COLORS.fontColor
-                    }
+                    ticks: []
                 },
-                colors: Object.values(Sing.palette).slice(1)
+                xaxis: {
+                    min: 1
+                },
+                grid: {
+                    hoverable: true,
+                    backgroundColor: {colors: [Sing.colors['white'], Sing.colors['white']]},
+                    borderWidth: 1,
+                    borderColor: COLORS.gridBorder
+                },
+                colors: COLORS.markers
             });
         }
     }
