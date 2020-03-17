@@ -1,6 +1,6 @@
 <!-- This is the white navigation bar seen on the top. A bit enhanced BS navbar. See .page-controls in _base.scss. -->
 <nav class="page-controls navbar navbar-dashboard">
-  {{con}} {{con1}}
+    {{con}} {{con1}}
     <div class="container-fluid">
         <!-- .navbar-header contains links seen on xs & sm screens -->
         <div class="navbar-header mr-md-3">
@@ -11,16 +11,25 @@
                         <i class="la la-bars"></i>
                     </a>
                     <!-- shown on xs & sm screen. collapses and expands navigation -->
+
                     <a class="d-lg-none nav-link" id="nav-collapse-toggle" href="#">
-                        <span class="square square-lg bg-gray text-white d-md-none"><i class="la la-bars"></i></span>
+                        <span class="square square-lg d-md-none"><i class="la la-bars"></i></span>
                         <i class="la la-bars d-none d-md-block"></i>
                     </a>
                 </li>
-                <li class="nav-item d-none d-md-block"><a href="#" class="nav-link"><i class="la la-refresh"></i></a></li>
-                <li class="nav-item ml-n-xs d-none d-md-block"><a href="#" class="nav-link"><i class="la la-times"></i></a></li>
+                <li class="nav-item d-none d-md-block ml-3"><a href="#" class="nav-link"><i class="la la-refresh"></i></a></li>
+                <li class="nav-item ml-n-xs d-none d-md-block ml-3"><a href="#" class="nav-link"><i class="la la-times"></i></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right d-md-none">
+                <li class="nav-item">
+                    <!-- toggles chat -->
+                    <a class="nav-link" href="#" data-toggle="chat-sidebar">
+                        <span class="square square-lg"><i class="la la-globe"></i></span>
+                    </a>
+                </li>
             </ul>
             <!-- xs & sm screen logo -->
-            <a class="navbar-brand d-md-none" href="index.html">
+            <a class="navbar-brand d-md-none" href="../dashboard/index.html">
                 <i class="fa fa-circle text-gray mr-n-sm"></i>
                 <i class="fa fa-circle text-warning"></i>
                 &nbsp;
@@ -36,8 +45,8 @@
             <!-- search form! link it to your search server -->
             <form class="navbar-form" role="search">
                 <div class="form-group">
-                    <div class="input-group input-group-no-border">
-                        <input class="form-control" type="text" placeholder="Search Dashboard">
+                    <div class="input-group input-group-no-border ml-4">
+                        <input class="form-control" id="main-search" type="text" placeholder="Search Dashboard">
                         <span class="input-group-append">
                             <span class="input-group-text">
                                 <i class="la la-search"></i>
@@ -56,16 +65,17 @@
                             data-toggle="dropdown"
                             aria-haspopup="true"
                             aria-expanded="false"
+                            data-position="bottom-middle-aligned"
+                            data-disable-interaction="false"
                     >
                         <span class="thumb-sm avatar float-left">
-                            <img class="rounded-circle" src="demo/img/people/a5.jpg" alt="...">
+                            <img class="rounded-circle" src="demo/img/people/a5.jpg" alt="..." >
                         </span>
                         &nbsp;
                         Philip <strong>Smith</strong>&nbsp;
-                        <span class="circle bg-warning fw-bold text-white">
+                        <span class="circle bg-primary fw-bold text-white">
                             15
                         </span>
-                        <b class="caret"></b>
                     </a>
                     <div
                             class="dropdown-menu dropdown-menu-right animated fadeInUp py-0"
@@ -83,19 +93,19 @@
                                              only requirement for async reloading -->
                                         <input type="radio" checked
                                                data-ajax-trigger="change"
-                                               data-ajax-load="demo/ajax/notifications.html"
+                                               data-ajax-load="../demo/ajax/notifications.html"
                                                data-ajax-target="#notifications-list"> Notifications
                                     </label>
                                     <label class="btn btn-default">
                                         <input type="radio"
                                                data-ajax-trigger="change"
-                                               data-ajax-load="demo/ajax/messages.html"
+                                               data-ajax-load="../demo/ajax/messages.html"
                                                data-ajax-target="#notifications-list"> Messages
                                     </label>
                                     <label class="btn btn-default">
                                         <input type="radio"
                                                data-ajax-trigger="change"
-                                               data-ajax-load="demo/ajax/progress.html"
+                                               data-ajax-load="../demo/ajax/progress.html"
                                                data-ajax-target="#notifications-list"> Progress
                                     </label>
                                 </div>
@@ -200,8 +210,8 @@
                         </section>
                     </div>
                 </li>
-                <li class="dropdown nav-item">
-                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                <li class="dropdown nav-item" >
+                    <a href="#" class="dropdown-toggle no-caret nav-link" data-toggle="dropdown">
                         <i class="la la-cog"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
@@ -210,7 +220,7 @@
                         <li><a class="dropdown-item" href="#">Calendar</a></li>
                         <li><a class="dropdown-item" href="#">Inbox &nbsp;&nbsp;<span class="badge badge-pill bg-danger animated bounceIn">9</span></a></li>
                         <li class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href=""><i class="la la-sign-out"></i> &nbsp; Log Out</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="la la-sign-out"></i> &nbsp; Log Out</a></li>
                     </ul>
                 </li>
             </ul>

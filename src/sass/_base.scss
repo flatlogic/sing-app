@@ -74,12 +74,13 @@
   }
 }
 
+
 .page-controls {
   position: absolute;
   z-index: 1;
   background: $navbar-bg;
   height: $navbar-height;
-
+  box-shadow: $navbar-shadow;
 
   @include media-breakpoint-down(sm) {
     font-size: $font-size-lg;
@@ -181,7 +182,6 @@
   vertical-align: middle;
   font-weight: $font-weight-normal;
   font-size: 18px;
-  letter-spacing: 1px;
 
   @include transition(width $sidebar-transition-time ease-in-out);
   > a {
@@ -190,11 +190,16 @@
     text-decoration: none;
     text-transform: capitalize;
     white-space: nowrap;
-    padding: 0 2px;
+    padding: 0 5px;
+    font-weight: 300;
+    span{
+      font-weight: $font-weight-normal;
+    }
   }
 
   .nav-collapsed &{
     width: $sidebar-icon-state-width;
+    @include transition(left $sidebar-transition-time ease-in-out);
   }
 
   .nav-static &{
@@ -894,6 +899,7 @@
 
   .sparkline-wrapper {
     display: flex;
+    overflow: hidden;
     justify-content: center;
     min-width: calc(100% - 150px);
   }

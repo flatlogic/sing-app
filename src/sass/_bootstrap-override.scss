@@ -146,6 +146,13 @@ legend {
   }
 }
 
+
+.table-bordered thead th {
+  border: none;
+  background-color: $blue;
+  color: $gray-750;
+}
+
 .table > thead > tr > th {
   border-top: none;
 }
@@ -198,12 +205,6 @@ legend {
 // Dropdown menus
 // --------------------------------------------------
 
-.dropdown-toggle {
-  &:after {
-    content: none;
-  }
-}
-
 .dropdown-menu{
   font-size: $font-size-mini;
   border-radius: 0;
@@ -245,7 +246,7 @@ legend {
 .nav-tabs {
   & .nav-item+.nav-item { margin-left: 0}
   border-bottom: none;
-  background-color: $gray-light;
+  background-color: $gray-200;
   border-top-left-radius: $border-radius;
   border-top-right-radius: $border-radius;
   > .nav-item {
@@ -400,8 +401,15 @@ legend {
 
 .navbar-form {
   .input-group {
-    width: 245px;
+    width: 300px;
     display: flex;
+    .form-control {
+      background-color: rgba(0, 0, 0, .1);
+
+      &:focus {
+        background-color: rgba(0, 0, 0, .1);
+      }
+    }
 
     .form-control {
       order: 2;
@@ -421,13 +429,16 @@ legend {
       border-bottom-right-radius: 0;
       border-bottom-left-radius: $border-radius;
       border-top-left-radius: $border-radius;
+      background-color: rgba(0, 0, 0, .1)!important;
     }
   }
 }
 
-.navbar-header > .navbar-nav{
+.navbar-header > .navbar-nav {
   float: left;
-
+  @include media-breakpoint-down(sm) {
+    margin-bottom: -6px;
+  }
   &.navbar-right{
     float: right;
 
@@ -443,7 +454,7 @@ legend {
 
     + .navbar-brand{
       height: 60px;
-      line-height: 35px;
+      line-height: 28px;
     }
   }
 }
@@ -627,9 +638,37 @@ legend {
 // Buttons
 // --------------------------------------------------
 
-.btn {
-  // add tiny gradient to background
-  background-image: linear-gradient(to right, #ffffff26, #fff0);
+.btn-group {
+  .btn-inverse {
+    color: #fff;
+    background-color: map-get($theme-colors, inverse);
+    border-color: map-get($theme-colors, inverse);
+  }
+}
+
+.btn-warning {
+  color: #fff!important;
+}
+
+.btn-outline-warning {
+  &:hover {
+    color: #fff!important;
+  }
+}
+
+.btn-gray {
+  color: #29323a;
+  background-color: #b8c6d2;
+  border-color: #b0c0cd;
+
+  &:hover {
+    background-color: #bfccd7;
+    border-color: #b8c6d2;
+  }
+}
+
+.badge-light {
+  color: #29323a;
 }
 
 .btn .glyphicon {
@@ -1229,6 +1268,7 @@ pre {
   line-height: $spacer;
   word-break: break-all;
   word-wrap: break-word;
+  white-space: pre-wrap;
   background-color: $pre-bg;
   border-radius: $border-radius;
 

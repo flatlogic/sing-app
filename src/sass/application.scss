@@ -1,25 +1,25 @@
 @import "variables";
 @import "mixins";
 
-@import "../../bower_components/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 @import '../fonts/flaticon/flaticon';
-@import "../../bower_components/font-awesome/scss/font-awesome";
-@import "../../node_modules/line-awesome/dist/css/line-awesome.css";
-@import "../../bower_components/animate.css/animate";
-@import "../../bower_components/bootstrap-select/dist/css/bootstrap-select";
-@import "../../bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.scss";
-@import "../../bower_components/pace.js/themes/pace-theme-minimal";
-@import "../../bower_components/glyphicons-halflings/scss/glyphicons-halflings";
+@import "../../node_modules/font-awesome/scss/font-awesome";
+@import "../../node_modules/line-awesome/dist/line-awesome/css/line-awesome.css";
+@import "../../node_modules/animate.css/animate";
+@import "../../node_modules/bootstrap-select/dist/css/bootstrap-select";
+@import "../../node_modules/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.scss";
+@import "../../node_modules/pace.js/themes/pace-theme-minimal";
+@import "../../node_modules/glyphicons-halflings/scss/glyphicons-halflings";
 
 @import "bootstrap-override";
 @import "libs-override";
 //
 
-@import "../../bower_components/messenger/build/css/messenger";
-@import "../../bower_components/messenger/build/css/messenger-spinner";
-@import "../../bower_components/jasny-bootstrap/dist/css/jasny-bootstrap";
-@import '../../bower_components/owl.carousel/dist/assets/owl.carousel.min.css';
+@import "../../node_modules/messenger/build/css/messenger";
+@import "../../node_modules/messenger/build/css/messenger-spinner";
+@import "../../node_modules/jasny-bootstrap/dist/css/jasny-bootstrap";
+@import '../../node_modules/owl.carousel/dist/assets/owl.carousel.min.css';
 
 @import "custom-libs-override";
 

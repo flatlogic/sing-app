@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Sing App Dashboard - Notifications</title>
-        <link href="css/application.css" rel="stylesheet">
+        <title>Sing App Dashboard - UI Notifications</title>
+        <link href="css/application.min.css" rel="stylesheet">
         <!-- as of IE9 cannot parse css files with more that 4K classes separating in two files -->
         <!--[if IE 9]>
         <link href="css/application-ie9-part2.css" rel="stylesheet">
@@ -32,7 +32,7 @@
             <!-- need this .js class to initiate slimscroll -->
             <div class="js-sidebar-content">
                 <header class="logo d-none d-md-block">
-                    <a href="https://demo.flatlogic.com/sing-app/"><span class="text-warning">sing</span> app</a>
+                    <a href="https://demo.flatlogic.com/sing-app/"><span>sing</span> app</a>
                 </header>
                 <!-- seems like lots of recent admin template have this feature of user info in the sidebar.
                      looks good, so adding it and enhancing with notifications -->
@@ -85,7 +85,7 @@
                             Tables
                         </a>
                     </li>
-                    <li class=" active ">
+                    <li class="">
                         <!-- an example of nested submenu. basic bootstrap collapse component -->
                         <a href="notifications.html">
                             <span class="icon">
@@ -115,19 +115,19 @@
                     <li>
                         <a href="#">
                             <!-- yep, .circle again -->
-                            <i class="fa fa-circle text-warning mr-xs"></i>
+                            <i class="fa fa-circle text-danger mr-xs"></i>
                             <span class="label-name">My Recent</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="fa fa-circle text-gray mr-xs"></i>
+                            <i class="fa fa-circle text-primary mr-xs"></i>
                             <span class="label-name">Starred</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="fa fa-circle text-danger mr-xs"></i>
+                            <i class="fa fa-circle mr-xs"></i>
                             <span class="label-name">Background</span>
                         </a>
                     </li>
@@ -139,7 +139,7 @@
                         <a href="#" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
                         <span class="fw-normal">Sales Report</span> <br>
                         <div class="progress progress-xs mt-2">
-                            <div class="progress-bar progress-bar-gray-light" role="progressbar" style="width: 16%" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 16%" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <small>Calculating x-axis bias... 65%</small>
                     </div>
@@ -147,7 +147,7 @@
                         <a href="#" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
                         <span class="fw-normal">Personal Responsibility</span> <br>
                         <div class="progress progress-xs mt-2">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 23%" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 23%" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <small>Provide required notes</small>
                     </div>
@@ -155,7 +155,7 @@
             </div>
         </nav>            <!-- This is the white navigation bar seen on the top. A bit enhanced BS navbar. See .page-controls in _base.scss. -->
             <nav class="page-controls navbar navbar-dashboard">
-               
+                 
                 <div class="container-fluid">
                     <!-- .navbar-header contains links seen on xs & sm screens -->
                     <div class="navbar-header mr-md-3">
@@ -166,16 +166,25 @@
                                     <i class="la la-bars"></i>
                                 </a>
                                 <!-- shown on xs & sm screen. collapses and expands navigation -->
+            
                                 <a class="d-lg-none nav-link" id="nav-collapse-toggle" href="#">
-                                    <span class="square square-lg bg-gray text-white d-md-none"><i class="la la-bars"></i></span>
+                                    <span class="square square-lg d-md-none"><i class="la la-bars"></i></span>
                                     <i class="la la-bars d-none d-md-block"></i>
                                 </a>
                             </li>
-                            <li class="nav-item d-none d-md-block"><a href="#" class="nav-link"><i class="la la-refresh"></i></a></li>
-                            <li class="nav-item ml-n-xs d-none d-md-block"><a href="#" class="nav-link"><i class="la la-times"></i></a></li>
+                            <li class="nav-item d-none d-md-block ml-3"><a href="#" class="nav-link"><i class="la la-refresh"></i></a></li>
+                            <li class="nav-item ml-n-xs d-none d-md-block ml-3"><a href="#" class="nav-link"><i class="la la-times"></i></a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right d-md-none">
+                            <li class="nav-item">
+                                <!-- toggles chat -->
+                                <a class="nav-link" href="#" data-toggle="chat-sidebar">
+                                    <span class="square square-lg"><i class="la la-globe"></i></span>
+                                </a>
+                            </li>
                         </ul>
                         <!-- xs & sm screen logo -->
-                        <a class="navbar-brand d-md-none" href="index.html">
+                        <a class="navbar-brand d-md-none" href="../dashboard/index.html">
                             <i class="fa fa-circle text-gray mr-n-sm"></i>
                             <i class="fa fa-circle text-warning"></i>
                             &nbsp;
@@ -191,8 +200,8 @@
                         <!-- search form! link it to your search server -->
                         <form class="navbar-form" role="search">
                             <div class="form-group">
-                                <div class="input-group input-group-no-border">
-                                    <input class="form-control" type="text" placeholder="Search Dashboard">
+                                <div class="input-group input-group-no-border ml-4">
+                                    <input class="form-control" id="main-search" type="text" placeholder="Search Dashboard">
                                     <span class="input-group-append">
                                         <span class="input-group-text">
                                             <i class="la la-search"></i>
@@ -211,16 +220,17 @@
                                         data-toggle="dropdown"
                                         aria-haspopup="true"
                                         aria-expanded="false"
+                                        data-position="bottom-middle-aligned"
+                                        data-disable-interaction="false"
                                 >
                                     <span class="thumb-sm avatar float-left">
-                                        <img class="rounded-circle" src="demo/img/people/a5.jpg" alt="...">
+                                        <img class="rounded-circle" src="demo/img/people/a5.jpg" alt="..." >
                                     </span>
                                     &nbsp;
                                     Philip <strong>Smith</strong>&nbsp;
-                                    <span class="circle bg-warning fw-bold text-white">
+                                    <span class="circle bg-primary fw-bold text-white">
                                         15
                                     </span>
-                                    <b class="caret"></b>
                                 </a>
                                 <div
                                         class="dropdown-menu dropdown-menu-right animated fadeInUp py-0"
@@ -238,19 +248,19 @@
                                                          only requirement for async reloading -->
                                                     <input type="radio" checked
                                                            data-ajax-trigger="change"
-                                                           data-ajax-load="demo/ajax/notifications.html"
+                                                           data-ajax-load="../demo/ajax/notifications.html"
                                                            data-ajax-target="#notifications-list"> Notifications
                                                 </label>
                                                 <label class="btn btn-default">
                                                     <input type="radio"
                                                            data-ajax-trigger="change"
-                                                           data-ajax-load="demo/ajax/messages.html"
+                                                           data-ajax-load="../demo/ajax/messages.html"
                                                            data-ajax-target="#notifications-list"> Messages
                                                 </label>
                                                 <label class="btn btn-default">
                                                     <input type="radio"
                                                            data-ajax-trigger="change"
-                                                           data-ajax-load="demo/ajax/progress.html"
+                                                           data-ajax-load="../demo/ajax/progress.html"
                                                            data-ajax-target="#notifications-list"> Progress
                                                 </label>
                                             </div>
@@ -355,8 +365,8 @@
                                     </section>
                                 </div>
                             </li>
-                            <li class="dropdown nav-item">
-                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                            <li class="dropdown nav-item" >
+                                <a href="#" class="dropdown-toggle no-caret nav-link" data-toggle="dropdown">
                                     <i class="la la-cog"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-right">
@@ -365,7 +375,7 @@
                                     <li><a class="dropdown-item" href="#">Calendar</a></li>
                                     <li><a class="dropdown-item" href="#">Inbox &nbsp;&nbsp;<span class="badge badge-pill bg-danger animated bounceIn">9</span></a></li>
                                     <li class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href=""><i class="la la-sign-out"></i> &nbsp; Log Out</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="la la-sign-out"></i> &nbsp; Log Out</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -375,7 +385,7 @@
                 <section class="widget theme-helper-content">
                     <header class="theme-helper-header d-flex p-0">
                         <div class="theme-helper-toggler">
-                            <div class="theme-helper-spinner bg-warning text-white">
+                            <div class="theme-helper-spinner bg-primary text-white">
                                 <i class="la la-cog"></i>
                                 <i class="la la-cog fs-smaller"></i>
                             </div>
@@ -390,7 +400,7 @@
                                class="btn btn-warning btn-rounded-f btn-block fs-mini text-white">
                                 Purchase
                             </a>
-                            <a href="http://demo.flatlogic.com/sing-app/html-bs4/"
+                            <a href="https://flatlogic.com/templates/sing-app-html5"
                                target="_blank"
                                role="button"
                                class="btn btn-danger btn-rounded-f btn-block fs-mini">
@@ -444,7 +454,7 @@
                 <!-- Page content -->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">YOU ARE HERE</li>
-            <li class="breadcrumb-item active">Notifications</li>
+            <li class="breadcrumb-item active">UI Notifications</li>
         </ol>
         <h1 class="page-title">Messages - <span class="fw-semi-bold">Notifications</span></h1>
         <section class="widget">
@@ -456,10 +466,19 @@
                     <a title="Properties" href="#"><i class="glyphicon glyphicon-cog"></i></a>
                     <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-plus"></i></a>
                     <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-minus"></i></a>
-                    <a data-widgster="close" title="Close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+                    <a data-widgster="close" title="Close" href="#"><i class="la la-remove"></i></a>
                 </div>
             </header>
             <div class="widget-body">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="alert alert-success alert-sm alert-transparent">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            For built-in Bootstrap notifications please check
+                            out <a class="fw-semi-bold" href="../components/ui_toasts.html">toasts page</a>.
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-4">
                         <h5 class="mt-3">Layout options</h5>
@@ -478,12 +497,13 @@
                         <h5 class="mt-3">Notification Types</h5>
                         <p>Different types of notifications for lost of use cases. Custom classes are also supported.</p>
                         <p><a class="btn btn-info" id="show-info-message" href="#">Info Message</a></p>
-                        <p><a class="btn btn-danger" id="show-error-message" href="#">Error + Retry Message</a></p>
+                        <p><a class="btn btn-danger" id="show-error-message" href="#">Error Message</a></p>
                         <p><a class="btn btn-success" id="show-success-message" href="#">Success Message</a></p>
                     </div>
                     <div class="col-lg-4">
                         <h5 class="mt-3">Dead Simple Usage</h5>
-                        <p>Just few lines of code to instantiate a notifications object. Does not require passing any options:</p>
+                        <p>Just few lines of code to instantiate a notifications object. Does not require passing any options:
+                        </p>
                         <pre><code>Messenger().post("Thanks for checking out Messenger!");</code></pre>
                         <p>More complex example:</p>
                         <pre><code>Messenger().post({
@@ -506,16 +526,16 @@
         </div>
 
         <!-- common libraries. required for every page-->
-        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="../bower_components/jquery-pjax/jquery.pjax.js"></script>
-        <script src="../bower_components/popper.js/dist/umd/popper.js"></script>
-        <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="../bower_components/bootstrap/js/dist/util.js"></script>
-        <script src="../bower_components/slimScroll/jquery.slimscroll.js"></script>
-        <script src="../bower_components/widgster/widgster.js"></script>
-        <script src="../bower_components/pace.js/pace.js" data-pace-options='{ "target": ".content-wrap", "ghostTime": 1000 }'></script>
-        <script src="../bower_components/hammerjs/hammer.js"></script>
-        <script src="../bower_components/jquery-hammerjs/jquery.hammer.js"></script>
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="../node_modules/jquery-pjax/jquery.pjax.js"></script>
+        <script src="../node_modules/popper.js/dist/umd/popper.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="../node_modules/bootstrap/js/dist/util.js"></script>
+        <script src="../node_modules/jquery-slimscroll/jquery.slimscroll.js"></script>
+        <script src="../node_modules/widgster/widgster.js"></script>
+        <script src="../node_modules/pace.js/pace.js" data-pace-options='{ "target": ".content-wrap", "ghostTime": 1000 }'></script>
+        <script src="../node_modules/hammerjs/hammer.js"></script>
+        <script src="../node_modules/jquery-hammerjs/jquery.hammer.js"></script>
 
 
         <!-- common app js -->
@@ -523,13 +543,12 @@
         <script src="js/app.js"></script>
 
         <!-- Page scripts -->
-        <script src="../bower_components/underscore/underscore-min.js"></script>
-        <script src="../bower_components/backbone/backbone.js"></script>
-        <script src="../bower_components/messenger/build/js/messenger.js"></script>
-        <script src="../bower_components/messenger/build/js/messenger-theme-flat.js"></script>
-        <script src="../bower_components/messenger/docs/welcome/javascripts/location-sel.js"></script>
-
+        <script src="../../node_modules/underscore/underscore-min.js"></script>
+        <script src="../../node_modules/backbone/backbone.js"></script>
+        <script src="../../node_modules/messenger/build/js/messenger.js"></script>
+        <script src="../../node_modules/messenger/build/js/messenger-theme-flat.js"></script>
+        <script src="../../node_modules/messenger/docs/welcome/javascripts/location-sel.js"></script>
         <!-- page specific js -->
-        <script src="js/notifications.js"></script>
+        <script src="../js/components/ui-notifications.js"></script>
     </body>
 </html>
