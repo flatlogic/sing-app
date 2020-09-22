@@ -99,10 +99,10 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
-animate.css@3.7.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/animate.css/-/animate.css-3.7.0.tgz#5de25d1ee5fba11ba6a1e2c4fa568f512eb7d4da"
-  integrity sha512-u3iMXDJr0cxMdQocIciDiou9Au4L5f9uT+/jCtprw3s1j3HcfCuI+khF+90Ps2KdsEhM2soF7SXB4WUvI3HlXg==
+animate.css@3.7.2:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/animate.css/-/animate.css-3.7.2.tgz#e73e0d50e92cb1cfef1597d9b38a9481020e08ea"
+  integrity sha512-0bE8zYo7C0KvgOYrSVfrzkbYk6IOTVPNqkiHg2cbyF4Pq/PXzilz4BRWA3hwEUBoMp5VBgrC29lQIZyhRWdBTw==
 
 ansi-colors@^1.0.1:
   version "1.1.0"
@@ -391,10 +391,10 @@ bach@^1.0.0:
     async-settle "^1.0.0"
     now-and-later "^2.0.0"
 
-backbone@1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/backbone/-/backbone-1.3.3.tgz#4cc80ea7cb1631ac474889ce40f2f8bc683b2999"
-  integrity sha1-TMgOp8sWMaxHSInOQPL4vGg7KZk=
+backbone@1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/backbone/-/backbone-1.4.0.tgz#54db4de9df7c3811c3f032f34749a4cd27f3bd12"
+  integrity sha512-RLmDrRXkVdouTg38jcgHhyQ/2zjg7a8E6sz2zxfz21Hh17xDJYUHBZimVIt5fUyS8vbfpeSmTL3gUjTEvUV3qQ==
   dependencies:
     underscore ">=1.8.3"
 
@@ -442,15 +442,15 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-bootstrap-select@1.13.2:
-  version "1.13.2"
-  resolved "https://registry.yarnpkg.com/bootstrap-select/-/bootstrap-select-1.13.2.tgz#b22dd116e6fdced73189202fcc963ae849e47594"
-  integrity sha512-7WMnL+OVgTEMvJEoufEqbKup+BOwvPDB/qyt/CI0Co1HNluRaMZAJSb0b42OQeD7rtC3uz3NW9dUyychADdPKg==
+bootstrap-select@1.13.18:
+  version "1.13.18"
+  resolved "https://registry.yarnpkg.com/bootstrap-select/-/bootstrap-select-1.13.18.tgz#4557119d58dc1159189977161c803962220e4dda"
+  integrity sha512-V1IzK4rxBq5FrJtkzSH6RmFLFBsjx50byFbfAf8jYyXROWs7ZpprGjdHeoyq2HSsHyjJhMMwjsQhRoYAfxCGow==
 
-bootstrap@4.3.1:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.3.1.tgz#280ca8f610504d99d7b6b4bfc4b68cec601704ac"
-  integrity sha512-rXqOmH1VilAt2DyPzluTi2blhk17bO7ef+zLLPlWvG494pDxcM234pJ8wTc/6R40UWizAIIMgxjvxZg5kmsbag==
+bootstrap@4.5.2:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.5.2.tgz#a85c4eda59155f0d71186b6e6ad9b875813779ab"
+  integrity sha512-vlGn0bcySYl/iV+BGA544JkkZP5LB3jsmkeKLFQakCOwCM3AOk7VkldBz4jrzSe+Z0Ezn99NVXa1o45cQY4R6A==
 
 bootstrap@~4:
   version "4.4.1"
@@ -1549,7 +1549,7 @@ handlebars-wax@^6.1.0:
     object-assign "^4.1.1"
     require-glob "^3.2.0"
 
-handlebars@^4.1.0, handlebars@^4.7.2:
+handlebars@^4.1.0:
   version "4.7.3"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.7.3.tgz#8ece2797826886cf8082d1726ff21d2a022550ee"
   integrity sha512-SRGwSYuNfx8DwHD/6InAPzD6RgeruWLT+B8e8a7gGs8FWgHzlExpTFMEq2IA6QpAfOClpKHy6+8IqTjeBCu6Kg==
@@ -1557,6 +1557,18 @@ handlebars@^4.1.0, handlebars@^4.7.2:
     neo-async "^2.6.0"
     optimist "^0.6.1"
     source-map "^0.6.1"
+  optionalDependencies:
+    uglify-js "^3.1.4"
+
+handlebars@^4.7.6:
+  version "4.7.6"
+  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.7.6.tgz#d4c05c1baf90e9945f77aa68a7a219aa4a7df74e"
+  integrity sha512-1f2BACcBfiwAfStCKZNrUCgqNZkGsAT7UM3kkYtXuLo0KnaVfjKOyf7PRzB6++aK9STyT1Pd2ZCPe3EGOXleXA==
+  dependencies:
+    minimist "^1.2.5"
+    neo-async "^2.6.0"
+    source-map "^0.6.1"
+    wordwrap "^1.0.0"
   optionalDependencies:
     uglify-js "^3.1.4"
 
@@ -1946,7 +1958,7 @@ jquery-slimscroll@^1.3.8:
   dependencies:
     jquery ">= 1.7"
 
-jquery-sparkline@^2.3.2:
+jquery-sparkline@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/jquery-sparkline/-/jquery-sparkline-2.4.0.tgz#1be8b7b704dd3857152708aefb1d4a4b3a69fb33"
   integrity sha1-G+i3twTdOFcVJwiu+x1KSzpp+zM=
@@ -1960,10 +1972,15 @@ jquery-ui@1.12.1:
   resolved "https://registry.yarnpkg.com/jquery-ui/-/jquery-ui-1.12.1.tgz#bcb4045c8dd0539c134bc1488cdd3e768a7a9e51"
   integrity sha1-vLQEXI3QU5wTS8FIjN0+dop6nlE=
 
-jquery@2.1.4, jquery@2.1.x, "jquery@>= 1.7", jquery@>=1.8.3, jquery@~2.1.3:
+jquery@2.1.x, "jquery@>= 1.7", jquery@>=1.8.3, jquery@~2.1.3:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-2.1.4.tgz#228bde698a0c61431dc2630a6a154f15890d2317"
   integrity sha1-IoveaYoMYUMdwmMKahVPFYkNIxc=
+
+jquery@2.2.4:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-2.2.4.tgz#2c89d6889b5eac522a7eea32c14521559c6cbf02"
+  integrity sha1-LInWiJterFIqfuoywUUhVZxsvwI=
 
 js-base64@^2.1.8:
   version "2.5.2"
@@ -2082,9 +2099,10 @@ liftoff@^3.1.0:
     rechoir "^0.6.2"
     resolve "^1.1.7"
 
-"line-awesome@github:icons8/line-awesome":
-  version "1.2.1"
-  resolved "https://codeload.github.com/icons8/line-awesome/tar.gz/768018587ea2170ccafe5e13201388ae820db563"
+line-awesome@1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/line-awesome/-/line-awesome-1.3.0.tgz#51d59fe311ed040d22d8e80d3aa0b9a4b57e6cd3"
+  integrity sha512-Y0YHksL37ixDsHz+ihCwOtF5jwJgCDxQ3q+zOVgaSW8VugHGTsZZXMacPYZB1/JULBi6BAuTCTek+4ZY/UIwcw==
 
 load-json-file@^1.0.0:
   version "1.1.0"
@@ -2254,7 +2272,7 @@ minimist@0.0.8:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
   integrity sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0=
 
-minimist@^1.1.3:
+minimist@^1.1.3, minimist@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
@@ -2544,7 +2562,7 @@ osenv@0:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
 
-owl.carousel@^2.3.3:
+owl.carousel@^2.3.4:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/owl.carousel/-/owl.carousel-2.3.4.tgz#6c53dc8d24304b790e4f27a1dc4a655e973ccdc9"
   integrity sha512-JaDss9+feAvEW8KZppPSpllfposEzQiW+Ytt/Xm5t/3CTJ7YVmkh6RkWixoA2yXk2boIwedYxOvrrppIGzru9A==
@@ -3641,6 +3659,11 @@ widgster@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/widgster/-/widgster-0.0.3.tgz#c5d396ff4de85de35c09211e23c003b74aefcf3d"
   integrity sha1-xdOW/03oXeNcCSEeI8ADt0rvzz0=
+
+wordwrap@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
+  integrity sha1-J1hIEIkUVqQXHI0CJkQa3pDLyus=
 
 wordwrap@~0.0.2:
   version "0.0.3"
