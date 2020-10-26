@@ -601,7 +601,7 @@
       @include transition(background-color .15s ease-in-out);
     }
   }
-  
+
   .btn-link {
     border: none;
     text-decoration: none;
@@ -880,9 +880,15 @@
   }
 
   .visit-element {
-    width: 33%;
+    width: 20%;
     min-width: 80px;
     text-align: center;
+    &.first {
+      text-align: start;
+    }
+    &.third {
+      text-align: end;
+    }
   }
 
   .big-stat-title {
@@ -909,20 +915,20 @@
       font-size: $font-size-lg;
       margin-top: 0.15 * $spacer;
     }
-    
+
     p {
       margin-bottom: 1.4 * $spacer;
     }
   }
-  
+
   .support {
     overflow-x: auto;
-  
+
     .table {
       th, tr {
         font-weight: $font-weight-normal;
       }
-  
+
       th, td {
         padding-top: $spacer;
         padding-bottom: $spacer;
