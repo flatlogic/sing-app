@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.2]
+
+### Updated
+
+- Header: fix dropdown panels;
+- Sidebar: remove reload icon;
+- Dashboard: fix color in main chart, change arrow icon color, fix justify content;
+- Table: fix icons, add margin on the button, add colors to badges;
+- Notifications: fix notifications, remove icons;
+- Badges: set padding to 4px 8px
+- UPD bootstrap
+
 ## [1.2.1]
 
 ### Updated
