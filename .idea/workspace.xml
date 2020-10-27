@@ -5,7 +5,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7558615c-1fa8-454d-98e3-19b1e428250a" name="Default Changelist" comment="" />
+    <list default="true" id="7558615c-1fa8-454d-98e3-19b1e428250a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,11 +28,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1jQ0vGjm5PNDFj7ZGi5ITKbL9GX" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -51,7 +58,8 @@
       <workItem from="1603791362511" duration="9000" />
       <workItem from="1603800011254" duration="24000" />
       <workItem from="1603800043046" duration="5000" />
-      <workItem from="1603800075102" duration="1732000" />
+      <workItem from="1603800075102" duration="1914000" />
+      <workItem from="1603802055500" duration="752000" />
     </task>
     <task id="LOCAL-00001" summary="trying to fix demo">
       <created>1603801542214</created>
@@ -60,7 +68,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603801542214</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="trying to fix demo">
+      <created>1603801871832</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603801871832</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -85,6 +100,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="trying to fix demo" />
     <option name="LAST_COMMIT_MESSAGE" value="trying to fix demo" />
   </component>
@@ -97,10 +113,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603730807815" />
-    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603801177401">
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603801988019">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603801177401" />
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603801988019" />
     <state x="667" y="224" width="585" height="592" key="find.popup" timestamp="1603721386947">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -49,7 +49,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "handlebars-layouts": "^3.1.4",
-    "popper.js": "1.14.4",
+    "popper.js": "1.14.7",
     "run-sequence": "^2.2.1"
   },
   "resolutions": {
