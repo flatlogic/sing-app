@@ -1,0 +1,32 @@
+{
+  "name": "jquery-sparkline",
+  "version": "2.4.0",
+  "description": "jQuery Sparklines",
+  "main": "jquery.sparkline.js",
+  "scripts": {
+    "build": "node build",
+    "postbuild": "uglifyjs jquery.sparkline.js > jquery.sparkline.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imsky/jquery.sparkline.git"
+  },
+  "author": {
+    "name": "gwatts"
+  },
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/gwatts/jquery.sparkline/issues"
+  },
+  "homepage": "http://omnipotent.net/jquery.sparkline",
+  "maintainers": [
+    {
+      "name": "imsky",
+      "email": "hello@imsky.co"
+    }
+  ],
+  "devDependencies": {
+    "shelljs": "~0.6",
+    "uglify-js": "~2.6"
+  }
+}

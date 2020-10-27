@@ -1,0 +1,55 @@
+<style>
+    body{
+        background: #eee;
+        font-family: sans-serif;
+    }
+    .container{
+        width: 520px;
+        margin: 100px auto;
+    }
+    .widget{
+        background-color: white;
+        padding: 20px;
+    }
+
+    .widget > header > h4{
+        margin: 0;
+        display: inline-block;
+    }
+
+    .widget-controls{
+        float: right;
+        font-size: small;
+        word-spacing: 2px;
+    }
+</style>
+
+<div class="container">
+    <section class="widget" data-widgster-load="reload.php">
+        <header>
+            <h4>Header</h4>
+            <div class="widget-controls">
+                <a data-widgster="load" href="#">Reload</a>
+                <a data-widgster="expand" href="#">Expand</a>
+                <a data-widgster="collapse" href="#">Collapse</a>
+                <a data-widgster="fullscreen" href="#">Fullscreen</a>
+                <a data-widgster="restore" href="#">Restore</a>
+                <a data-widgster="close" href="#">Close</a>
+            </div>
+        </header>
+        <div class="body">
+            <p>Yes, I am widget body. I may contain lots of cool stuff like lore ipsum, etc.</p>
+            <p>But!</p>
+            <p>This time I am going to show you something really cool. I will be just body and that's it.
+                Can you imagine that?</p>
+        </div>
+    </section>
+</div>
+
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="../widgster.js"></script>
+<script>
+    $(function(){
+        $('.widget').widgster();
+    })
+</script>

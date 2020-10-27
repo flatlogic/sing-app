@@ -1,0 +1,27 @@
+{
+  "name": "jquery-hammerjs",
+  "version": "2.0.0",
+  "description": "jquery.hammer.js",
+  "main": "jquery.hammer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hammerjs/jquery.hammer.js.git"
+  },
+  "keywords": [
+    "hammerjs",
+    "jquery"
+  ],
+  "dependencies": {
+    "hammerjs": "2.0.x",
+    "jquery": "2.1.x"
+  },
+  "author": "J. Tangelder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hammerjs/jquery.hammer.js/issues"
+  },
+  "homepage": "https://github.com/hammerjs/jquery.hammer.js"
+}

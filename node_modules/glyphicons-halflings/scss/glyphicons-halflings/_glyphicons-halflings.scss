@@ -1,0 +1,377 @@
+//
+// Glyphicons
+//
+// Since icons are fonts, they can be placed anywhere text is placed and are
+// thus automatically sized to match the surrounding child. To use, create an
+// inline element with the appropriate classes, like so:
+//
+// <a href="#"><i class="halflings halflings-leaf"></i> Leaf</a>
+
+// Import the fonts
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('#{$glyphicons-halflings-font-path}/glyphicons-halflings-regular.eot');
+  src: url('#{$glyphicons-halflings-font-path}/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+       url('#{$glyphicons-halflings-font-path}/glyphicons-halflings-regular.woff2') format('woff2'),
+       url('#{$glyphicons-halflings-font-path}/glyphicons-halflings-regular.woff') format('woff'),
+       url('#{$glyphicons-halflings-font-path}/glyphicons-halflings-regular.ttf') format('truetype'),
+       url('#{$glyphicons-halflings-font-path}/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+// Catchall baseclass
+.#{$glyphicons-halflings-class-prefix} {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  vertical-align:top;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.x05{
+    font-size: $glyphicons-halflings-font-base-size / 2;
+  }
+  &.x2{
+    font-size: $glyphicons-halflings-font-base-size * 2;
+  }
+  &.x3{
+    font-size: $glyphicons-halflings-font-base-size * 3;
+  }
+  &.x4{
+    font-size: $glyphicons-halflings-font-base-size * 4;
+  }
+  &.x5{
+    font-size: $glyphicons-halflings-font-base-size * 5;
+  }
+  &.x6{
+    font-size: $glyphicons-halflings-font-base-size * 6;
+  }
+  &.x7{
+    font-size: $glyphicons-halflings-font-base-size * 7;
+  }
+  &.x8{
+    font-size: $glyphicons-halflings-font-base-size * 8;
+  }
+  
+  
+  // Light
+  &.light{
+    &:before{
+      color:#f2f2f2
+    }
+  }
+  
+  // Drop shadow
+  &.drop{
+    &:before{
+      text-shadow: -1px 1px 3px rgba(0,0,0,0.3);
+    }  
+  }
+  
+  // Horizontal Flip
+  &.flip{
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+  }
+  &.flipv{
+    -moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: FlipV;
+    -ms-filter: "FlipV";
+  }
+  
+  // Rotate
+  &.rotate90{
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  &.rotate180{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  &.rotate270{
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+}
+
+
+
+// Individual icons
+.#{$glyphicons-halflings-class-prefix}- {
+  &glass{ &:before{ content:"\E001";} }
+  &music{ &:before{ content:"\E002";} }
+  &search{ &:before{ content:"\E003";} }
+  &envelope{ &:before{ content:"\2709";} }
+  &heart{ &:before{ content:"\E005";} }
+  &star{ &:before{ content:"\E006";} }
+  &star-empty{ &:before{ content:"\E007";} }
+  &user{ &:before{ content:"\E008";} }
+  &film{ &:before{ content:"\E009";} }
+  &th-large{ &:before{ content:"\E010";} }
+  &th{ &:before{ content:"\E011";} }
+  &th-list{ &:before{ content:"\E012";} }
+  &ok{ &:before{ content:"\E013";} }
+  &remove{ &:before{ content:"\E014";} }
+  &zoom-in{ &:before{ content:"\E015";} }
+  &zoom-out{ &:before{ content:"\E016";} }
+  &off{ &:before{ content:"\E017";} }
+  &signal{ &:before{ content:"\E018";} }
+  &cog{ &:before{ content:"\E019";} }
+  &trash{ &:before{ content:"\E020";} }
+  &home{ &:before{ content:"\E021";} }
+  &file{ &:before{ content:"\E022";} }
+  &time{ &:before{ content:"\E023";} }
+  &road{ &:before{ content:"\E024";} }
+  &download-alt{ &:before{ content:"\E025";} }
+  &download{ &:before{ content:"\E026";} }
+  &upload{ &:before{ content:"\E027";} }
+  &inbox{ &:before{ content:"\E028";} }
+  &play-circle{ &:before{ content:"\E029";} }
+  &repeat{ &:before{ content:"\E030";} }
+  &refresh{ &:before{ content:"\E031";} }
+  &list-alt{ &:before{ content:"\E032";} }
+  &glyph-lock{ &:before{ content:"\E033";} }
+  &flag{ &:before{ content:"\E034";} }
+  &headphones{ &:before{ content:"\E035";} }
+  &volume-off{ &:before{ content:"\E036";} }
+  &volume-down{ &:before{ content:"\E037";} }
+  &volume-up{ &:before{ content:"\E038";} }
+  &qrcode{ &:before{ content:"\E039";} }
+  &barcode{ &:before{ content:"\E040";} }
+  &tag{ &:before{ content:"\E041";} }
+  &tags{ &:before{ content:"\E042";} }
+  &book{ &:before{ content:"\E043";} }
+  &glyph-bookmark{ &:before{ content:"\E044";} }
+  &print{ &:before{ content:"\E045";} }
+  &glyph-camera{ &:before{ content:"\E046";} }
+  &font{ &:before{ content:"\E047";} }
+  &bold{ &:before{ content:"\E048";} }
+  &italic{ &:before{ content:"\E049";} }
+  &text-height{ &:before{ content:"\E050";} }
+  &text-width{ &:before{ content:"\E051";} }
+  &align-left{ &:before{ content:"\E052";} }
+  &align-center{ &:before{ content:"\E053";} }
+  &align-right{ &:before{ content:"\E054";} }
+  &align-justify{ &:before{ content:"\E055";} }
+  &list{ &:before{ content:"\E056";} }
+  &indent-left{ &:before{ content:"\E057";} }
+  &indent-right{ &:before{ content:"\E058";} }
+  &facetime-video{ &:before{ content:"\E059";} }
+  &picture{ &:before{ content:"\E060";} }
+  &pencil{ &:before{ content:"\270F";} }
+  &map-marker{ &:before{ content:"\E062";} }
+  &adjust{ &:before{ content:"\E063";} }
+  &tint{ &:before{ content:"\E064";} }
+  &edit{ &:before{ content:"\E065";} }
+  &share{ &:before{ content:"\E066";} }
+  &check{ &:before{ content:"\E067";} }
+  &move{ &:before{ content:"\E068";} }
+  &step-backward{ &:before{ content:"\E069";} }
+  &fast-backward{ &:before{ content:"\E070";} }
+  &backward{ &:before{ content:"\E071";} }
+  &play{ &:before{ content:"\E072";} }
+  &pause{ &:before{ content:"\E073";} }
+  &stop{ &:before{ content:"\E074";} }
+  &forward{ &:before{ content:"\E075";} }
+  &fast-forward{ &:before{ content:"\E076";} }
+  &step-forward{ &:before{ content:"\E077";} }
+  &eject{ &:before{ content:"\E078";} }
+  &chevron-left{ &:before{ content:"\E079";} }
+  &chevron-right{ &:before{ content:"\E080";} }
+  &plus-sign{ &:before{ content:"\E081";} }
+  &minus-sign{ &:before{ content:"\E082";} }
+  &remove-sign{ &:before{ content:"\E083";} }
+  &ok-sign{ &:before{ content:"\E084";} }
+  &question-sign{ &:before{ content:"\E085";} }
+  &info-sign{ &:before{ content:"\E086";} }
+  &screenshot{ &:before{ content:"\E087";} }
+  &remove-circle{ &:before{ content:"\E088";} }
+  &ok-circle{ &:before{ content:"\E089";} }
+  &ban-circle{ &:before{ content:"\E090";} }
+  &arrow-left{ &:before{ content:"\E091";} }
+  &arrow-right{ &:before{ content:"\E092";} }
+  &arrow-up{ &:before{ content:"\E093";} }
+  &arrow-down{ &:before{ content:"\E094";} }
+  &share-alt{ &:before{ content:"\E095";} }
+  &resize-full{ &:before{ content:"\E096";} }
+  &resize-small{ &:before{ content:"\E097";} }
+  &plus{ &:before{ content:"\002B";} }
+  &minus{ &:before{ content:"\2212";} }
+  &asterisk{ &:before{ content:"\002A";} }
+  &exclamation-sign{ &:before{ content:"\E101";} }
+  &gift{ &:before{ content:"\E102";} }
+  &leaf{ &:before{ content:"\E103";} }
+  &glyph-fire{ &:before{ content:"\E104";} }
+  &eye-open{ &:before{ content:"\E105";} }
+  &eye-close{ &:before{ content:"\E106";} }
+  &warning-sign{ &:before{ content:"\E107";} }
+  &plane{ &:before{ content:"\E108";} }
+  &glyph-calendar{ &:before{ content:"\E109";} }
+  &random{ &:before{ content:"\E110";} }
+  &comments{ &:before{ content:"\E111";} }
+  &magnet{ &:before{ content:"\E112";} }
+  &chevron-up{ &:before{ content:"\E113";} }
+  &chevron-down{ &:before{ content:"\E114";} }
+  &retweet{ &:before{ content:"\E115";} }
+  &shopping-cart{ &:before{ content:"\E116";} }
+  &folder-close{ &:before{ content:"\E117";} }
+  &folder-open{ &:before{ content:"\E118";} }
+  &resize-vertical{ &:before{ content:"\E119";} }
+  &resize-horizontal{ &:before{ content:"\E120";} }
+  &hdd{ &:before{ content:"\E121";} }
+  &bullhorn{ &:before{ content:"\E122";} }
+  &glyph-bell{ &:before{ content:"\E123";} }
+  &certificate{ &:before{ content:"\E124";} }
+  &thumbs-up{ &:before{ content:"\E125";} }
+  &thumbs-down{ &:before{ content:"\E126";} }
+  &hand-right{ &:before{ content:"\E127";} }
+  &hand-left{ &:before{ content:"\E128";} }
+  &hand-top{ &:before{ content:"\E129";} }
+  &hand-down{ &:before{ content:"\E130";} }
+  &circle-arrow-right{ &:before{ content:"\E131";} }
+  &circle-arrow-left{ &:before{ content:"\E132";} }
+  &circle-arrow-top{ &:before{ content:"\E133";} }
+  &circle-arrow-down{ &:before{ content:"\E134";} }
+  &globe{ &:before{ content:"\E135";} }
+  &glyph-wrench{ &:before{ content:"\E136";} }
+  &tasks{ &:before{ content:"\E137";} }
+  &filter{ &:before{ content:"\E138";} }
+  &glyph-briefcase{ &:before{ content:"\E139";} }
+  &fullscreen{ &:before{ content:"\E140";} }
+  &dashboard{ &:before{ content:"\E141";} }
+  &glyph-paperclip{ &:before{ content:"\E142";} }
+  &heart-empty{ &:before{ content:"\E143";} }
+  &link{ &:before{ content:"\E144";} }
+  &phone{ &:before{ content:"\E145";} }
+  &glyph-pushpin{ &:before{ content:"\E146";} }
+  &euro{ &:before{ content:"\20AC";} }
+  &usd{ &:before{ content:"\E148";} }
+  &gbp{ &:before{ content:"\E149";} }
+  &sort{ &:before{ content:"\E150";} }
+  &sort-by-alphabet{ &:before{ content:"\E151";} }
+  &sort-by-alphabet-alt{ &:before{ content:"\E152";} }
+  &sort-by-order{ &:before{ content:"\E153";} }
+  &sort-by-order-alt{ &:before{ content:"\E154";} }
+  &sort-by-attributes{ &:before{ content:"\E155";} }
+  &sort-by-attributes-alt{ &:before{ content:"\E156";} }
+  &unchecked{ &:before{ content:"\E157";} }
+  &expand{ &:before{ content:"\E158";} }
+  &collapse{ &:before{ content:"\E159";} }
+  &collapse-top{ &:before{ content:"\E160";} }
+  &log-in{ &:before{ content:"\E161";} }
+  &flash{ &:before{ content:"\E162";} }
+  &log-out{ &:before{ content:"\E163";} }
+  &new-window{ &:before{ content:"\E164";} }
+  &record{ &:before{ content:"\E165";} }
+  &save{ &:before{ content:"\E166";} }
+  &open{ &:before{ content:"\E167";} }
+  &saved{ &:before{ content:"\E168";} }
+  &import{ &:before{ content:"\E169";} }
+  &export{ &:before{ content:"\E170";} }
+  &send{ &:before{ content:"\E171";} }
+  &floppy-disk{ &:before{ content:"\E172";} }
+  &floppy-saved{ &:before{ content:"\E173";} }
+  &floppy-remove{ &:before{ content:"\E174";} }
+  &floppy-save{ &:before{ content:"\E175";} }
+  &floppy-open{ &:before{ content:"\E176";} }
+  &credit-card{ &:before{ content:"\E177";} }
+  &transfer{ &:before{ content:"\E178";} }
+  &cutlery{ &:before{ content:"\E179";} }
+  &header{ &:before{ content:"\E180";} }
+  &compressed{ &:before{ content:"\E181";} }
+  &earphone{ &:before{ content:"\E182";} }
+  &phone-alt{ &:before{ content:"\E183";} }
+  &tower{ &:before{ content:"\E184";} }
+  &stats{ &:before{ content:"\E185";} }
+  &sd-video{ &:before{ content:"\E186";} }
+  &hd-video{ &:before{ content:"\E187";} }
+  &subtitles{ &:before{ content:"\E188";} }
+  &sound-stereo{ &:before{ content:"\E189";} }
+  &sound-dolby{ &:before{ content:"\E190";} }
+  &sound-5-1{ &:before{ content:"\E191";} }
+  &sound-6-1{ &:before{ content:"\E192";} }
+  &sound-7-1{ &:before{ content:"\E193";} }
+  &copyright-mark{ &:before{ content:"\E194";} }
+  &registration-mark{ &:before{ content:"\E195";} }
+  &cloud{ &:before{ content:"\2601";} }
+  &cloud-download{ &:before{ content:"\E197";} }
+  &cloud-upload{ &:before{ content:"\E198";} }
+  &tree-conifer{ &:before{ content:"\E199";} }
+  &tree-deciduous{ &:before{ content:"\E200";} }
+  &cd{ &:before{ content:"\E201";} }
+  &save-file{ &:before{ content:"\E202";} }
+  &open-file{ &:before{ content:"\E203";} }
+  &level-up{ &:before{ content:"\E204";} }
+  &copy{ &:before{ content:"\E205";} }
+  &paste{ &:before{ content:"\E206";} }
+  &door{ &:before{ content:"\1F6AA";} }
+  &key{ &:before{ content:"\1F511";} }
+  &alert{ &:before{ content:"\E209";} }
+  &equalizer{ &:before{ content:"\E210";} }
+  &king{ &:before{ content:"\E211";} }
+  &queen{ &:before{ content:"\E212";} }
+  &pawn{ &:before{ content:"\E213";} }
+  &bishop{ &:before{ content:"\E214";} }
+  &knight{ &:before{ content:"\E215";} }
+  &baby-formula{ &:before{ content:"\E216";} }
+  &tent{ &:before{ content:"\26FA";} }
+  &blackboard{ &:before{ content:"\E218";} }
+  &bed{ &:before{ content:"\E219";} }
+  &apple{ &:before{ content:"\F8FF";} }
+  &erase{ &:before{ content:"\E221";} }
+  &hourglass{ &:before{ content:"\231B";} }
+  &lamp{ &:before{ content:"\E223";} }
+  &duplicate{ &:before{ content:"\E224";} }
+  &piggy-bank{ &:before{ content:"\E225";} }
+  &scissors{ &:before{ content:"\E226";} }
+  &bitcoin{ &:before{ content:"\E227";} }
+  &yen{ &:before{ content:"\00A5";} }
+  &ruble{ &:before{ content:"\20BD";} }
+  &scale{ &:before{ content:"\E230";} }
+  &ice-lolly{ &:before{ content:"\E231";} }
+  &ice-lolly-tasted{ &:before{ content:"\E232";} }
+  &education{ &:before{ content:"\E233";} }
+  &option-horizontal{ &:before{ content:"\E234";} }
+  &option-vertical{ &:before{ content:"\E235";} }
+  &menu-hamburger{ &:before{ content:"\E236";} }
+  &modal-window{ &:before{ content:"\E237";} }
+  &oil{ &:before{ content:"\E238";} }
+  &grain{ &:before{ content:"\E239";} }
+  &sunglasses{ &:before{ content:"\E240";} }
+  &text-size{ &:before{ content:"\E241";} }
+  &text-color{ &:before{ content:"\E242";} }
+  &text-background{ &:before{ content:"\E243";} }
+  &object-align-top{ &:before{ content:"\E244";} }
+  &object-align-bottom{ &:before{ content:"\E245";} }
+  &object-align-horizontal{ &:before{ content:"\E246";} }
+  &object-align-left{ &:before{ content:"\E247";} }
+  &object-align-vertical{ &:before{ content:"\E248";} }
+  &object-align-right{ &:before{ content:"\E249";} }
+  &triangle-right{ &:before{ content:"\E250";} }
+  &triangle-left{ &:before{ content:"\E251";} }
+  &triangle-bottom{ &:before{ content:"\E252";} }
+  &triangle-top{ &:before{ content:"\E253";} }
+  &terminal{ &:before{ content:"\E254";} }
+  &superscript{ &:before{ content:"\E255";} }
+  &subscript{ &:before{ content:"\E256";} }
+  &menu-left{ &:before{ content:"\E257";} }
+  &menu-right{ &:before{ content:"\E258";} }
+  &menu-down{ &:before{ content:"\E259";} }
+  &menu-up{ &:before{ content:"\E260";} }
+}

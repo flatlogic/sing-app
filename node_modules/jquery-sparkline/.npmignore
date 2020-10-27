@@ -1,0 +1,63 @@
+# Gitignore from Quickstart
+# qkst.io/dotfiles/gitignore
+
+# JavaScript
+node_modules/
+bower_components/
+npm-debug.log
+
+# Python
+*.py[cod]
+venv
+__pycache__
+
+# Java
+*.class
+*.[jwe]ar
+
+# C, C++
+*.o
+*.so
+*.la
+*.a
+*.dll
+
+# Executables
+*.out
+*.exe
+*.app
+
+# Logs
+*.log
+logs
+
+# Archives
+*.[7gx]z
+*.[tr]ar
+*.zip
+*.dmg
+*.deb
+*.rpm
+*.xpi
+*.msi
+
+# Linux
+*~
+.Trash-*
+
+# OS X
+._*
+.fuse_*
+.Spotlight-*
+.DS_Store
+
+# Windows
+*.tmp
+*.bak
+*.lnk
+Thumbs.db
+
+# Other VCS
+.hg
+.bzr
+.svn

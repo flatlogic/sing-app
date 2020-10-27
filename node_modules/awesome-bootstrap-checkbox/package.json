@@ -1,0 +1,34 @@
+{
+  "name": "awesome-bootstrap-checkbox",
+  "version": "1.0.1",
+  "description": "Font Awesome Bootstrap Checkboxes & Radios. Pure css way to make inputs look prettier.",
+  "main": "awesome-bootstrap-checkbox.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flatlogic/awesome-bootstrap-checkbox.git"
+  },
+  "keywords": [
+    "bootstrap",
+    "font-awesome",
+    "scss"
+  ],
+  "author": "contact@flatlogic.com (https://flatlogic.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flatlogic/awesome-bootstrap-checkbox/issues"
+  },
+  "homepage": "https://github.com/flatlogic/awesome-bootstrap-checkbox",
+  "files": [
+    "demo",
+    "awesome-bootstrap-checkbox.css",
+    "awesome-bootstrap-checkbox.scss",
+    "bower.json"
+  ],
+  "devDependencies": {
+    "bootstrap": "4.0.0",
+    "font-awesome": "5.0.8"
+  }
+}

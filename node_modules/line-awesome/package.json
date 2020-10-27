@@ -1,0 +1,18 @@
+{
+  "name": "line-awesome",
+  "version": "1.3.0",
+  "description": "Line Awesome by Icon8. A drop-in replacement for Font Awesome.",
+  "license": "MIT",
+  "keywords": [
+    "font",
+    "awesome",
+    "icons",
+    "icons8",
+    "line-awesome",
+    "font-awesome"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/icons8/line-awesome.git"
+  }
+}

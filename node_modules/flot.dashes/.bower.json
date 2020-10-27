@@ -1,0 +1,9 @@
+{
+  "name": "flot.dashes",
+  "homepage": "https://github.com/cquartier/flot.dashes",
+  "version": "0.1.0",
+  "main": "jquery.flot.dashes.js",
+  "dependencies": {
+    "flot": ">= 0.8.0"
+  }
+}

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>bootstrap calendar example</title>
+
+        <meta name="description" content="bootstrap_calendar a simple calendar plugin for jQuery and Twitter Bootstrap." />
+        <meta name="author" content="bic.cat and xero.nu">
+
+        <!-- Long live the font Ubuntu ! -->
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+
+        <script src="lib/js/bootstrap.min.js"></script>
+        <link href="lib/css/bootstrap.min.css" rel="stylesheet">
+        <link href="lib/css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="lib/css/font-awesome.min.css" rel="stylesheet">
+
+        <script src="../js/bootstrap_calendar.min.js"></script>
+        <link href="../css/bootstrap_calendar.css" rel="stylesheet">
+
+        <style type="text/css">
+        body{
+        	background: #f0f0f0;
+        	padding-top: 20px;
+        	background-image: url(lib/img/grid-18px-masked.png);
+        	background-position: top;
+        	background-repeat: repeat-x;
+        	background-attachment: fixed;
+        }
+        body, div, span, p, a, h1, h2, h3, h3, h5, h5{
+        	font-family: 'Ubuntu', sans-serif;
+        }
+        footer{
+        	padding-top: 100px;
+        }
+        .pintam{
+        	box-shadow: rgba(0,0,0,0.3) 0 1px 3px;
+        	background: #f7f7f7;
+        	border-radius: 5px;
+        }
+        .atzucac{
+        	padding: 20px;
+        }
+        .container{
+        	max-width: 900px;
+        }
+        /* custom dropdown styles */
+        .dropdown-menu {
+        	min-width: 250px; 
+        }
+		.dropdown-menu::before {
+		   position: absolute;
+		   top: -7px;
+		   left: 9px;
+		   display: inline-block;
+		   border-right: 7px solid transparent;
+		   border-bottom: 7px solid #CCC;
+		   border-left: 7px solid transparent;
+		   border-bottom-color: rgba(0, 0, 0, 0.2);
+		   content: '';
+		 }
+		.dropdown-menu::after {
+		    position: absolute;
+		    top: -6px;
+		    left: 10px;
+		    display: inline-block;
+		    border-right: 6px solid transparent;
+		    border-bottom: 6px solid white;
+		    border-left: 6px solid transparent;
+		    content: '';
+		  }        
+        </style>
+    </head>
+    <body>
+    	<div class="container">
+			<div class="hero-unit pintam">
+				<h1><i class="icon-calendar"></i>&nbsp; Bootstrap Calendar</h1><br>
+				<p>a simple calendar plugin for jQuery and Twitter Bootstrap.<br/><em class="muted">Works inline, in dropdowns, and in the responsive navbar!</em></p>
+				<p class="pull-right"><a href="https://github.com/xero/bootstrap_calendar/archive/master.zip" class="btn btn-primary btn-large"><i class="icon-download-alt"></i>&nbsp;&nbsp;Download</a> &nbsp; &nbsp; <a href="https://github.com/xero/bootstrap_calendar" class="btn btn-success btn-large"><i class="icon-github-alt"></i>&nbsp;&nbsp;Browse Code</a></p>
+			</div>
+			<div class="row-fluid">
+				<div class="span8 pintam">
+					<div class="atzucac">
+						<h2>Dependencies</h2>
+						<ul>
+							<li><a href="http://jquery.com">jQuery 1.7.2+</a></a></li>
+							<li><a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap 2.0</a></li>
+						</ul>
+						<hr />
+						<h2>Options</h2>
+						<dl>
+							<dt>popover_options (<a href="http://twitter.github.io/bootstrap/javascript.html#popovers" target="_blank">Bootstrap popover</a> object)</dt>
+
+							<dt>tooltip_options (<a href="http://twitter.github.io/bootstrap/javascript.html#tooltips" target="_blank">Bootstrap tooltip</a> object)</dt>
+
+							<dt>days (array)</dt>
+							<dd>default: default: ["S", "M", "T", "W", "T", "F", "S"]</dd>
+
+							<dt>months (array)</dt>
+							<dd>default: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]</dd>
+
+							<dt>show_days (boolean)</dt>
+							<dd>default: true</dd>
+
+							<dt>req_ajax (json array)</dt>
+							<dd>
+								- req_ajax.type (string) {'get', 'post'}<br>
+								- req_ajax.url (string)
+							</dd>
+
+							<dt>events (array)</dt>
+							<dd>
+								- req_ajax.type (string) {'get', 'post'}<br>
+								- req_ajax.url (string)
+							</dd>
+
+							<br>
+
+							<dt>Event (array)</dt>
+							<dd>
+								<b>- [0]</b> (string): date<br>
+								ex: "17/4/2013"
+							</dd>
+							<dd>
+								<b>- [1]</b> (string): title<br>
+								ex: "hello world!"
+							</dd>
+							<dd>
+								<b>- [2]</b> (string): link<br>
+								ex: "http://github.com"
+							</dd>
+							<dd>
+								<b>- [3]</b> (string): color<br>
+								ex: "#333"
+							</dd>
+							<dd>
+								<b>- [4]</b> (string): html popover<br>
+								ex: "Text for the content of popover...description of event...image..."
+							</dd>
+						</dl>
+						<hr />
+						<h2>Example</h2>
+						<p>Note: that each event in the example has a diferent behavior<br>
+							 <dl>
+							 	<dt>The blue event has a hover popover</dt>
+							 	<dd>
+							 		<pre>
+array(
+	"27/4/2013", 
+	'github drinkup', 
+	'https://github.com/blog/category/drinkup', 
+	'blue'
+)
+</pre><br/><br/>
+							 	</dd>
+							 	<dt>The green event has a click popover</dt>
+							 	<dd>
+							 		<pre>
+array(
+	"7/4/2013", 
+	'bootstrap logo popover!', 
+	'#', 
+	'#51a351', 
+	'&lt;img src="http://bit.ly/XRpKAE" /&gt;'
+)
+</pre><br/><br/>
+							 	</dd>
+							 	<dt>The red event has a hover tooltip</dt>
+							 	<dd>
+							 		<pre>
+array(
+	"17/4/2013",
+	'octocat!', 
+	'https://github.com/logos', 
+	'red', 
+	'new github logo &lt;img src="http://git.io/Xmayvg" /&gt;'
+)
+</pre><br/><br/>
+							 	</dd>
+							 </dl>
+						</p>
+						<h3>Javascript:</h3>
+						<pre>
+$(document).ready( function(){
+
+	theMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	theDays = ["S", "M", "T", "W", "T", "F", "S"];
+
+    $('#calendar_test').calendar({
+        months: theMonths,
+        days: theDays,
+        req_ajax: {
+        	type: 'get',
+        	url: 'json.php'
+        }
+    });
+});
+						</pre>
+						<br>
+						<h3>PHP:</h3>
+<pre>
+&lt;?php
+$month = isset($_GET['month']) ? $_GET['month'] : date('n');
+$year = isset($_GET['year']) ? $_GET['year'] : date('Y');
+
+$array = array(
+  array(
+    "7/$month/$year", 
+    'bootstrap logo popover!', 
+    '#', 
+    '#51a351', 
+    '&lt;img src="http://bit.ly/XRpKAE" /&gt;'
+  ),
+  array(
+    "17/$month/$year", 
+    'octocat!', 
+    'https://github.com/logos', 
+    'blue', 
+    'new github logo &lt;img src="http://git.io/Xmayvg" /&gt;'
+  ),
+  array(
+    "27/$month/$year", 
+    'github drinkup', 
+    'https://github.com/blog/category/drinkup', 
+    'red'
+  )
+);
+
+header('Content-Type: application/json');
+echo json_encode($array);
+exit;
+?&gt;
+</pre>
+					<hr/>
+					<h2>Credits</h2>
+					<p>
+						original <a href="https://github.com/bichotll/bic_calendar">bic_calendar</a> by <a href="http://bic.cat">bic.cat</a>.<br/>
+						<a href="https://github.com/xero/bootstrap_calendar">bootstrap_calendar</a> fork (english localization and updates) by <a href="http://xero.nu">xero</a>
+					</p>
+					</div>
+				</div>
+				<div class="span4">
+			    	<div class="calendar_test"></div>
+			    	<br/><br/>
+					<div class="btn-group">
+						<a class="btn btn-large btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+							&nbsp;Dropdown Calendar&nbsp;&nbsp;
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li class="noborder calendar_test"></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<p class="muted">
+					<a href="http://bic.cat">bic.cat</a> &amp; <a href="http://xero.nu">xero.nu</a>
+				</p>
+			</footer>
+		</div>
+		<script type="text/javascript">
+			$(document).ready( function(){
+				theMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+				theDays = ["S", "M", "T", "W", "T", "F", "S"];
+
+				$('.calendar_test').calendar({
+					months: theMonths,
+					days: theDays,
+					req_ajax: {
+						type: 'get',
+						url: 'json.php'
+					}
+				});
+			});
+		</script>
+    </body>
+</html>
