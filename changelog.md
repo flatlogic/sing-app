@@ -1,4 +1,10 @@
 # Changelog
+## [1.2.3]
+
+### Fixed
+
+- Notifications: fix info notification;
+- Dashboard: fix arrow icon color;
 
 ## [1.2.2]
 

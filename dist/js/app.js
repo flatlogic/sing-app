@@ -738,7 +738,7 @@ function initDemoFunctions(){
                 $darkStyles = $('<link href="css/application-dark.min.css" rel="stylesheet">').appendTo($('head'));
             }
 
-            if ($darkStyles[0].isabled)
+            if ($darkStyles[0].disabled)
                 $darkStyles[0].disabled = false;
         });
 

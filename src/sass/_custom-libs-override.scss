@@ -545,7 +545,7 @@ ul.messenger-theme-air .messenger-message.alert-error .messenger-message-inner:b
 }
 /* line 113, ../../src/sass/messenger-theme-air.sass */
 ul.messenger-theme-air .messenger-message.alert-info .messenger-message-inner:before {
-  background-color: #61c4b8;
+  background-color: theme-color('info');;
 }
 /* line 116, ../../src/sass/messenger-theme-air.sass */
 ul.messenger-theme-air .messenger-spinner {

@@ -262,10 +262,10 @@
 
 @include keyframes('bg-attention'){
   0%{
-    background-color: lighten(theme-color('warning'), 43%);
+    background-color: lighten(theme-color('info'), 43%);
   }
   5%{
-    background-color: lighten(theme-color('warning'), 33%);
+    background-color: lighten(theme-color('info'), 33%);
   }
   0%{
     background-color: rgba(0,0,0,0);
