@@ -1,6 +1,6 @@
 {
   "name": "Sing",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Sing Dashboard App",
   "main": "index.html",
   "authors": [
@@ -14,7 +14,7 @@
     "animate.css": "3.7.2",
     "awesome-bootstrap-checkbox": "1.0.1",
     "backbone": "1.4.0",
-    "bootstrap": "4.5.3",
+    "bootstrap": "4.5.2",
     "bootstrap-select": "1.13.18",
     "bootstrap_calendar": "git://github.com/xero/bootstrap_calendar#v1.0.1",
     "flot": "0.8.3",

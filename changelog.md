@@ -1,4 +1,11 @@
 # Changelog
+
+## [1.2.4]
+
+### Fixed
+
+- Navbar dropdown toggle button
+
 ## [1.2.3]
 
 ### Fixed
