@@ -403,6 +403,11 @@ legend {
   .input-group {
     width: 300px;
     display: flex;
+
+    @include media-breakpoint-down(md) {
+      width: 240px;
+    }
+    
     .form-control {
       background-color: rgba(0, 0, 0, .1);
 

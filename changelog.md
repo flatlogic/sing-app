@@ -1,5 +1,9 @@
 # Changelog
+## [1.2.5]
+### Fixed 
 
+- Fix colors in header
+- Fix width of search bar
 ## [1.2.4]
 
 ### Fixed
