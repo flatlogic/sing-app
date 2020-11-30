@@ -24,7 +24,7 @@ $(function () {
                     }
                 },
                 colors: [
-                    Sing.colors['brand-warning'],
+                    Sing.colors['brand-primary'],
                     Sing.colors['brand-danger'],
                     Sing.colors['brand-info']
                 ],

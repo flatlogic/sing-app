@@ -1,4 +1,8 @@
 # Changelog
+## [1.2.6]
+### Fixed 
+
+- Fix color in chart on dashboard
 ## [1.2.5]
 ### Fixed 
 
