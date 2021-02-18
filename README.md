@@ -2,7 +2,7 @@
 # Sing App Lite - free and open source admin dashboard template
 Including responsive layout and high quality UI built with Bootstrap 4.5.
 
-[View Demo](https://flatlogic.com/admin-dashboards/sing-app-html5-lite/demo) | [Download](https://github.com/flatlogic/sing-app/archive/master.zip) | [Available versions](https://demo.flatlogic.com/sing-app/) | [More templates](https://flatlogic.com/admin-dashboards)
+[View Demo](https://flatlogic.com/admin-dashboards/sing-app-html5-lite/demo) | [Download](https://github.com/flatlogic/sing-app/archive/master.zip) | [Available versions](https://demo.flatlogic.com/sing-app/) | [More templates](https://flatlogic.com/admin-dashboards) | [Support forum](https://flatlogic.com/forum)
 
 [![header_illustration_fb](https://user-images.githubusercontent.com/36201579/40110692-554a4650-5909-11e8-8cde-30a0dd1f65ad.jpg)](https://flatlogic.github.io/sing-app/)
 
@@ -71,7 +71,7 @@ Sing App is a part of admin dashboard solution provided by Flatlogic. We can int
 For full documentation, visit [https://demo.flatlogic.com/sing-app/documentation/](https://demo.flatlogic.com/sing-app/documentation/).
 
 ## Support
-For any additional information please refer to [Flatlogic homepage](https://flatlogic.com).
+For any additional information please go to our [support forum](https://flatlogic.com/forum) and raise your questions or feedback provide there. We highly appreciate your participation!
 
 ## How can I support developers?
 - Star our GitHub repo :star:
