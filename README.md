@@ -71,7 +71,7 @@ Sing App is a part of admin dashboard solution provided by Flatlogic. We can int
 For full documentation, visit [https://demo.flatlogic.com/sing-app/documentation/](https://demo.flatlogic.com/sing-app/documentation/).
 
 ## Support
-For any additional information please go to our [support forum](https://flatlogic.com/forum) and raise your questions or feedback provide there. We highly appreciate your participation!
+For any additional information please go to our [**support forum**](https://flatlogic.com/forum) and raise your questions or feedback provide there. We highly appreciate your participation!
 
 ## How can I support developers?
 - Star our GitHub repo :star:
