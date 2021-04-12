@@ -1,4 +1,8 @@
 # Changelog
+## [1.2.7] [12/04/2021]
+### Updated
+
+- Update support links
 ## [1.2.6]
 ### Fixed 
 
