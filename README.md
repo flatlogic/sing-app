@@ -1,12 +1,10 @@
 
 # Sing App Lite - free and open source admin dashboard template
-Including responsive layout and high quality UI built with Bootstrap 4.5.
+Including a responsive layout and high-quality UI built with Bootstrap 4.5, this repository provides access to a limited free version of [Sing App](https://demo.flatlogic.com/sing-app/). The full package includes versions for [Bootstrap 4](https://flatlogic.com/admin-dashboards/sing-app-html5/demo), [React](https://flatlogic.com/admin-dashboards/sing-app-react/demo) with backend integration, [Vue.js](https://flatlogic.com/admin-dashboards/sing-app-vue/demo),     [Angular](https://flatlogic.com/admin-dashboards/sing-app-angular/demo), and [Angular JS](https://flatlogic.com/admin-dashboards/sing-app-angularjs/demo), providing comprehensive tools for [business software](https://flatlogic.com/) development. The free Vue.js version, known as Sing App Vue Dashboard, demonstrates the flexibility and range of options available to developers.
 
 [View Demo](https://flatlogic.com/admin-dashboards/sing-app-html5-lite/demo) | [Download](https://github.com/flatlogic/sing-app/archive/master.zip) | [Available versions](https://demo.flatlogic.com/sing-app/) | [More templates](https://flatlogic.com/admin-dashboards) | [Support forum](https://flatlogic.com/forum)
 
 [![header_illustration_fb](https://user-images.githubusercontent.com/36201579/40110692-554a4650-5909-11e8-8cde-30a0dd1f65ad.jpg)](https://flatlogic.github.io/sing-app/)
-
-This repository contains a limited free version of [Sing App](https://demo.flatlogic.com/sing-app/). [Full bootstrap 4](https://flatlogic.com/admin-dashboards/sing-app-html5/demo), [React](https://flatlogic.com/admin-dashboards/sing-app-react/demo) with backend, [Vue.js](https://flatlogic.com/admin-dashboards/sing-app-vue/demo), [Angular](https://flatlogic.com/admin-dashboards/sing-app-angular/demo) and [Angular JS](https://flatlogic.com/admin-dashboards/sing-app-angularjs/demo) versions are also available and are shipped in a full package.
 
 Free Vue.js version is available as [Sing App Vue Dashboard](https://github.com/flatlogic/sing-app-vue-dashboard)
 
