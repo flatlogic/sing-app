@@ -1,6 +1,6 @@
 
 # Sing App Lite - free and open source admin dashboard template
-Including a responsive layout and high-quality UI built with Bootstrap 4.5, this repository provides access to a limited free version of [Sing App](https://demo.flatlogic.com/sing-app/). The full package includes versions for [Bootstrap 4](https://flatlogic.com/admin-dashboards/sing-app-html5/demo), [React](https://flatlogic.com/admin-dashboards/sing-app-react/demo) with backend integration, [Vue.js](https://flatlogic.com/admin-dashboards/sing-app-vue/demo),     [Angular](https://flatlogic.com/admin-dashboards/sing-app-angular/demo), and [Angular JS](https://flatlogic.com/admin-dashboards/sing-app-angularjs/demo), providing comprehensive tools for [business software](https://flatlogic.com/) development. The free Vue.js version, known as [Sing App Vue Dashboard](https://github.com/flatlogic/sing-app-vue-dashboard), demonstrates the flexibility and range of options available to developers.
+Including a responsive layout and high-quality UI built with Bootstrap 4.6, this repository provides access to a limited free version of [Sing App](https://demo.flatlogic.com/sing-app/). The full package includes versions for [Bootstrap 4](https://flatlogic.com/admin-dashboards/sing-app-html5/demo), [React](https://flatlogic.com/admin-dashboards/sing-app-react/demo) with backend integration, [Vue.js](https://flatlogic.com/admin-dashboards/sing-app-vue/demo),     [Angular](https://flatlogic.com/admin-dashboards/sing-app-angular/demo), and [Angular JS](https://flatlogic.com/admin-dashboards/sing-app-angularjs/demo), providing comprehensive tools for [business software](https://flatlogic.com/) development. The free Vue.js version, known as [Sing App Vue Dashboard](https://github.com/flatlogic/sing-app-vue-dashboard), demonstrates the flexibility and range of options available to developers.
 
 [View Demo](https://flatlogic.com/admin-dashboards/sing-app-html5-lite/demo) | [Download](https://github.com/flatlogic/sing-app/archive/master.zip) | [Available versions](https://demo.flatlogic.com/sing-app/) | [More templates](https://flatlogic.com/admin-dashboards) | [Support forum](https://flatlogic.com/forum)
 
@@ -39,21 +39,29 @@ $ git clone -o sing-app-lite -b master --single-branch \
 $ cd MyApp
 ```
 
-#### 2. Run `yarn install`
+#### 2. Install dependencies
 
-This will install both run-time project dependencies and developer tools listed
-in [package.json](../package.json) file. We are moving all dependencies to npm, so there will be no bower dependencies soon.
+Use Node.js 22.12 or newer and run `npm ci`. The committed `package-lock.json`
+is the dependency source of truth; generated `node_modules` are not stored in Git.
 
-#### 3. Run `yarn build`
+#### 3. Build and serve
 
-This command will build the app from the source files (`/src`) into the output
-`/dist` folder. Then open `dist/index.html` in your browser.
+Run `npm run build` to compile `/src` into `/dist`. Serve the project root
+with a static web server and open `/dist/index.html`; pages load their runtime
+libraries from `/node_modules`. For a local preview, `node tests/serve.cjs`
+serves http://127.0.0.1:4325/dist/index.html.
 
-Now you can open your web app in a browser, on mobile devices and start
-hacking. The page must be served from a web server, e.g. apache, nginx, WebStorm built-in web server, etc., otherwise some features may not work properly.
+#### 4. Develop and verify
 
-#### 3. Run `yarn watch`
-This command will watch for changes in `/src` and recompile handlebars' templates & scss styles on the fly into html & css accordingly.
+`npm run watch` recompiles changed scripts, templates and styles.
+After building, run `npm run test:build` for artifact and compiler-error checks,
+and `npm test` for real Chrome page, chart, calendar, gesture and PJAX tests.
+The browser checks use an installed Google Chrome. Google Maps requires a valid
+provider key and is not included in the local browser checks.
+
+Three small libraries whose original Git repositories have no npm package
+manifest remain in `src/js/vendor`, with their existing code, attribution and
+source revision. All other dependencies are installed by npm.
 
 For more information please refer to full [documentation](https://demo.flatlogic.com/sing-app/documentation).
 

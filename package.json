@@ -8,55 +8,51 @@
   ],
   "scripts": {
     "build": "gulp build",
-    "watch": "gulp watch"
+    "watch": "gulp watch",
+    "test": "playwright test",
+    "test:build": "node --test tests/build.test.cjs"
   },
   "dependencies": {
     "animate.css": "3.7.2",
     "awesome-bootstrap-checkbox": "1.0.1",
-    "backbone": "1.4.0",
-    "bootstrap": "4.5.2",
+    "backbone": "^1.6.1",
+    "bootstrap": "^4.6.2",
     "bootstrap-select": "1.13.18",
-    "bootstrap_calendar": "git://github.com/xero/bootstrap_calendar#v1.0.1",
     "flot": "0.8.3",
-    "flot-orderBars": "https://github.com/emmerich/flot-orderBars.git#d44ff4f2fec4c8bb1254e59567ee39fa3684372e",
-    "flot.animator": "https://github.com/Codicode/flotanimator.git#3c256c0183d713fd3bf41d04417873928eb1a751",
-    "flot.dashes": "https://github.com/cquartier/flot.dashes.git#454016a8d61b3e7af375e4ffda36c7c55413f62b",
     "font-awesome": "4.7.0",
     "gmaps": "0.4.25",
-    "gulp-sourcemaps": "^2.6.5",
-    "hammerjs": "hammer#^2.0.8",
-    "handlebars": "^4.7.6",
+    "hammerjs": "^2.0.8",
+    "handlebars": "^4.7.9",
     "jasny-bootstrap": "3.1.3",
-    "jquery": "2.1.4",
+    "jquery": "^3.7.1",
     "jquery-hammerjs": "^2.0.0",
     "jquery-pjax": "2.0.1",
     "jquery-slimscroll": "^1.3.8",
     "jquery-sparkline": "^2.4.0",
-    "jquery-ui": "1.12.1",
-    "jquery-ui-touch-punch": "git://github.com/furf/jquery-ui-touch-punch.git#4bc009145202d9c7483ba85f3a236a8f3470354d",
     "line-awesome": "1.3.0",
     "messenger": "https://github.com/HubSpot/messenger.git",
     "owl.carousel": "^2.3.4",
-    "pace.js": "https://github.com/HubSpot/pace.git#v0.7.1",
-    "widgster": "0.0.3"
+    "widgster": "^1.0.0",
+    "flot-orderbars": "^1.0.0",
+    "pace-js": "^1.2.4"
   },
   "devDependencies": {
-    "del": "^5.1.0",
     "glyphicons-halflings": "*",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.1",
     "gulp-hb": "^8.0.0",
     "gulp-rename": "2.0.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
+    "gulp-sass": "^6.0.1",
     "handlebars-layouts": "^3.1.4",
-    "popper.js": "1.14.7",
-    "run-sequence": "^2.2.1"
-  },
-  "resolutions": {
-    "jquery": "~2.1.3",
-    "bootstrap": "~4"
+    "popper.js": "^1.16.1",
+    "sass": "^1.107.1",
+    "@playwright/test": "^1.64.1"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=22.12.0"
+  },
+  "overrides": {
+    "jquery-hammerjs": {
+      "jquery": "^3.7.1"
+    }
   }
 }

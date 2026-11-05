@@ -202,7 +202,7 @@
   .form-control:focus,
   .form-control:focus + .input-group-append .input-group-text,
   &.focus .input-group-text{
-    @extend .input-no-border:focus;
+    background-color: $gray-100;
   }
 }
 
