@@ -75,8 +75,8 @@ $(function(){
             /**
              * Initialize pjax & attaching all related events
              */
-            this.$sidebar.find('.sidebar-nav a:not([data-toggle=collapse], [data-no-pjax], [href=#])').on('click', $.proxy(this._checkLoading, this));
-            $(document).pjax('#sidebar .sidebar-nav a:not([data-toggle=collapse], [data-no-pjax], [href=#], .no-pjax)', '#content', {
+            this.$sidebar.find('.sidebar-nav a:not([data-toggle=collapse], [data-no-pjax], [href="#"])').on('click', $.proxy(this._checkLoading, this));
+            $(document).pjax('#sidebar .sidebar-nav a:not([data-toggle=collapse], [data-no-pjax], [href="#"], .no-pjax)', '#content', {
                 fragment: '#content',
                 type: 'GET', //this.debug ? 'POST' : 'GET' //GET - for production, POST - for debug.
                 timeout: 4000
@@ -469,7 +469,7 @@ $(function(){
 
         //ensure synchronous loading
         var $previous = {
-            load: function(fn){
+            on: function(event, fn){
                 fn();
             }
         };
@@ -484,7 +484,7 @@ $(function(){
 
             var script = document.createElement('script');
             script.src = $(this).attr('src');
-            $previous.load(function(){
+            $previous.on('load', function(){
                 document.body.appendChild(script);
             });
 
@@ -492,7 +492,7 @@ $(function(){
         });
 
         var view = this;
-        $previous.load(function(){
+        $previous.on('load', function(){
             $(document).trigger('sing-app:loaded');
             view.log('scripts loaded.');
         })
