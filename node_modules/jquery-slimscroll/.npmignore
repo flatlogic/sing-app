@@ -1,9 +1,0 @@
-### Node template
-node_modules/
-npm-debug.log*
-
-### JetBrains template
-*.iml
-.idea/
-/out/
-.idea_modules/
